@@ -134,117 +134,9 @@ the top position in the market. Best web template used for directory.">
                         </li>
                         <li class="dropdown mega-dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages</a>
-                            <ul class="dropdown-menu mega-dropdown-menu row text-center">
-                                <li class="col-sm-3">
-                                    <ul>
-                                        <li class="dropdown-header">Categories</li>
-                                        <li>
-                                            <a href="real_estate_gridlist.html">Real Estates</a>
-                                        </li>
-                                        <li>
-                                            <a href="automotive_gridlist.html">Automotive</a>
-                                        </li>
-                                        <li>
-                                            <a href="restaurant_gridlist.html">Restaurant</a>
-                                        </li>
-                                        <li>
-                                            <a href="job_gridlist.html">Jobs</a>
-                                        </li>
-                                        <li>
-                                            <a href="shopping_gridlist.html">Shopping</a>
-                                        </li>
-                                        <li>
-                                            <a href="hotels_travel_gridlist.html">Hotels & Travel</a>
-                                        </li>
-                                        <li>
-                                            <a href="pets_gridlist.html">Pets</a>
-                                        </li>
-                                        <li>
-                                            <a href="services_gridlist.html">Services</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="col-sm-3">
-                                    <ul>
-                                        <li class="dropdown-header">About Us</li>
-                                        <li>
-                                            <a href="about.html#company">About Our Company</a>
-                                        </li>
-                                        <li>
-                                            <a href="about.html#features">Features</a>
-                                        </li>
-                                        <li>
-                                            <a href="about.html#catalog">Agents</a>
-                                        </li>
-                                        <li>
-                                            <a href="about.html#customer">Customers</a>
-                                        </li>
-                                        <li>
-                                            <a href="about.html#pricing">Pricing Plans</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="col-sm-3">
-                                    <ul>
-                                        <li class="dropdown-header">Short Codes</li>
-                                        <li>
-                                            <a href="styles.html#typography">Typography</a>
-                                        </li>
-                                        <li>
-                                            <a href="styles.html#section">Colors of section</a>
-                                        </li>
-                                        <li>
-                                            <a href="styles.html#button">Buttons</a>
-                                        </li>
-                                        <li>
-                                            <a href="styles.html#elements">Form Elements</a>
-                                        </li>
-                                        <li>
-                                            <a href="not_found.html">404 page</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="col-sm-3">
-                                    <ul>
-                                        <li class="dropdown-header">Contacts</li>
-                                        <li>
-                                            <a href="contacts.html#contact">Contact Information</a>
-                                        </li>
-                                        <li>
-                                            <a href="contacts.html#network">Social Networks</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Categories</a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="real_estate_gridlist.html">Real Estates</a>
-                                </li>
-                                <li>
-                                    <a href="automotive_gridlist.html">Automotive</a>
-                                </li>
-                                <li>
-                                    <a href="restaurant_gridlist.html">Restaurant</a>
-                                </li>
-                                <li>
-                                    <a href="job_gridlist.html">Jobs</a>
-                                </li>
-                                <li>
-                                    <a href="shopping_gridlist.html">Shopping</a>
-                                </li>
-                                <li>
-                                    <a href="hotels_travel_gridlist.html">Hotels & Travel</a>
-                                </li>
-                                <li>
-                                    <a href="pets_gridlist.html">Pets</a>
-                                </li>
-                                <li>
-                                    <a href="services_gridlist.html">Services</a>
-                                </li>
-                            </ul>
                         </li>
                         <li>
                             <a href="news.html">News</a>
@@ -252,16 +144,8 @@ the top position in the market. Best web template used for directory.">
                         <li>
                             <a href="contacts.html">Contact Us</a>
                         </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Filter</a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="googlemap.html">Google Map</a>
-                                </li>
-                                <li>
-                                    <a href="googlemap_full.html">Google Full Map</a>
-                                </li>
-                            </ul>
+                        <li>
+                            <a href="/login">Login</a>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
