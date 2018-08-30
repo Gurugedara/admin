@@ -13,4 +13,12 @@ class adminController extends Controller
     public function verifyStudent(){
         return view('admin.studentVerify');
     }
+
+    public function verifyTeachers(){
+        return view('admin.teacherVerify');
+    }
+
+    public function viewCourses(){
+        return view('admin.courses');
+    }
 }
