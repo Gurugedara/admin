@@ -41,3 +41,17 @@ text-align: center;
 background-color: lightblue;
 margin-top: 6px;
 }
+
+.mdl-navigation__link--current{
+    background-color: #3c33dd;
+}
+
+.mainTable{
+    margin-top: 50px;
+    margin-left:18%;
+}
+
+.subTable{
+    width: 95%;
+}
+
