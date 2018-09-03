@@ -1,660 +1,404 @@
+
 <!DOCTYPE html>
-<html>
-
-
-<!-- Mirrored from demo.lorvent.com/globals/directory/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 30 Aug 2018 19:51:00 GMT -->
+<html lang="en">
 <head>
-    <!--meta tag css link-->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="Bootstrap Business Directory Template, Best Responsive Directory Template, Bootstrap Directory Listing
-Template">
-    <meta name="description" content="Globals directory is the perfect business directory template used for different businesses. Directory
-module helps to make the business listings around. It is the best directory template and accomplished
-the top position in the market. Best web template used for directory.">
-    <!--favicon-->
-    <link rel="icon" href="images/fevicon.ico" type="image/x-icon">
-    <!--title-->
-    <title>Best Bootstrap Directory Template | Business Directory Bootstrap Template -Globals</title>
-    <!--bootstrap css link-->
-    <link rel="stylesheet" type="text/css" href="/frontend/css/roboto.min.css">
-    <link rel="stylesheet" type="text/css" href="/frontend/css/bootstrap.min.css">
-    <link href="/frontend/css/bootstrap-material-design.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/frontend/css/material.css">
-    <link rel="stylesheet" type="text/css" href="/frontend/css/material-design-icon.css">
-    <link rel="stylesheet" type="text/css" href="/frontend/css/ripples.min.css">
-    <link rel="stylesheet" type="text/css" href="/frontend/css/font-awesome.min.css">
-    <!--leftmenu-->
-    <link rel="stylesheet" type="text/css" href="/frontend/css/leftmenu.css">
-    <link rel="stylesheet" type="text/css" href="/frontend/css/custom.css">
-    <!--revolution-slider-->
-    <link rel="stylesheet" type="text/css" href="/frontend/css/revolution-slider/settings.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="/frontend/css/revolution-slider/layers.css" />
-    <link rel="stylesheet" type="text/css" href="/frontend/css/revolution-slider/navigation.css" />
-    <link rel="stylesheet" type="text/css" href="/frontend/css/revolution-slider/style.css" media="screen" />
-    <!--tooltip-->
-    <link rel="stylesheet" type="text/css" href="/frontend/css/tooltip/html5tooltips.css">
-    <link rel="stylesheet" type="text/css" href="/frontend/css/tooltip/html5tooltips.animation.css">
-    <!--animated css-->
-    <link rel="stylesheet" type="text/css" href="/frontend/css/animate.css">
-    <!--custom css link-->
-    <!--slider-->
-    <link rel="stylesheet" type="text/css" href="/frontend/css/index-slider.css">
-    <link rel="stylesheet" type="text/css" href="/frontend/css/directory.css">
-    <link rel="stylesheet" type="text/css" href="/frontend/css/index.css">
-    <link rel="stylesheet" type="text/css" href="/frontend/css/red-color.css">
+
+  <title>Gurugedara</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+  }
+  h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+  h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }  
+  .jumbotron {
+      background-color: #fff;
+      color: #ad42f4;
+      padding: 100px 45px;
+      font-family: Montserrat, sans-serif;
+      
+  }
+  .container-fluid {
+      padding: 60px 50px;
+  }
+   /* section-2 background color*/
+  .bg-grey {
+      background-color: #f6f6f6;
+  }
+   /* logos in section-3 */
+  .logo-small {
+      color: #ad42f4;
+      font-size: 30px;
+  }
+  /* settings of big logos in all sections */
+  .logo {
+      color: #31f938;
+      font-size: 200px;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+  }
+ /* Caraousel settings */
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #ad42f4;
+  }
+  .carousel-indicators li {
+      border-color: #ad42f4;
+  }
+  .carousel-indicators li.active {
+      background-color: #ad42f4;
+  }
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+  }
+  .panel {
+      border: 1px solid #f4511e; 
+      border-radius:0 !important;
+      transition: box-shadow 0.8s;
+  }
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #f4511e;
+      background-color: #fff !important;
+      color: #f4511e;
+  }
+  .panel-heading {
+      color: #fff !important;
+      background-color: #f4511e !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+      background-color: white !important;
+  }
+  .panel-footer h3 {
+      font-size: 32px;
+  }
+  .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+  }
+  .panel-footer .btn {
+      margin: 15px 0;
+      background-color: #f4511e;
+      color: #fff;
+  }
+  .navbar {
+      margin-bottom: 0;
+      background-color: #fff;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+  }
+   
+  .navbar li a, .navbar .navbar-brand {
+      color: #f4511e !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color:  #ad42f4 !important;
+      background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+  }
+  footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #f4511e;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .col-sm-8 {
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+  </style>
 </head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-<body>
-    <!--Left Menu Button-->
-    <div id="wrapper">
-        <!-- Sidebar -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper">
-            <ul class="nav sidebar-nav">
-                <li class="profile-box">
-                    <div class="sidebar-brand">
-                        <img src="/frontend/images/userprofile.png" class="img-responsive profile" alt="userprofile">
-                        <a href="#" class="profile-name">
-                            Kenneth Hanson
-                        </a>
-                        <a href="#" class="user">
-                            username@gmail.com
-                        </a>
-                    </div>
-                </li>
-            </ul>
-            <div>
-                <h3 class="plan-types">Choose Category</h3>
-            </div>
-            <ul class="nav sidebar-nav">
-                <li></li>
-                <li>
-                    <a href="real_estate_gridlist.html" class="plan-a">Real Estate</a>
-                </li>
-                <li>
-                    <a href="automotive_gridlist.html" class="plan-a">Automotive</a>
-                </li>
-                <li>
-                    <a href="restaurant_gridlist.html" class="plan-a">Restaurant</a>
-                </li>
-                <li>
-                    <a href="job_gridlist.html" class="plan-a">Jobs</a>
-                </li>
-                <li>
-                    <a href="shopping_gridlist.html" class="plan-a">Shopping</a>
-                </li>
-                <li>
-                    <a href="hotels_travel_gridlist.html" class="plan-a">Hotels &amp; Travel</a>
-                </li>
-                <li>
-                    <a href="pets_gridlist.html" class="plan-a">Pets</a>
-                </li>
-                <li class="search-div-pad">
-                    <a href="services_gridlist.html" class="plan-a">Services</a>
-                </li>
-            </ul>
-            <h3 class="drop-search">Search</h3>
-            <div class="bar-adj">
-                <div class="form-group label-floating is-empty typeandsearch">
-                    <label for="typeforemail" class="control-label">Type and hit Enter...</label>
-                    <input type="text" id="typeforemail" class="form-control">
-                    <span class="material-input"></span></div>
-            </div>
-            <i class="mdi-navigation-arrow-back back-icon"></i>
-        </nav>
-        <!-- /#page-content-wrapper -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">Gurugedara</a>
     </div>
-    <!--wrapper -->
-    <!--Left Menu Button end-->
-    <!--header section-->
-    <header>
-        <div class="container">
-            <nav class="navbar navbar-default">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-links" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a id="nav-expander" class="hamburger is-closed" data-toggle="offcanvas">
-                        <i class="mdi-navigation-menu menu-icon"></i>
-                    </a>
-                    <a href="index.html">
-                        <img src="/frontend/images/logo.png" alt="logo" class="global-logo ">
-                    </a>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="nav-links">
-                    <ul class="nav navbar-nav">
-                        <li class="active">
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li class="dropdown mega-dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages</a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Categories</a>
-                        </li>
-                        <li>
-                            <a href="news.html">News</a>
-                        </li>
-                        <li>
-                            <a href="contacts.html">Contact Us</a>
-                        </li>
-                        <li>
-                            <a href="/login">Login</a>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <button class="btn btn-default hidden-xs menu-plus-btn" data-tooltip="Add New Offer" data-tooltip-stickto="bottom" data-tooltip-color="#313539" data-tooltip-animate-function="foldin"><i class="mdi-content-add plus-btn-icon"></i>
-                            </button>
-                        </li>
-                        <li class="dropdown hidden-xs">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="mdi-navigation-more-vert menu-icon2"></i></a>
-                            <ul class="menu toggle-menu-possition">
-                                <li class="drop li-h">
-                                    <a href="#" class="icon-centent"><i class="mdi-social-person menu-i"></i>My Account</a>
-                                </li>
-                                <li class="drop li-h">
-                                    <a href="#" class="icon-centent"><i class="material-icons menu-i">favorite</i>Favorites (6)
-                                    </a>
-                                </li>
-                                <li class="drop li-h">
-                                    <a href="#" class="icon-centent"><i class="material-icons menu-i">layers</i>Compare List (2)</a>
-                                </li>
-                                <li class="drop li-h">
-                                    <a href="#" class="icon-centent"><i class="mdi-image-brightness-5 menu-i"></i>Settings</a>
-                                </li>
-                                <li class="drop li-h">
-                                    <a href="#" class="icon-centent"><i class="mdi-navigation-arrow-back menu-i"></i>LOGOUT</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </nav>
-        </div>
-    </header>
-    <!--header section end-->
-    <!--slider-->
-    <!--
-#################################
-    - THEMEPUNCH BANNER -
-#################################
--->
-    <div class="tp-banner-container">
-        <div class="tp-banner">
-            <ul>
-                <!-- SLIDE  -->
-                <li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-saveperformance="on">
-                    <!-- MAIN IMAGE -->
-                    <img alt="slidebg1" src="/frontend/images/dummy.png" data-lazyload="/frontend/images/background2.png" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" class="back-img">
-                    <!-- LAYERS -->
-                    <!-- LAYER NR. 2 -->
-                    <div class="tp-caption lft customout rs-parallaxlevel-0" data-x="250" data-y="80" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="700" data-start="1400" data-easing="Power3.easeInOut" data-elementdelay="0.1" data-endelementdelay="0.1" style="z-index: 3;">
-                        <img alt="dummy" src="/frontend/images/dummy.png" data-lazyload="/frontend/images/parallax/1.png" class="slide-doller-img">
-                    </div>
-                    <div class="tp-caption lft customout rs-parallaxlevel-0" data-x="50" data-y="700" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="700" data-start="1400" data-easing="Power3.easeInOut" data-elementdelay="0.1" data-endelementdelay="0.1" style="z-index: 3;">
-                        <img alt="test0" src="/frontend/images/dummy.png" data-lazyload="/frontend/images/parallax/2.png" class="slide-doller-img">
-                    </div>
-                    <div class="tp-caption lft customout rs-parallaxlevel-0" data-x="200" data-y="350" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="700" data-start="1400" data-easing="Power3.easeInOut" data-elementdelay="0.1" data-endelementdelay="0.1" style="z-index: 3;">
-                        <img alt="test2" src="/frontend/images/dummy.png" data-lazyload="/frontend/images/parallax/3.png" class="slide-doller-img">
-                    </div>
-                    <div class="tp-caption lft customout rs-parallaxlevel-0" data-x="800" data-y="600" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="700" data-start="1400" data-easing="Power3.easeInOut" data-elementdelay="0.1" data-endelementdelay="0.1" style="z-index: 3;">
-                        <img alt="test2" src="/frontend/images/dummy.png" data-lazyload="/frontend/images/parallax/4.png" class="slide-doller-img">
-                    </div>
-                    <!-- LAYER NR. 4 -->
-                    <div class="tp-caption grey_heavy_72 skewfromrightshort tp-resizeme rs-parallaxlevel-0" data-x="520" data-y="190" data-speed="500" data-start="2250" data-easing="Power3.easeInOut" data-splitin="chars" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" style="z-index: 5; max-width:inherit; max-height: inherit; white-space: nowrap;color: #31364c;font-family: roboto, sans-serif;font-weight: 300;font-size:86px;">
-                        Hello World!
-                    </div>
-                    <!-- LAYER NR. 2nd text -->
-                    <div class="tp-caption grey_heavy_72 skewfromrightshort tp-resizeme rs-parallaxlevel-0" data-x="535" data-y="296" data-speed="500" data-start="3550" data-easing="Power3.easeInOut" data-splitin="chars" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" style="z-index: 5; max-width: inherit; max-height: inherit; white-space: nowrap;color: #31364c;font-family: roboto, sans-serif;font-weight: 200;font-size:46px;">
-                        Welcome to Directory Portal
-                    </div>
-                    <!-- LAYER NR. 8 -->
-                    <div class="tp-caption grey_regular_18 customin tp-resizeme rs-parallaxlevel-0" data-x="550" data-y="378" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="500" data-start="4600" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.05" data-endelementdelay="0.1" style="z-index: 9; max-width: inherit; max-height:inherit; white-space: nowrap;">
-                        <div class="hidden-xs hidden-sm" style="text-align:left;color: #9699a6; font-family: 'roboto',sans-serif;font-weight: normal;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                            <br>nonummy nibh euismod tincidunt ut laoreet.
-                        </div>
-                        <div class="visible-xs visible-sm" style="text-align:left;color: #9699a6; font-family: 'roboto',sans-serif;font-weight: normal;font-size:30px;">Lorem ipsum dolor sit amet, consectetuer
-                            <br> adipiscing elit, sed diam nonummy nibh
-                        </div>
-                    </div>
-                    <!-- LAYER NR. 11 -->
-                    <div class="tp-caption customin tp-resizeme rs-parallaxlevel-0" data-x="550" data-y="476" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="500" data-start="5200" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-linktoslide="next" style="z-index: 12; max-width: inherit; max-height: inherit; white-space: nowrap; border-radius:26px;">
-                        <a href='about.html' class='largeredbtn2'>Learn More &nbsp;<i class="mdi-navigation-arrow-forward slide-r-i"></i></a>
-                    </div>
-                </li>
-                <li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-saveperformance="on">
-                    <!-- MAIN IMAGE -->
-                    <img alt="slidebg1" src="/frontend/images/dummy.png" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" class="back-img" style="background-color:#FF9700;">
-                    <!-- LAYERS -->
-                    <!-- LAYER NR. 2 -->
-                    <div class="tp-caption lft customout rs-parallaxlevel-0" data-x="200" data-y="300" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:100% 100%;" data-speed="700" data-start="1400" data-easing="Power3.easeInOut" data-elementdelay="0.1" data-endelementdelay="0.1" style="z-index: 3;">
-                        <img alt="dummy" src="/frontend/images/dummy.png" data-lazyload="images/mainimages/img-08.png" style="width:750px; height:600px">
-                    </div>
-                    <!-- LAYER NR. 4 -->
-                    <div class="tp-caption grey_heavy_72 skewfromrightshort tp-resizeme rs-parallaxlevel-0" data-x="350" data-y="50" data-speed="500" data-start="2250" data-easing="Power3.easeInOut" data-splitin="chars" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" style="z-index: 5; max-width:100%; max-height: inherit; white-space: nowrap; font-family: roboto, sans-serif;font-weight: 300;font-size:86px; color:#fff;">
-                        Hello World!
-                    </div>
-                    <!-- LAYER NR. 2nd text -->
-                    <div class="tp-caption grey_heavy_72 skewfromrightshort tp-resizeme rs-parallaxlevel-0" data-x="360" data-y="150" data-speed="500" data-start="3550" data-easing="Power3.easeInOut" data-splitin="chars" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" style="z-index: 5; color:#fff; max-width: inherit; max-height: inherit; white-space: nowrap;font-family: roboto, sans-serif;font-weight: 200;font-size:46px;">
-                        Welcome to Directory Portal
-                    </div>
-                    <!-- LAYER NR. 8 -->
-                    <div class="tp-caption grey_regular_18 customin tp-resizeme rs-parallaxlevel-0" data-x="375" data-y="225" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="500" data-start="4600" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.05" data-endelementdelay="0.1" style="z-index: 9; max-width: inherit; max-height:inherit; white-space: nowrap;">
-                        <div class="hidden-xs hidden-sm" style="text-align:left;color: #fff;font-family: 'roboto',sans-serif;font-weight: normal;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                            <br>nonummy nibh euismod tincidunt ut laoreet.
-                        </div>
-                        <div class="visible-xs visible-sm" style="text-align:left;color: #fff;font-family: 'roboto',sans-serif;font-weight: normal;font-size:30px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                        </div>
-                    </div>
-                    <!-- LAYER NR. 11 -->
-                    <div class="tp-caption customin tp-resizeme rs-parallaxlevel-0" data-x="370" data-y="300" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="500" data-start="5200" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-linktoslide="next" style="z-index: 12; max-width: inherit; max-height: inherit; white-space: nowrap; border-radius:26px;">
-                        <a href='about.html' class='largeredbtn2'>Learn More &nbsp;<i class="mdi-navigation-arrow-forward slide-r-i"></i></a>
-                    </div>
-                </li>
-                <li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-saveperformance="on">
-                    <!-- MAIN IMAGE -->
-                    <img alt="slidebg1" src="/frontend/images/dummy.png" style="background-color:#9C26B0;" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" class="back-img">
-                    <!-- LAYERS -->
-                    <!-- LAYER NR. 2 -->
-                    <div class="tp-caption lft customout rs-parallaxlevel-0" data-x="700" data-y="150" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="700" data-start="1400" data-easing="Power3.easeInOut" data-elementdelay="0.1" data-endelementdelay="0.1" style="z-index: 3;">
-                        <img alt="dummy" src="/frontend/images/dummy.png" data-lazyload="images/mainimages/img-05.png" style="width:600px;height:500px;">
-                    </div>
-                    <!-- LAYER NR. 4 -->
-                    <div class="tp-caption grey_heavy_72 skewfromrightshort tp-resizeme rs-parallaxlevel-0" data-x="50" data-y="350" data-speed="500" data-start="2250" data-easing="Power3.easeInOut" data-splitin="chars" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" style="z-index: 5; max-width:inherit; max-height: inherit; white-space: nowrap;color: #fff;font-family: roboto, sans-serif;font-weight: 300;font-size:86px;">
-                        Hello World!
-                    </div>
-                    <!-- LAYER NR. 2nd text -->
-                    <div class="tp-caption grey_heavy_72 skewfromrightshort tp-resizeme rs-parallaxlevel-0" data-x="65" data-y="460" data-speed="500" data-start="3550" data-easing="Power3.easeInOut" data-splitin="chars" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" style="z-index: 5; max-width: inherit; max-height: inherit; white-space: nowrap;color: #fff;font-family: roboto, sans-serif;font-weight: 200;font-size:46px;">
-                        Welcome to Directory Portal
-                    </div>
-                    <!-- LAYER NR. 8 -->
-                    <div class="tp-caption grey_regular_18 customin tp-resizeme rs-parallaxlevel-0" data-x="80" data-y="520" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="500" data-start="4600" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.05" data-endelementdelay="0.1" style="z-index: 9; max-width: inherit; max-height:inherit; white-space: nowrap;">
-                        <div class="hidden-xs hidden-sm" style="text-align:left;color: #fff; font-family: 'roboto',sans-serif;font-weight: normal;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                            <br>nonummy nibh euismod tincidunt ut laoreet.
-                        </div>
-                        <div class="visible-xs visible-sm" style="text-align:left;color: #fff; font-family: 'roboto',sans-serif;font-weight: normal;font-size:30px;">Lorem ipsum dolor sit amet, consectetuer
-                        </div>
-                    </div>
-                    <!-- LAYER NR. 11 -->
-                    <div class="tp-caption customin tp-resizeme rs-parallaxlevel-0" data-x="80" data-y="600" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="500" data-start="5200" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-linktoslide="next" style="z-index: 12; max-width: inherit; max-height: inherit; white-space: nowrap; border-radius:26px;">
-                        <a href='about.html' class='largeredbtn2'>Learn More &nbsp;<i class="mdi-navigation-arrow-forward slide-r-i"></i></a>
-                    </div>
-                </li>
-            </ul>
-            <div class="tp-bannertimer"></div>
-        </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#vision">VISION & MISSION</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+        <li><a href="#" class="glyphicon glyphicon-log-in"> LOGIN</a></li>
+      </ul>
     </div>
-    <section class="check-domain all">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5" style="margin-top: -6%;">
-                    <h1 class="check-domain-h pull-left">Real Estate</h1><span class="pull-left">368</span>
-                    <p class="check-domain-p clearfix clr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                        <br> diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                        <br>aliquam erat volutpat. </p>
-                    <a href="real_estate_gridlist.html">
-                        <p class="arrowbc"><i class="material-icons">arrow_forward</i></p>
-                    </a>
-                </div>
-                <div class="col-md-7 check-domain-left-col">
-                    <img class="img-responsive wow bounceInLeft" src="/frontend/images/mainimages/realestate.png" alt="pets image10">
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="automotive all">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7 check-domain-left-col">
-                    <img class="img-responsive wow bounceInLeft" src="/frontend/images/mainimages/img-02.png" alt="pets image8">
-                </div>
-                <div class="col-md-5" style="margin-top: 4%;">
-                    <h1 class="check-domain-h pull-left">Automotive</h1><span class="pull-left">250</span>
-                    <p class="check-domain-p clearfix clr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                        <br> diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                        <br>aliquam erat volutpat. </p>
-                    <a href="automotive_gridlist.html">
-                        <p class="arrowbc"><i class="material-icons">arrow_forward</i></p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="restaurant all">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5" style="margin-top: 4%;">
-                    <h1 class="check-domain-h pull-left">Restaurant</h1><span class="pull-left">132</span>
-                    <p class="check-domain-p clearfix clr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                        <br> diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                        <br>aliquam erat volutpat. </p>
-                    <a href="restaurant_gridlist.html">
-                        <p class="arrowbc"><i class="material-icons">arrow_forward</i></p>
-                    </a>
-                </div>
-                <div class="col-md-7 check-domain-left-col">
-                    <img class="img-responsive wow bounceInLeft" src="/frontend/images/mainimages/img-03.png" alt="pets image7">
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="jobs all">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7 check-domain-left-col">
-                    <img class="img-responsive wow bounceInLeft" src="/frontend/images/mainimages/img-04.png" alt="pets image7">
-                </div>
-                <div class="col-md-5" style="margin-top: 4%;">
-                    <h1 class="check-domain-h pull-left">Jobs</h1><span class="pull-left">98</span>
-                    <p class="check-domain-p clearfix clr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                        <br> diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                        <br>aliquam erat volutpat. </p>
-                    <a href="job_gridlist.html">
-                        <p class="arrowbc"><i class="material-icons">arrow_forward</i></p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="shopping all">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5" style="margin-top: 6%;">
-                    <h1 class="check-domain-h pull-left">Shopping</h1><span class="pull-left">76</span>
-                    <p class="check-domain-p clearfix clr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                        <br> diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                        <br>aliquam erat volutpat. </p>
-                    <a href="shopping_gridlist.html">
-                        <p class="arrowbc"><i class="material-icons">arrow_forward</i></p>
-                    </a>
-                </div>
-                <div class="col-md-7 check-domain-left-col">
-                    <img class="img-responsive wow bounceInLeft" src="/frontend/images/mainimages/img-05.png" alt="pets image5">
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="hotels all">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7 check-domain-left-col">
-                    <img class="img-responsive wow bounceInLeft" src="/frontend/images/mainimages/img-06.png" alt="pets image4">
-                </div>
-                <div class="col-md-5" style="margin-top: 4%;">
-                    <h1 class="check-domain-h pull-left">Hotels & Travel</h1><span class="pull-left rating_align">63</span>
-                    <p class="check-domain-p clearfix clr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                        <br> diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                        <br>aliquam erat volutpat. </p>
-                    <a href="hotels_travel_gridlist.html">
-                        <p class="arrowbc"><i class="material-icons">arrow_forward</i></p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="pets all">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5" style="margin-top: 6%;">
-                    <h1 class="check-domain-h pull-left">Pets</h1><span class="pull-left">50</span>
-                    <p class="check-domain-p clearfix clr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                        <br> diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                        <br>aliquam erat volutpat. </p>
-                    <a href="pets_gridlist.html">
-                        <p class="arrowbc"><i class="material-icons">arrow_forward</i></p>
-                    </a>
-                </div>
-                <div class="col-md-7 check-domain-left-col">
-                    <img class="img-responsive wow bounceInLeft" src="/frontend/images/mainimages/img-07.png" alt="pets image2">
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="services all">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7 check-domain-left-col">
-                    <img class="img-responsive wow bounceInLeft" src="/frontend/images/mainimages/img-08.png" alt="pets image">
-                </div>
-                <div class="col-md-5" style="margin-top: 4%;">
-                    <h1 class="check-domain-h pull-left">Services</h1><span class="pull-left">28</span>
-                    <p class="check-domain-p clearfix clr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                        <br> diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                        <br>aliquam erat volutpat. </p>
-                    <a href="services_gridlist.html">
-                        <p class="arrowbc"><i class="material-icons">arrow_forward</i></p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="show-btn-div">
-                    <button class="btn btn-default show-offer-btn center-block text-center" style="margin-bottom: 2.9%; margin-top: 2.9%;">Show all <span>3568</span> Offers &nbsp; <i class="material-icons">arrow_forward</i></button>
-                </div>
-            </div>
-        </div>
+  </div>
+</nav>
+<div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="/v1/img/slide/3.jpg" class="center">
+      </div>
+      <div class="item">
+        <img src="/v1/img/slide/2.jpg">
+      </div>
+      <div class="item">
+        <img src="/v1/img/slide/1.png">
+      </div>
     </div>
-    <!--Footer section-->
-    <section class="follow-us">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h1 class="follow-h">Follow Us in Social Networks</h1>
-                    <p class="follow-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam. </p>
-                </div>
-                <div class="col-md-5 col-md-offset-1">
-                    <ul class="follow-icons">
-                        <!-- Follow item -->
-                        <li>
-                            <a href="#">
-                                <img class="img-responsive" alt="facebook-icon" src="/frontend/images/icons/facebook-icon.png">
-                            </a>
-                        </li>
-                        <!-- ./Follow item -->
-                        <!-- Follow item -->
-                        <li>
-                            <a href="#">
-                                <img class="img-responsive" alt="twitter-icon" src="/frontend/images/icons/twitter-icon.png">
-                            </a>
-                        </li>
-                        <!-- ./Follow item -->
-                        <!-- Follow item -->
-                        <li>
-                            <a href="#">
-                                <img class="img-responsive" alt="google-icon" src="/frontend/images/icons/google-icon.png">
-                            </a>
-                        </li>
-                        <!-- ./Follow item -->
-                        <!-- Follow item -->
-                        <li>
-                            <a href="#">
-                                <img class="img-responsive" alt="pinterest-icon" src="/frontend/images/icons/pinterest-icon.png">
-                            </a>
-                        </li>
-                        <!-- ./Follow item -->
-                        <!-- Follow item -->
-                        <li>
-                            <a href="#">
-                                <img class="img-responsive" alt="instagram-icon" src="/frontend/images/icons/instagram-icon.png">
-                            </a>
-                        </li>
-                        <!-- ./Follow item -->
-                        <!-- Follow item -->
-                        <li>
-                            <a href="#">
-                                <img class="img-responsive" alt="envato-icon" src="/frontend/images/icons/envato-icon.png">
-                            </a>
-                        </li>
-                        <!-- ./Follow item -->
-                        <!-- Follow item -->
-                        <li>
-                            <a href="#">
-                                <img class="img-responsive" alt="flicker-icon" src="/frontend/images/icons/flicker-icon.png">
-                            </a>
-                        </li>
-                        <!-- ./Follow item -->
-                        <!-- Follow item -->
-                        <li>
-                            <a href="#">
-                                <img class="img-responsive" alt="dribbble-icon" src="/frontend/images/icons/dribbble-icon.png">
-                            </a>
-                        </li>
-                        <!-- ./Follow item -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--follow us end-->
-    <!--Footer section-->
-    <footer class="footer-section home hover-red">
-        <div class="container">
-            <div class="row">
-                <div class="col col-md-4">
-                    <img src="/frontend/images/mainimages/footer-logo.png" alt="footer_logo" class="footer-logo-p">
-                    <p class="foot-logo-text">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima.
-                        <a href="about.html" class="read-more" id="load">Read More...
-                        </a>
-                    </p>
-                    <p class="hidden foot-logo-text"> Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima.</p>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <h6 class="footer-heading-p social-pad">useful links</h6>
-                            <ol class="breadcrumb footer-copy-right">
-                                <li>
-                                    <a href="index.html" class="">Home</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="">Forums</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="">Privacy Policy</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="">Help Center</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="">Terms of Use</a>
-                                </li>
-                                <li>
-                                    <a href="contacts.html" class="">Contacts</a>
-                                </li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-md-4">
-                    <h6 class="footer-heading-p">Recent News</h6>
-                    <ul class="footer-news">
-                        <li class="li-hover">
-                            <h4 class="clock"><i class="mdi-action-schedule ad-clock"></i> 07 May, 2015</h4>
-                            <p class="footer-col1 footer-left">
-                                <a href="news.html"> Mirum est notare quam littera gothica, quam nunc putamus parum, anteposuerit litterarum.</a>
-                            </p>
-                        </li>
-                        <li class="li-hover">
-                            <h4 class="clock"><i class="mdi-action-schedule ad-clock"></i> 23 April, 2015</h4>
-                            <p class="footer-col1 footer-left">
-                                <a href="news.html"> Claritas est etiam processus dynamicus.</a>
-                            </p>
-                        </li>
-                        <li class="border-none li-hover">
-                            <h4 class="clock"><i class="mdi-action-schedule ad-clock"></i> 05 December, 2014</h4>
-                            <p class="footer-col1 footer-left">
-                                <a href="news.html">Eodem modo typi, qui nunc nobis videntur clari, sollemnes in futurum.</a>
-                            </p>
-                        </li>
-                    </ul>
-                    <div class="img-footer">
-                        <div class="row dribble">
-                            <ul class="shots list-inline"></ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-md-4 home_sub">
-                    <h6 class="footer-heading-p">Email Newsletters</h6>
-                    <p class="footer-col1">
-                        Sign Up for Our Newsletter to get Latest Updates and Offers. Subscribe to receive news in your inbox.
-                    </p>
-                    <form class="home_form">
-                        <div class="input-name form-group">
-                            <div class="form-group label-floating is-empty">
-                                <label class="control-label" for="fname">FullName</label>
-                                <input type="email" id="fname" class="form-control">
-                                <span class="material-input"></span></div>
-                        </div>
-                        <div class="input">
-                            <div class="form-group label-floating is-empty">
-                                <label class="control-label" for="mail">Email Address </label>
-                                <input type="email" id="mail" class="form-control">
-                                <span class="material-input"></span></div>
-                        </div>
-                    </form>
-                    <button class="subscribe-btn btn btn-default">Subscribe Now</button>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div class="bottom-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <ol class="breadcrumb copy-right-box">
-                        <li>
-                            <img alt="copyright" class="copyright-img" src="/frontend/images/copyright.png">&nbsp; &nbsp; &copy;
-                        </li>
-                        <li>2015 Good Investment
-                            <a class="" href="#">Globals</a>
-                        </li>
-                        <li>Designed by
-                            <a class="" href="http://codecanyon.net/user/jyostna">Jyostna</a>
-                        </li>
-                        <li>Only for
-                            <a class="" href="#">Envato Market</a>
-                        </li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Footer section ends-->
-    <!--Back to top button-->
-    <a href="#" id="back-to-top" title="Back to top" class="arrow-btn btn btn-default">
-        <i class="mdi-hardware-keyboard-arrow-up arrow-footer"></i>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
     </a>
-    <!--Back to top button end-->
-    <!--jquery js file-->
-    <script type="text/javascript" src="/frontend/js/jquery-1.11.3.min.js"></script>
-    <!--bootstrap js files-->
-    <script type="text/javascript" src="/frontend/js/bootstrap.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script type="text/javascript" src="/frontend/js/material.min.js"></script>
-    <script type="text/javascript" src="/frontend/js/ripples.min.js"></script>
-    <!--revolution-slider-->
-    <script type="text/javascript" src="/frontend/js/revolution-slider/jquery.themepunch.tools.min.js"></script>
-    <script type="text/javascript" src="/frontend/js/revolution-slider/jquery.themepunch.revolution.min.js"></script>
-    <!--Quickview-->
-    <script type="text/javascript" src="/frontend/js/quickview/jquery.fs.boxer.js"></script>
-    <!--tooltip js file-->
-    <script type="text/javascript" src="/frontend/js/tooltip/html5tooltips.js"></script>
-    <!--wow-->
-    <script type="text/javascript" src="/frontend/js/wow/wow.min.js"></script>
-    <script type="text/javascript" src="/frontend/js/custom.js"></script>
-    <!--page js-->
-    <script type="text/javascript" src="/frontend/js/index.js"></script>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>About Gurugedara</h2><br>
+      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <br>
+    </div>
+    <div class="col-sm-4">
+      <span class="slideanim"><img src=/v1/img/logo/logo2.png></span>
+    </div>
+  </div>
+</div>
+
+<div id=vision class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="slideanim"><img src="/v1/img/logo/teacher.png"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2>Our Values</h2><br>
+      <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
+      <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+  <h2>SERVICES</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-education logo-small"></span>
+      <h4>Guidance</h4>
+      <p>Guide students to build successful future careers..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-folder-open logo-small"></span>
+      <h4>Syllabuses</h4>
+      <p>We provide syllabuses to students who follow courses..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-pencil logo-small"></span>
+      <h4>Exams</h4>
+      <p>Students can participate Online Exams on what thay have lerned in courses.. </p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-comment logo-small"></span>
+      <h4>Knowledge sharing</h4>
+      <p>Students can share thair knowladge with others through discussions foram..</p>
+    </div>
+ <div class="col-sm-4">
+      <span class=""></span>
+      <h4></h4>
+      <p></p>
+    </div>   
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-user logo-small"></span>
+      <h4 style="color:#303030;">Clarifications</h4>
+      <p>Student can clarify thair questions by asking directly form teacher through a foram..</p>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Raid ave, Colombo 00700</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +94 770095174</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> gurugedara@gmail.com</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
 </body>
-
-
-<!-- Mirrored from demo.lorvent.com/globals/directory/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 30 Aug 2018 19:52:10 GMT -->
 </html>
+
