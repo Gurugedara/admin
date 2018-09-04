@@ -217,7 +217,7 @@
         <li><a href="#vision">VISION & MISSION</a></li>
         <li><a href="#services">SERVICES</a></li>
         <li><a href="#contact">CONTACT</a></li>
-        <li><a href="#" class="glyphicon glyphicon-log-in"> LOGIN</a></li>
+        <li><a href="/login" class="glyphicon glyphicon-log-in"> LOGIN</a></li>
       </ul>
     </div>
   </div>
