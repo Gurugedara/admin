@@ -20,9 +20,7 @@ class Create1534565895UsersTable extends Migration
                 $table->string('email');
                 $table->string('password');
                 $table->string('remember_token')->nullable();
-                
                 $table->timestamps();
-                
             });
         }
     }
