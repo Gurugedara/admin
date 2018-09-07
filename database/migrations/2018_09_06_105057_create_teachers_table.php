@@ -15,12 +15,12 @@ class CreateTeachersTable extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->string('nic');
-            $table->string('phonenumber');
+            $table->string('phone');
             $table->string('school');
             $table->string('education');
             $table->string('subjects');
             $table->string('qualification')->default('null');
-            $table->integer('usernu');
+            $table->integer('user');
             $table->timestamps();
             $table->primary('nic');
         });

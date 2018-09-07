@@ -17,7 +17,6 @@ class CreateStudentInstitiutesTable extends Migration
             $table->string('studentid');
             $table->string('instituteid');
             $table->integer('status')->default('0');
-            $table->integer('usernu');
             $table->timestamps();
             $table->primary(['studentid','instituteid']);
         });

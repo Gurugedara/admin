@@ -21,6 +21,7 @@ class CreateStudentsTable extends Migration
             $table->integer('age');
             $table->string('olindex')->default('null');
             $table->string('alindex')->default('null');
+            $table->integer('user');
             $table->timestamps();
         });
     }
