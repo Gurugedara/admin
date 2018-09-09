@@ -13,11 +13,14 @@ class InstituteStudent extends Seeder
     {
         $items = [
             
-            ['id' => 1, 'nic' => '987004525V','phone' => '0758745254', 'school' => 'National School of Colombo', 'age' => '19', 'olindex' => '45254125','alindex'=>'4572548','user' => 4],
+            ['studentid' => 1, 'instituteid' => '1','status' => '0'],
+            ['studentid' => 1, 'instituteid' => '2','status' => '0'],
+            ['studentid' => 4, 'instituteid' => '2','status' => '1'],
+            ['studentid' => 6, 'instituteid' => '3','status' => '1'],
         ];
 
         foreach ($items as $item) {
-            \App\student::create($item);
+            \App\studentInstitute::create($item);
         }
     }
 }

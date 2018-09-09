@@ -13,7 +13,7 @@ class CreateStudentInstitiutesTable extends Migration
      */
     public function up()
     {
-        Schema::create('student_institiutes', function (Blueprint $table) {
+        Schema::create('student_institutes', function (Blueprint $table) {
             $table->string('studentid');
             $table->string('instituteid');
             $table->integer('status')->default('0');
