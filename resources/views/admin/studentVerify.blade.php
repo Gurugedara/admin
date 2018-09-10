@@ -58,18 +58,19 @@
                                 </thead>
                                 <tbody>
                                     @foreach($allstudents as $student)
-                                    <tr>
-                                        <th scope="row">
-                                            <input class="form-check-input" type="checkbox" id="checkbox1">
-                                            <label for="checkbox1" class="label-table form-check-label"></label>
-                                        </th>
-                                        <td>ddfdfsfsdf</td>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        
-                                    </tr>
+                                        @foreach ($student->institutes as $institute)
+                                            <tr>
+                                                <th scope="row">
+                                                    <input class="form-check-input" type="checkbox" id="checkbox1">
+                                                    <label for="checkbox1" class="label-table form-check-label"></label>
+                                                </th>
+                                                <td>ddfdfsfsdf</td>
+                                            <td>{{$institute->name}}</td>
+                                                <td>Lorem Ipsum</td>
+                                                <td>Lorem Ipsum</td>
+                                                <td>Lorem Ipsum</td>
+                                            </tr>
+                                        @endforeach
                                     @endforeach
                                 </tbody>
                             </table>

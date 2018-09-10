@@ -8,9 +8,9 @@ class student extends Model
 {
     protected $fillable = ['id','nic','phone','school','age','olindex','alindex','user'];
 
-    public function user()
+    public function institutes()
     {
-        return $this->belongsTo(studentInstitute::class, 'id');
+        return $this->belongsToMany('App\institute', 'institute_students', 'student_id', 'institute_id')->withTimestamps()->withPivot('regNumber','status');
     }
 
 }

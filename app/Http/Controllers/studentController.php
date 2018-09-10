@@ -9,9 +9,8 @@ use App\studentInstitute;
 class studentController extends Controller
 {
     public function index(){
-        $allstudents = student::all();
-        $allinsstu = studentInstitute::all();
-        //dd($allstudents);
+        $allstudents = student::get();
+        
         return view('admin.studentVerify',compact('allstudents'));
     }
 }

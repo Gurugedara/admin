@@ -13,13 +13,13 @@ class CreateStudentInstitiutesTable extends Migration
      */
     public function up()
     {
-        Schema::create('student_institutes', function (Blueprint $table) {
-            $table->string('studentid');
-            $table->string('instituteid');
+        Schema::create('institute_students', function (Blueprint $table) {
+            $table->string('institute_id');
+            $table->string('student_id');
             $table->string('regNumber');
             $table->integer('status')->default('0');
             $table->timestamps();
-            $table->primary(['studentid','instituteid']);
+            $table->primary(['student_id','institute_id']);
         });
     }
 
