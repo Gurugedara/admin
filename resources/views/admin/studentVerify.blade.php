@@ -57,42 +57,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($allstudents as $student)
                                     <tr>
                                         <th scope="row">
                                             <input class="form-check-input" type="checkbox" id="checkbox1">
                                             <label for="checkbox1" class="label-table form-check-label"></label>
                                         </th>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            <input class="form-check-input" type="checkbox" id="checkbox2">
-                                            <label for="checkbox2" class="label-table form-check-label"></label>
-                                        </th>
-                                        <td>Lorem Ipsum</td>
+                                        <td>ddfdfsfsdf</td>
                                         <td>Lorem Ipsum</td>
                                         <td>Lorem Ipsum</td>
                                         <td>Lorem Ipsum</td>
                                         <td>Lorem Ipsum</td>
                                         
                                     </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            <input class="form-check-input" type="checkbox" id="checkbox3">
-                                            <label for="checkbox3" class="label-table form-check-label"></label>
-                                        </th>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
 

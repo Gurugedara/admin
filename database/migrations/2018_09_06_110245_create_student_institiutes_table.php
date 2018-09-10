@@ -16,6 +16,7 @@ class CreateStudentInstitiutesTable extends Migration
         Schema::create('student_institutes', function (Blueprint $table) {
             $table->string('studentid');
             $table->string('instituteid');
+            $table->string('regNumber');
             $table->integer('status')->default('0');
             $table->timestamps();
             $table->primary(['studentid','instituteid']);
