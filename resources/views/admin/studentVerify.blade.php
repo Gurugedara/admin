@@ -49,8 +49,8 @@
                                             <label for="checkbox" class="label-table form-check-label"></label>
                                         </th>
                                         <th class="th-lg">Registration Number</th>
-                                        <th class="th-lg">First Name</th>
-                                        <th class="th-lg">Last Name</th>
+                                        <th class="th-lg">Name</th>
+                                        <th class="th-lg">NIC</th>
                                         <th class="th-lg">Course</th>
                                         <th class="th-lg">Action</th>
                                        
@@ -65,8 +65,8 @@
                                                     <label for="checkbox1" class="label-table form-check-label"></label>
                                                 </th>
                                                 <td>{{$institute->pivot->regNumber}}</td>
+                                                <td>{{$student->user->firstname." ".$student->user->lastname}}</td>
                                                 <td>{{$student->nic}}</td>
-                                                <td>Lorem Ipsum</td>
                                                 <td>Lorem Ipsum</td>
                                                 <td>Lorem Ipsum</td>
                                             </tr>

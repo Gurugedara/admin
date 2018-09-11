@@ -6,11 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class student extends Model
 {
-    protected $fillable = ['id','nic','phone','school','age','olindex','alindex','user'];
+    protected $fillable = ['id','nic','phone','school','age','olindex','alindex','user_id'];
 
     public function institutes()
     {
         return $this->belongsToMany('App\institute', 'institute_students', 'student_id', 'institute_id')->withTimestamps()->withPivot('regNumber','status');
+    }
+
+    public function user(){
+        return $this->hasOne('App\user', 'id');
     }
 
     public function unapprovedStudents() {
