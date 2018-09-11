@@ -13,5 +13,9 @@ class student extends Model
         return $this->belongsToMany('App\institute', 'institute_students', 'student_id', 'institute_id')->withTimestamps()->withPivot('regNumber','status');
     }
 
+    public function unapprovedStudents() {
+        return $this->institutes()->wherePivot('status', 0);
+    }
+
 }
 
