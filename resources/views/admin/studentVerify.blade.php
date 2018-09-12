@@ -68,7 +68,10 @@
                                                 <td>{{$student->user->firstname." ".$student->user->lastname}}</td>
                                                 <td>{{$student->nic}}</td>
                                                 <td>Lorem Ipsum</td>
-                                                <td>Lorem Ipsum</td>
+                                                <td>
+                                                    <button class="btn btn-success">Approve</button>
+                                                    <button class="btn btn-danger">Deny</button>
+                                                </td>
                                             </tr>
                                         @endforeach
                                     @endforeach
