@@ -49,50 +49,33 @@
                                             <label for="checkbox" class="label-table form-check-label"></label>
                                         </th>
                                         <th class="th-lg">Registration Number</th>
-                                        <th class="th-lg">First Name</th>
-                                        <th class="th-lg">Last Name</th>
+                                        <th class="th-lg">Name</th>
+                                        <th class="th-lg">NIC</th>
                                         <th class="th-lg">Course</th>
                                         <th class="th-lg">Action</th>
                                        
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">
-                                            <input class="form-check-input" type="checkbox" id="checkbox1">
-                                            <label for="checkbox1" class="label-table form-check-label"></label>
-                                        </th>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            <input class="form-check-input" type="checkbox" id="checkbox2">
-                                            <label for="checkbox2" class="label-table form-check-label"></label>
-                                        </th>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">
-                                            <input class="form-check-input" type="checkbox" id="checkbox3">
-                                            <label for="checkbox3" class="label-table form-check-label"></label>
-                                        </th>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        <td>Lorem Ipsum</td>
-                                        
-                                    </tr>
+                                    @foreach($allteachers as $teacher)
+                                        @foreach ($teacher->institutes as $institute)
+                                            <tr>
+                                                <th scope="row">
+                                                    <input class="form-check-input" type="checkbox" id="checkbox1">
+                                                    <label for="checkbox1" class="label-table form-check-label"></label>
+                                                </th>
+                                                <td>{{$institute->pivot->regNumber}}</td>
+                                                <td>{{$teacher->user}}</td>
+                                                <td>{{$teacher->nic}}</td>
+                                                <td>Lorem Ipsum</td>
+                                                <td>
+                                                <a href="/admin/teacherVerify/verify/{{$teacher->id}}"><button class="btn btn-success">Approve</button></a>
+                                                <a href="/admin/teacherVerify/Deny/{{$teacher->id}}"><button class="btn btn-danger">Deny</button></a>
+                                                </td>
+                                                
+                                            </tr>
+                                        @endforeach
+                                    @endforeach
                                 </tbody>
                             </table>
 

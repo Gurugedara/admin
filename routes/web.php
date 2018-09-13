@@ -19,7 +19,11 @@ $this->post('password/reset', 'Auth\ResetPasswordController@reset')->name('auth.
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/home', 'HomeController@index');
     Route::get('/studentVerify', 'studentController@index');
+    Route::get('/studentVerify/verify/{id}', 'studentController@changeStatus');
+    Route::get('/studentVerify/Deny/{id}', 'studentController@deny');
     Route::get('/teacherVerify', 'teacherController@index');
+    Route::get('/teacherVerify/verify/{id}', 'teacherController@changeStatus');
+    Route::get('/teacherVerify/Deny/{id}', 'teacherController@deny');
     Route::get('/courses', 'adminController@viewCourses');
     
     Route::resource('roles', 'Admin\RolesController');

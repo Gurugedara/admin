@@ -69,8 +69,8 @@
                                                 <td>{{$student->nic}}</td>
                                                 <td>Lorem Ipsum</td>
                                                 <td>
-                                                    <button class="btn btn-success">Approve</button>
-                                                    <button class="btn btn-danger">Deny</button>
+                                                    <a href="/admin/studentVerify/verify/{{$student->id}}"><button class="btn btn-success">Approve</button></a>
+                                                    <a href="/admin/studentVerify/Deny/{{$student->id}}"><button class="btn btn-danger">Deny</button></a>
                                                 </td>
                                             </tr>
                                         @endforeach

@@ -14,6 +14,7 @@ class CreateTeachersTable extends Migration
     public function up()
     {
         Schema::create('teachers', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('nic');
             $table->string('phone');
             $table->string('school');
@@ -22,7 +23,7 @@ class CreateTeachersTable extends Migration
             $table->string('qualification')->default('null');
             $table->integer('user');
             $table->timestamps();
-            $table->primary('nic');
+            //$table->primary('nic');
         });
     }
 

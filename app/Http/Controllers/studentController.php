@@ -17,4 +17,21 @@ class studentController extends Controller
         }))->get();
         return view('admin.studentVerify',compact('allstudents'));
     }
+
+    public function changeStatus($id){
+        $institutes = student::with('institutes')->findOrFail($id);
+        foreach($institutes->institutes as $institute){
+            $institute->pivot->status =1;
+            $institute->pivot->save();
+        }
+        return redirect('/admin/studentVerify');
+    }
+    public function deny($id){
+        $institutes = student::with('institutes')->findOrFail($id);
+        foreach($institutes->institutes as $institute){
+            $institute->pivot->status =-1;
+            $institute->pivot->save();
+        }
+        return redirect('/admin/studentVerify');
+    }
 }
