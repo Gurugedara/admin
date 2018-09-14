@@ -16,10 +16,11 @@ class CreateStudentInstitiutesTable extends Migration
         Schema::create('institute_students', function (Blueprint $table) {
             $table->string('institute_id');
             $table->string('student_id');
+            $table->string('course_id');
             $table->string('regNumber');
             $table->integer('status')->default('0');
             $table->timestamps();
-            $table->primary(['student_id','institute_id']);
+            $table->primary(['student_id','institute_id','course_id']);
         });
     }
 

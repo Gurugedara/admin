@@ -65,9 +65,10 @@
                                                     <label for="checkbox1" class="label-table form-check-label"></label>
                                                 </th>
                                                 <td>{{$institute->pivot->regNumber}}</td>
-                                                <td>{{$teacher->user}}</td>
+                                                {{-- {{dd($teacher)}} --}}
+                                                <td>{{$teacher->user->firstname}}</td>
                                                 <td>{{$teacher->nic}}</td>
-                                                <td>Lorem Ipsum</td>
+                                                <td>{{$institute->pivot->course_id}}</td>
                                                 <td>
                                                 <a href="/admin/teacherVerify/verify/{{$teacher->id}}"><button class="btn btn-success">Approve</button></a>
                                                 <a href="/admin/teacherVerify/Deny/{{$teacher->id}}"><button class="btn btn-danger">Deny</button></a>

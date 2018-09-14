@@ -10,7 +10,7 @@ class student extends Model
 
     public function institutes()
     {
-        return $this->belongsToMany('App\institute', 'institute_students', 'student_id', 'institute_id')->withTimestamps()->withPivot('regNumber','status');
+        return $this->belongsToMany('App\institute', 'institute_students', 'student_id', 'institute_id')->withTimestamps()->withPivot('regNumber','status','course_id');
     }
 
     public function user(){

@@ -9,7 +9,7 @@ use App\teacher;
 class teacherController extends Controller
 {
     public function index(){
-        $user_id = Auth::user()->role_id;
+        //$user_id = Auth::user()->role_id;
         $allteachers=teacher::with(array('institutes'=>function($query){$query->where('status',0);}))->with('user')->get();
         //dd($allteachers);
         return view('admin.teacherVerify',compact('allteachers'));

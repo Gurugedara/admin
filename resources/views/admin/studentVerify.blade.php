@@ -67,7 +67,7 @@
                                                 <td>{{$institute->pivot->regNumber}}</td>
                                                 <td>{{$student->user->firstname." ".$student->user->lastname}}</td>
                                                 <td>{{$student->nic}}</td>
-                                                <td>Lorem Ipsum</td>
+                                                <td>{{$institute->pivot->course_id}}</td>
                                                 <td>
                                                     <a href="/admin/studentVerify/verify/{{$student->id}}"><button class="btn btn-success">Approve</button></a>
                                                     <a href="/admin/studentVerify/Deny/{{$student->id}}"><button class="btn btn-danger">Deny</button></a>

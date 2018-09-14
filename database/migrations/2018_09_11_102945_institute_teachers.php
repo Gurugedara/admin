@@ -16,6 +16,7 @@ class InstituteTeachers extends Migration
         Schema::create('institute_teachers', function (Blueprint $table) {
             $table->string('institute_id');
             $table->string('teacher_id');
+            $table->string('course_id');
             $table->string('regNumber');
             $table->integer('status')->default('0');
             $table->timestamps();

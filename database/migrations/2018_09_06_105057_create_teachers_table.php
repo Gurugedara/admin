@@ -21,7 +21,7 @@ class CreateTeachersTable extends Migration
             $table->string('education');
             $table->string('subjects');
             $table->string('qualification')->default('null');
-            $table->integer('user');
+            $table->integer('user_id');
             $table->timestamps();
             //$table->primary('nic');
         });
