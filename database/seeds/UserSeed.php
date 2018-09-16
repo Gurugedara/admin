@@ -19,6 +19,8 @@ class UserSeed extends Seeder
             ['id' => 4, 'firstname' => 'Nimal','lastname' => 'rathnayake', 'email' => 'nimal@gmail.com', 'password' => '$2y$10$DHKFHDI0EMIRoJzCohQbTOFfBKstTRGSo7lI61IQbSu8Vniyh3rCi', 'role_id' => 4,],
             ['id' => 5, 'firstname' => 'Sunil','lastname' => 'Ranasinghe', 'email' => 'sunil@gmail.com', 'password' => '$2y$10$DHKFHDI0EMIRoJzCohQbTOFfBKstTRGSo7lI61IQbSu8Vniyh3rCi', 'role_id' => 4,],
             ['id' => 6, 'firstname' => 'Nisal','lastname' => 'Kumara', 'email' => 'nisal@gmail.com', 'password' => '$2y$10$DHKFHDI0EMIRoJzCohQbTOFfBKstTRGSo7lI61IQbSu8Vniyh3rCi', 'role_id' => 4,],
+            ['id' => 7, 'firstname' => 'android','lastname' => 'student', 'email' => 'ravindu@gmail.com', 'password' => '12345678', 'role_id' => 3,],
+            ['id' => 8, 'firstname' => 'android','lastname' => 'teacher', 'email' => 'ravindu1@gmail.com', 'password' => '12345678', 'role_id' => 4,],
 
         ];
 
