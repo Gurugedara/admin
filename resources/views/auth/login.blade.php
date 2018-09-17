@@ -58,8 +58,8 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <label>
-                                    <input type="checkbox"
-                                           name="remember"> @lang('quickadmin.qa_remember_me')
+                                    {{-- <input type="checkbox" --}}
+                                           {{-- name="remember"> @lang('quickadmin.qa_remember_me') --}}
                                 </label>
                             </div>
                         </div>
