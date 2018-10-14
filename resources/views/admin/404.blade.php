@@ -1,12 +1,11 @@
 <!DOCTYPE html>
     <!--[if IE 9 ]><html class="ie9"><![endif]-->
-    
-<!-- Mirrored from byrushan.com/projects/mae/1-0/404.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Oct 2018 07:25:42 GMT -->
+
 <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Material Admin</title>
+        <title>Guru Gedara Admin Panel</title>
         
         <!-- Vendor CSS -->
         <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
@@ -68,6 +67,4 @@
             </div>   
         <![endif]-->
     </body>
-
-<!-- Mirrored from byrushan.com/projects/mae/1-0/404.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Oct 2018 07:25:42 GMT -->
 </html>
