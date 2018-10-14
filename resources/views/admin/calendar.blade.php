@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<!--[if IE 9 ]><html class="ie9"><![endif]-->
+    <!--[if IE 9 ]><html class="ie9"><![endif]-->
     
-<!-- Mirrored from byrushan.com/projects/mae/1-0/data-tables.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Oct 2018 07:22:46 GMT -->
+<!-- Mirrored from byrushan.com/projects/mae/1-0/calendar.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Oct 2018 07:24:41 GMT -->
 <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Material Admin</title>
-        
+
         <!-- Vendor CSS -->
+        <link href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
         <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
         <link href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
         <link href="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
-        <link href="vendors/bootgrid/jquery.bootgrid.min.css" rel="stylesheet">
         <link href="vendors/bower_components/google-material-color/dist/palette.css" rel="stylesheet">
 
         <!-- CSS -->
         <link href="css/app.min.1.css" rel="stylesheet">
         <link href="css/app.min.2.css" rel="stylesheet">
+
+        <!-- Following CSS is used only fore demo purposes thus you can remove anytime -->
+        <link href="css/demo.css" rel="stylesheet">
     </head>
 
     <body data-ma-header="teal">
@@ -365,12 +368,12 @@
                     </li>
                     <li><a href="typography.html"><i class="zmdi zmdi-format-underlined"></i> Typography</a></li>
                     <li><a href="widgets.html"><i class="zmdi zmdi-widgets"></i> Widgets</a></li>
-                    <li class="sub-menu active">
+                    <li class="sub-menu">
                         <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-view-list"></i> Tables</a>
 
                         <ul>
                             <li><a href="tables.html">Normal Tables</a></li>
-                            <li class="active"><a href="data-tables.html">Data Tables</a></li>
+                            <li><a href="data-tables.html">Data Tables</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
@@ -407,7 +410,7 @@
                             <li><a href="photo-timeline.html">Timeline</a></li>
                         </ul>
                     </li>
-                    <li><a href="calendar.html"><i class="zmdi zmdi-calendar"></i> Calendar</a></li>
+                    <li class="active"><a href="calendar.html"><i class="zmdi zmdi-calendar"></i> Calendar</a></li>
                     <li><a href="generic-classes.html"><i class="zmdi zmdi-layers"></i> Generic Classes</a></li>
                     <li class="sub-menu">
                         <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-collection-item"></i> Sample Pages</a>
@@ -446,368 +449,57 @@
             </aside>
 
             <section id="content">
-                <div class="container">
+                <div class="container c-boxed">
                     <div class="c-header">
-                        <h2>Data Table</h2>
+                        <h2>Calendar <small>FullCalendar is a jQuery plugin that provides a full-sized, drag & drop event calendar like the one below.</small></h2>
                     </div>
 
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>Basic Example <small>It's just that simple. Turn your simple table into a sophisticated data table and offer your users a nice experience and great features without any effort.</small></h2>
-                        </div>
+                    <div id="calendar" class="card"></div>
 
-                        <div class="table-responsive">
-                            <table id="data-table-basic" class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th data-column-id="id" data-type="numeric">ID</th>
-                                        <th data-column-id="sender">Sender</th>
-                                        <th data-column-id="received" data-order="desc">Received</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>10238</td>
-                                        <td>eduardo@pingpong.com</td>
-                                        <td>14.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10243</td>
-                                        <td>eduardo@pingpong.com</td>
-                                        <td>19.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10248</td>
-                                        <td>eduardo@pingpong.com</td>
-                                        <td>24.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10253</td>
-                                        <td>eduardo@pingpong.com</td>
-                                        <td>29.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10234</td>
-                                        <td>lila@google.com</td>
-                                        <td>10.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10239</td>
-                                        <td>lila@google.com</td>
-                                        <td>15.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10244</td>
-                                        <td>lila@google.com</td>
-                                        <td>20.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10249</td>
-                                        <td>lila@google.com</td>
-                                        <td>25.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10237</td>
-                                        <td>robert@bingo.com</td>
-                                        <td>13.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10242</td>
-                                        <td>robert@bingo.com</td>
-                                        <td>18.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10247</td>
-                                        <td>robert@bingo.com</td>
-                                        <td>23.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10252</td>
-                                        <td>robert@bingo.com</td>
-                                        <td>28.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10236</td>
-                                        <td>simon@yahoo.com</td>
-                                        <td>12.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10241</td>
-                                        <td>simon@yahoo.com</td>
-                                        <td>17.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10246</td>
-                                        <td>simon@yahoo.com</td>
-                                        <td>22.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10251</td>
-                                        <td>simon@yahoo.com</td>
-                                        <td>27.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10235</td>
-                                        <td>tim@microsoft.com</td>
-                                        <td>11.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10240</td>
-                                        <td>tim@microsoft.com</td>
-                                        <td>16.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10245</td>
-                                        <td>tim@microsoft.com</td>
-                                        <td>21.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10250</td>
-                                        <td>tim@microsoft.com</td>
-                                        <td>26.10.2013</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                    <!-- Add event -->
+                    <div class="modal fade" id="addNew-event" data-backdrop="static" data-keyboard="false">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Add an Event</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="addEvent" role="form">
+                                        <div class="form-group">
+                                            <label for="eventName">Event Name</label>
+                                            <div class="fg-line">
+                                                <input type="text" class="input-sm form-control" id="eventName" placeholder="eg: Sports day">
+                                            </div>
+                                        </div>
 
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>Selection Example <small>Ensure that the data attribute [data-identifier="true"] is set on one column header.</small></h2>
-                        </div>
+                                        <div class="form-group">
+                                            <label for="eventName">Tag Color</label>
+                                            <div class="event-tag">
+                                                <span data-tag="palette-Teal bg" class="palette-Teal bg selected"></span>
+                                                <span data-tag="palette-Red bg" class="palette-Red bg"></span>
+                                                <span data-tag="palette-Pink bg" class="palette-Pink bg"></span>
+                                                <span data-tag="palette-Blue bg" class="palette-Blue bg"></span>
+                                                <span data-tag="palette-Lime bg" class="palette-Lime bg"></span>
+                                                <span data-tag="palette-Green bg" class="palette-Green bg"></span>
+                                                <span data-tag="palette-Cyan bg" class="palette-Cyan bg"></span>
+                                                <span data-tag="palette-Orange bg" class="palette-Orange bg"></span>
+                                                <span data-tag="palette-Purple bg" class="palette-Purple bg"></span>
+                                                <span data-tag="palette-Gray bg" class="palette-Grey bg"></span>
+                                                <span data-tag="palette-Black bg" class="palette-Black bg"></span>
+                                            </div>
+                                        </div>
 
-                        <div class="table-responsive">
-                            <table id="data-table-selection" class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th data-column-id="id" data-type="numeric" data-identifier="true">ID</th>
-                                        <th data-column-id="sender">Sender</th>
-                                        <th data-column-id="received" data-order="desc">Received</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>10238</td>
-                                        <td>eduardo@pingpong.com</td>
-                                        <td>14.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10243</td>
-                                        <td>eduardo@pingpong.com</td>
-                                        <td>19.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10248</td>
-                                        <td>eduardo@pingpong.com</td>
-                                        <td>24.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10253</td>
-                                        <td>eduardo@pingpong.com</td>
-                                        <td>29.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10234</td>
-                                        <td>lila@google.com</td>
-                                        <td>10.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10239</td>
-                                        <td>lila@google.com</td>
-                                        <td>15.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10244</td>
-                                        <td>lila@google.com</td>
-                                        <td>20.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10249</td>
-                                        <td>lila@google.com</td>
-                                        <td>25.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10237</td>
-                                        <td>robert@bingo.com</td>
-                                        <td>13.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10242</td>
-                                        <td>robert@bingo.com</td>
-                                        <td>18.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10247</td>
-                                        <td>robert@bingo.com</td>
-                                        <td>23.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10252</td>
-                                        <td>robert@bingo.com</td>
-                                        <td>28.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10236</td>
-                                        <td>simon@yahoo.com</td>
-                                        <td>12.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10241</td>
-                                        <td>simon@yahoo.com</td>
-                                        <td>17.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10246</td>
-                                        <td>simon@yahoo.com</td>
-                                        <td>22.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10251</td>
-                                        <td>simon@yahoo.com</td>
-                                        <td>27.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10235</td>
-                                        <td>tim@microsoft.com</td>
-                                        <td>11.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10240</td>
-                                        <td>tim@microsoft.com</td>
-                                        <td>16.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10245</td>
-                                        <td>tim@microsoft.com</td>
-                                        <td>21.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10250</td>
-                                        <td>tim@microsoft.com</td>
-                                        <td>26.10.2013</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                                        <input type="hidden" id="getStart" />
+                                        <input type="hidden" id="getEnd" />
+                                    </form>
+                                </div>
 
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>Selection Example <small>Ensure that the data attribute [data-identifier="true"] is set on one column header.</small></h2>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary btn-sm" id="addEvent">Add Event</button>
+                                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
                         </div>
-
-                        <table id="data-table-command" class="table table-striped table-vmiddle">
-                            <thead>
-                                <tr>
-                                    <th data-column-id="id" data-type="numeric">ID</th>
-                                    <th data-column-id="sender">Sender</th>
-                                    <th data-column-id="received" data-order="desc">Received</th>
-                                    <th data-column-id="commands" data-formatter="commands" data-sortable="false">Commands</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                                        <tr>
-                                    <td>10238</td>
-                                    <td>eduardo@pingpong.com</td>
-                                    <td>14.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10243</td>
-                                    <td>eduardo@pingpong.com</td>
-                                    <td>19.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10248</td>
-                                    <td>eduardo@pingpong.com</td>
-                                    <td>24.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10253</td>
-                                    <td>eduardo@pingpong.com</td>
-                                    <td>29.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10234</td>
-                                    <td>lila@google.com</td>
-                                    <td>10.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10239</td>
-                                    <td>lila@google.com</td>
-                                    <td>15.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10244</td>
-                                    <td>lila@google.com</td>
-                                    <td>20.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10249</td>
-                                    <td>lila@google.com</td>
-                                    <td>25.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10237</td>
-                                    <td>robert@bingo.com</td>
-                                    <td>13.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10242</td>
-                                    <td>robert@bingo.com</td>
-                                    <td>18.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10247</td>
-                                    <td>robert@bingo.com</td>
-                                    <td>23.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10252</td>
-                                    <td>robert@bingo.com</td>
-                                    <td>28.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10236</td>
-                                    <td>simon@yahoo.com</td>
-                                    <td>12.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10241</td>
-                                    <td>simon@yahoo.com</td>
-                                    <td>17.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10246</td>
-                                    <td>simon@yahoo.com</td>
-                                    <td>22.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10251</td>
-                                    <td>simon@yahoo.com</td>
-                                    <td>27.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10235</td>
-                                    <td>tim@microsoft.com</td>
-                                    <td>11.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10240</td>
-                                    <td>tim@microsoft.com</td>
-                                    <td>16.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10245</td>
-                                    <td>tim@microsoft.com</td>
-                                    <td>21.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10250</td>
-                                    <td>tim@microsoft.com</td>
-                                    <td>26.10.2013</td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             </section>
@@ -823,7 +515,6 @@
                     <li><a href="#">Contact</a></li>
                 </ul>
             </footer>
-
         </section>
 
         <!-- Page Loader -->
@@ -837,113 +528,251 @@
 
         <!-- Older IE warning message -->
         <!--[if lt IE 9]>
-            <div class="ie-warning">
-                <h1 class="c-white">Warning!!</h1>
-                <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-                <div class="iew-container">
-                    <ul class="iew-download">
-                        <li>
-                            <a href="http://www.google.com/chrome/">
-                                <img src="img/browsers/chrome.png" alt="">
-                                <div>Chrome</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.mozilla.org/en-US/firefox/new/">
-                                <img src="img/browsers/firefox.png" alt="">
-                                <div>Firefox</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.opera.com">
-                                <img src="img/browsers/opera.png" alt="">
-                                <div>Opera</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.apple.com/safari/">
-                                <img src="img/browsers/safari.png" alt="">
-                                <div>Safari</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                                <img src="img/browsers/ie.png" alt="">
-                                <div>IE (New)</div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <p>Sorry for the inconvenience!</p>
-            </div>   
+        <div class="ie-warning">
+            <h1 class="c-white">Warning!!</h1>
+            <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+            <div class="iew-container">
+                <ul class="iew-download">
+                    <li>
+                        <a href="http://www.google.com/chrome/">
+                            <img src="img/browsers/chrome.png" alt="">
+                            <div>Chrome</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.mozilla.org/en-US/firefox/new/">
+                            <img src="img/browsers/firefox.png" alt="">
+                            <div>Firefox</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.opera.com">
+                            <img src="img/browsers/opera.png" alt="">
+                            <div>Opera</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.apple.com/safari/">
+                            <img src="img/browsers/safari.png" alt="">
+                            <div>Safari</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                            <img src="img/browsers/ie.png" alt="">
+                            <div>IE (New)</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p>Sorry for the inconvenience!</p>
+        </div>
         <![endif]-->
 
         <!-- Javascript Libraries -->
         <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
         <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        
+
         <script src="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="vendors/bower_components/Waves/dist/waves.min.js"></script>
         <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
-        <script src="vendors/bootgrid/jquery.bootgrid.updated.min.js"></script>
-        
+        <script src="vendors/bower_components/moment/min/moment.min.js"></script>
+        <script src="vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+
         <!-- Placeholder for IE9 -->
         <!--[if IE 9 ]>
-            <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+        <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
         <![endif]-->
-        
+
         <script src="js/functions.js"></script>
         <script src="js/actions.js"></script>
         <script src="js/demo.js"></script>
 
-        <!-- Data Table -->
         <script type="text/javascript">
-            $(document).ready(function(){
-                //Basic Example
-                $("#data-table-basic").bootgrid({
-                    css: {
-                        icon: 'zmdi icon',
-                        iconColumns: 'zmdi-view-module',
-                        iconDown: 'zmdi-expand-more',
-                        iconRefresh: 'zmdi-refresh',
-                        iconUp: 'zmdi-expand-less'
+            $(document).ready(function() {
+                var date = new Date();
+                var d = date.getDate();
+                var m = date.getMonth();
+                var y = date.getFullYear();
+
+                var cId = $('#calendar'); //Change the name if you want. I'm also using thsi add button for more actions
+
+                //Generate the Calendar
+                cId.fullCalendar({
+                    header: {
+                        right: '',
+                        center: 'prev, title, next',
+                        left: ''
                     },
-                });
-                
-                //Selection
-                $("#data-table-selection").bootgrid({
-                    css: {
-                        icon: 'zmdi icon',
-                        iconColumns: 'zmdi-view-module',
-                        iconDown: 'zmdi-expand-more',
-                        iconRefresh: 'zmdi-refresh',
-                        iconUp: 'zmdi-expand-less'
-                    },
-                    selection: true,
-                    multiSelect: true,
-                    rowSelect: true,
-                    keepSelection: true
-                });
-                
-                //Command Buttons
-                $("#data-table-command").bootgrid({
-                    css: {
-                        icon: 'zmdi icon',
-                        iconColumns: 'zmdi-view-module',
-                        iconDown: 'zmdi-expand-more',
-                        iconRefresh: 'zmdi-refresh',
-                        iconUp: 'zmdi-expand-less'
-                    },
-                    formatters: {
-                        "commands": function(column, row) {
-                            return "<button type=\"button\" class=\"btn btn-icon command-edit waves-effect waves-circle\" data-row-id=\"" + row.id + "\"><span class=\"zmdi zmdi-edit\"></span></button> " + 
-                                "<button type=\"button\" class=\"btn btn-icon command-delete waves-effect waves-circle\" data-row-id=\"" + row.id + "\"><span class=\"zmdi zmdi-delete\"></span></button>";
-                        }
+
+                    theme: true, //Do not remove this as it ruin the design
+                    selectable: true,
+                    selectHelper: true,
+                    editable: true,
+
+                    //Add Events
+                    events: [
+                        {
+                            title: 'Hangout with friends',
+                            start: new Date(y, m, 1),
+                            allDay: true,
+                            className: 'palette-Cyan bg'
+                        },
+                        {
+                            title: 'Meeting with client',
+                            start: new Date(y, m, 10),
+                            allDay: true,
+                            className: 'palette-Orange bg'
+                        },
+                        {
+                            title: 'Repeat Event',
+                            start: new Date(y, m, 18),
+                            allDay: true,
+                            className: 'palette-Amber bg'
+                        },
+                        {
+                            title: 'Semester Exam',
+                            start: new Date(y, m, 20),
+                            allDay: true,
+                            className: 'palette-Green bg'
+                        },
+                        {
+                            title: 'Soccor match',
+                            start: new Date(y, m, 5),
+                            allDay: true,
+                            className: 'palette-Light-Blue bg'
+                        },
+                        {
+                            title: 'Coffee time',
+                            start: new Date(y, m, 21),
+                            allDay: true,
+                            className: 'palette-Orange bg'
+                        },
+                        {
+                            title: 'Job Interview',
+                            start: new Date(y, m, 5),
+                            allDay: true,
+                            className: 'palette-Amber bg'
+                        },
+                        {
+                            title: 'IT Meeting',
+                            start: new Date(y, m, 5),
+                            allDay: true,
+                            className: 'palette-Green bg'
+                        },
+                        {
+                            title: 'Brunch at Beach',
+                            start: new Date(y, m, 1),
+                            allDay: true,
+                            className: 'palette-Blue bg'
+                        },
+                        {
+                            title: 'Live TV Show',
+                            start: new Date(y, m, 15),
+                            allDay: true,
+                            className: 'palette-Cyan bg'
+                        },
+                        {
+                            title: 'Software Conference',
+                            start: new Date(y, m, 25),
+                            allDay: true,
+                            className: 'palette-Blue bg'
+                        },
+                        {
+                            title: 'Coffee time',
+                            start: new Date(y, m, 30),
+                            allDay: true,
+                            className: 'palette-Orange bg'
+                        },
+                        {
+                            title: 'Job Interview',
+                            start: new Date(y, m, 30),
+                            allDay: true,
+                            className: 'palette-Green bg'
+                        },
+                    ],
+
+                    //On Day Select
+                    select: function(start, end, allDay) {
+                        $('#addNew-event').modal('show');
+                        $('#addNew-event input:text').val('');
+                        $('#getStart').val(start);
+                        $('#getEnd').val(end);
                     }
+                });
+
+                //Create and ddd Action button with dropdown in Calendar header.
+                var actionMenu = '<ul class="actions actions-alt" id="fc-actions">' +
+                        '<li class="dropdown">' +
+                        '<a href="" data-toggle="dropdown"><i class="zmdi zmdi-more-vert"></i></a>' +
+                        '<ul class="dropdown-menu">' +
+                        '<li class="active">' +
+                        '<a data-view="month" href="">Month View</a>' +
+                        '</li>' +
+                        '<li>' +
+                        '<a data-view="basicWeek" href="">Week View</a>' +
+                        '</li>' +
+                        '<li>' +
+                        '<a data-view="agendaWeek" href="">Agenda Week View</a>' +
+                        '</li>' +
+                        '<li>' +
+                        '<a data-view="basicDay" href="">Day View</a>' +
+                        '</li>' +
+                        '<li>' +
+                        '<a data-view="agendaDay" href="">Agenda Day View</a>' +
+                        '</li>' +
+                        '</ul>' +
+                        '</div>' +
+                        '</li>';
+
+
+                cId.find('.fc-toolbar').append(actionMenu);
+
+                //Event Tag Selector
+                (function(){
+                    $('body').on('click', '.event-tag > span', function(){
+                        $('.event-tag > span').removeClass('selected');
+                        $(this).addClass('selected');
+                    });
+                })();
+
+                //Add new Event
+                $('body').on('click', '#addEvent', function(){
+                    var eventName = $('#eventName').val();
+                    var tagColor = $('.event-tag > span.selected').attr('data-tag');
+
+                    if (eventName != '') {
+                        //Render Event
+                        $('#calendar').fullCalendar('renderEvent',{
+                            title: eventName,
+                            start: $('#getStart').val(),
+                            end:  $('#getEnd').val(),
+                            allDay: true,
+                            className: tagColor
+
+                        },true ); //Stick the event
+
+                        $('#addNew-event form')[0].reset()
+                        $('#addNew-event').modal('hide');
+                    }
+
+                    else {
+                        $('#eventName').closest('.form-group').addClass('has-error');
+                    }
+                });
+
+                //Calendar views
+                $('body').on('click', '#fc-actions [data-view]', function(e){
+                    e.preventDefault();
+                    var dataView = $(this).attr('data-view');
+
+                    $('#fc-actions li').removeClass('active');
+                    $(this).parent().addClass('active');
+                    cId.fullCalendar('changeView', dataView);
                 });
             });
         </script>
     </body>
-  
-<!-- Mirrored from byrushan.com/projects/mae/1-0/data-tables.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Oct 2018 07:22:48 GMT -->
+
+<!-- Mirrored from byrushan.com/projects/mae/1-0/calendar.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Oct 2018 07:24:41 GMT -->
 </html>

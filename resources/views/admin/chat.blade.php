@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!--[if IE 9 ]><html class="ie9"><![endif]-->
+    <!--[if IE 9 ]><html class="ie9"><![endif]-->
     
-<!-- Mirrored from byrushan.com/projects/mae/1-0/data-tables.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Oct 2018 07:22:46 GMT -->
+<!-- Mirrored from byrushan.com/projects/mae/1-0/messages.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Oct 2018 07:24:41 GMT -->
 <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,6 @@
         <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
         <link href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
         <link href="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
-        <link href="vendors/bootgrid/jquery.bootgrid.min.css" rel="stylesheet">
         <link href="vendors/bower_components/google-material-color/dist/palette.css" rel="stylesheet">
 
         <!-- CSS -->
@@ -27,7 +26,7 @@
                     Material
                     <small>admin extended</small>
                 </a>
-
+    
                 <div class="menu-collapse" data-ma-action="sidebar-open" data-ma-target="main-menu">
                     <div class="mc-wrap">
                         <div class="mcw-line top palette-White bg"></div>
@@ -36,14 +35,14 @@
                     </div>
                 </div>
             </div>
-
+    
             <ul class="pull-right h-menu">
                 <li class="hm-search-trigger">
                     <a href="#" data-ma-action="search-open">
                         <i class="hm-icon zmdi zmdi-search"></i>
                     </a>
                 </li>
-
+    
                 <li class="dropdown hidden-xs hidden-sm h-apps">
                     <a data-toggle="dropdown" href="#">
                         <i class="hm-icon zmdi zmdi-apps"></i>
@@ -55,7 +54,7 @@
                                 <small>Calendar</small>
                             </a>
                         </li>
-
+    
                         <li>
                             <a href="#">
                                 <i class="palette-Green-400 bg zmdi zmdi-file-text"></i>
@@ -112,7 +111,7 @@
                     <a data-toggle="dropdown" href="#">
                         <img src="img/profile-pics/1.jpg" alt="">
                     </a>
-
+    
                     <ul class="dropdown-menu pull-right dm-icon">
                         <li>
                             <a href="profile-about.html"><i class="zmdi zmdi-account"></i> View Profile</a>
@@ -129,16 +128,16 @@
                     </ul>
                 </li>
             </ul>
-
+    
             <div class="media-body h-search">
                 <form class="p-relative">
                     <input type="text" class="hs-input" placeholder="Search for people, files & reports">
                     <i class="zmdi zmdi-search hs-reset" data-ma-action="search-clear"></i>
                 </form>
             </div>
-
+    
         </header>
-
+        
         <section id="main">
             <aside id="s-user-alerts" class="sidebar">
                 <ul class="tab-nav tn-justified tn-icon m-t-10" data-tab-color="teal">
@@ -365,12 +364,12 @@
                     </li>
                     <li><a href="typography.html"><i class="zmdi zmdi-format-underlined"></i> Typography</a></li>
                     <li><a href="widgets.html"><i class="zmdi zmdi-widgets"></i> Widgets</a></li>
-                    <li class="sub-menu active">
+                    <li class="sub-menu">
                         <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-view-list"></i> Tables</a>
 
                         <ul>
                             <li><a href="tables.html">Normal Tables</a></li>
-                            <li class="active"><a href="data-tables.html">Data Tables</a></li>
+                            <li><a href="data-tables.html">Data Tables</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
@@ -409,12 +408,12 @@
                     </li>
                     <li><a href="calendar.html"><i class="zmdi zmdi-calendar"></i> Calendar</a></li>
                     <li><a href="generic-classes.html"><i class="zmdi zmdi-layers"></i> Generic Classes</a></li>
-                    <li class="sub-menu">
+                    <li class="sub-menu active">
                         <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-collection-item"></i> Sample Pages</a>
                         <ul>
                             <li><a href="profile-about.html">Profile</a></li>
                             <li><a href="list-view.html">List View</a></li>
-                            <li><a href="messages.html">Messages</a></li>
+                            <li class="active"><a href="messages.html">Messages</a></li>
                             <li><a href="pricing-table.html">Pricing Table</a></li>
                             <li><a href="contacts.html">Contacts</a></li>
                             <li><a href="wall.html">Wall</a></li>
@@ -448,366 +447,258 @@
             <section id="content">
                 <div class="container">
                     <div class="c-header">
-                        <h2>Data Table</h2>
+                        <h2>Messages</h2>
                     </div>
 
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>Basic Example <small>It's just that simple. Turn your simple table into a sophisticated data table and offer your users a nice experience and great features without any effort.</small></h2>
+                    <div class="card clearfix" id="messages">
+                        <div class="ms-menu">
+                            <div class="ms-user clearfix palette-Teal-400 bg">
+                                <img src="img/profile-pics/1.jpg" alt="">
+                                <div>Signed in as <br/> m-hollaway@gmail.com</div>
+                            </div>
+
+                            <div class="list-group lg-alt m-t-10">
+                                <a class="list-group-item media" href="#">
+                                    <div class="pull-left">
+                                        <img src="img/profile-pics/4.jpg" alt="" class="avatar-img">
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lgi-heading">Davil Parnell</div>
+                                        <small class="lgi-text">Fierent fastidii recteque ad pro</small>
+                                    </div>
+                                </a>
+
+                                <a class="list-group-item media" href="#">
+                                    <div class="pull-left">
+                                        <img src="img/profile-pics/2.jpg" alt="" class="avatar-img">
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lgi-heading">Ann Watkinson</div>
+                                        <small class="lgi-text">Cum sociis natoque penatibus </small>
+                                    </div>
+                                </a>
+
+                                <a class="list-group-item media" href="#">
+                                    <div class="pull-left">
+                                        <img src="img/profile-pics/3.jpg" alt="" class="avatar-img">
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lgi-heading">Marse Walter</div>
+                                        <small class="lgi-text">Suspendisse sapien ligula</small>
+                                    </div>
+                                </a>
+
+                                <a class="list-group-item media" href="#">
+                                    <div class="pull-left">
+                                        <img src="img/profile-pics/2.jpg" alt="" class="avatar-img">
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lgi-heading">Jeremy Robbins</div>
+                                        <small class="lgi-text">Phasellus porttitor tellus nec</small>
+                                    </div>
+                                </a>
+
+                                <a class="list-group-item media" href="#">
+                                    <div class="pull-left">
+                                        <img src="img/profile-pics/4.jpg" alt="" class="avatar-img">
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lgi-heading">Reginald Horace</div>
+                                        <small class="lgi-text">Quisque consequat arcu eget</small>
+                                    </div>
+                                </a>
+
+                                <a class="list-group-item media" href="#">
+                                    <div class="pull-left">
+                                        <img src="img/profile-pics/5.jpg" alt="" class="avatar-img">
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lgi-heading">Shark Henry</div>
+                                        <small class="lgi-text">Nam lobortis odio et leo maximu</small>
+                                    </div>
+                                </a>
+
+                                <a class="list-group-item media" href="#">
+                                    <div class="pull-left">
+                                        <img src="img/profile-pics/2.jpg" alt="" class="avatar-img">
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lgi-heading">Paul Van Dack</div>
+                                        <small class="lgi-text">Nam posuere purus sed velit auctor sodales</small>
+                                    </div>
+                                </a>
+
+                                <a class="list-group-item media" href="#">
+                                    <div class="pull-left">
+                                        <img src="img/profile-pics/1.jpg" alt="" class="avatar-img">
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lgi-heading">James Anderson</div>
+                                        <small class="lgi-text">Vivamus imperdiet sagittis quam</small>
+                                    </div>
+                                </a>
+
+                                <a class="list-group-item media" href="#">
+                                    <div class="pull-left">
+                                        <img src="img/profile-pics/3.jpg" alt="" class="avatar-img">
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lgi-heading">Kane Williams</div>
+                                        <small class="lgi-text">Suspendisse justo nulla luctus nec</small>
+                                    </div>
+                                </a>
+                            </div>
+
                         </div>
 
-                        <div class="table-responsive">
-                            <table id="data-table-basic" class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th data-column-id="id" data-type="numeric">ID</th>
-                                        <th data-column-id="sender">Sender</th>
-                                        <th data-column-id="received" data-order="desc">Received</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>10238</td>
-                                        <td>eduardo@pingpong.com</td>
-                                        <td>14.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10243</td>
-                                        <td>eduardo@pingpong.com</td>
-                                        <td>19.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10248</td>
-                                        <td>eduardo@pingpong.com</td>
-                                        <td>24.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10253</td>
-                                        <td>eduardo@pingpong.com</td>
-                                        <td>29.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10234</td>
-                                        <td>lila@google.com</td>
-                                        <td>10.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10239</td>
-                                        <td>lila@google.com</td>
-                                        <td>15.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10244</td>
-                                        <td>lila@google.com</td>
-                                        <td>20.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10249</td>
-                                        <td>lila@google.com</td>
-                                        <td>25.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10237</td>
-                                        <td>robert@bingo.com</td>
-                                        <td>13.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10242</td>
-                                        <td>robert@bingo.com</td>
-                                        <td>18.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10247</td>
-                                        <td>robert@bingo.com</td>
-                                        <td>23.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10252</td>
-                                        <td>robert@bingo.com</td>
-                                        <td>28.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10236</td>
-                                        <td>simon@yahoo.com</td>
-                                        <td>12.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10241</td>
-                                        <td>simon@yahoo.com</td>
-                                        <td>17.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10246</td>
-                                        <td>simon@yahoo.com</td>
-                                        <td>22.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10251</td>
-                                        <td>simon@yahoo.com</td>
-                                        <td>27.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10235</td>
-                                        <td>tim@microsoft.com</td>
-                                        <td>11.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10240</td>
-                                        <td>tim@microsoft.com</td>
-                                        <td>16.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10245</td>
-                                        <td>tim@microsoft.com</td>
-                                        <td>21.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10250</td>
-                                        <td>tim@microsoft.com</td>
-                                        <td>26.10.2013</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                        <div class="ms-body">
+                            <div class="action-header clearfix palette-Teal-400 bg">
+                                <div class="ah-label hidden-xs palette-White text">Marsh Walter</div>
 
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>Selection Example <small>Ensure that the data attribute [data-identifier="true"] is set on one column header.</small></h2>
-                        </div>
+                                <div class="menu-collapse visible-xs" data-ma-action="message-toggle">
+                                    <div class="mc-wrap">
+                                        <div class="mcw-line top palette-White bg"></div>
+                                        <div class="mcw-line center palette-White bg"></div>
+                                        <div class="mcw-line bottom palette-White bg"></div>
+                                    </div>
+                                </div>
 
-                        <div class="table-responsive">
-                            <table id="data-table-selection" class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th data-column-id="id" data-type="numeric" data-identifier="true">ID</th>
-                                        <th data-column-id="sender">Sender</th>
-                                        <th data-column-id="received" data-order="desc">Received</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>10238</td>
-                                        <td>eduardo@pingpong.com</td>
-                                        <td>14.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10243</td>
-                                        <td>eduardo@pingpong.com</td>
-                                        <td>19.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10248</td>
-                                        <td>eduardo@pingpong.com</td>
-                                        <td>24.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10253</td>
-                                        <td>eduardo@pingpong.com</td>
-                                        <td>29.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10234</td>
-                                        <td>lila@google.com</td>
-                                        <td>10.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10239</td>
-                                        <td>lila@google.com</td>
-                                        <td>15.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10244</td>
-                                        <td>lila@google.com</td>
-                                        <td>20.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10249</td>
-                                        <td>lila@google.com</td>
-                                        <td>25.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10237</td>
-                                        <td>robert@bingo.com</td>
-                                        <td>13.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10242</td>
-                                        <td>robert@bingo.com</td>
-                                        <td>18.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10247</td>
-                                        <td>robert@bingo.com</td>
-                                        <td>23.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10252</td>
-                                        <td>robert@bingo.com</td>
-                                        <td>28.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10236</td>
-                                        <td>simon@yahoo.com</td>
-                                        <td>12.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10241</td>
-                                        <td>simon@yahoo.com</td>
-                                        <td>17.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10246</td>
-                                        <td>simon@yahoo.com</td>
-                                        <td>22.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10251</td>
-                                        <td>simon@yahoo.com</td>
-                                        <td>27.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10235</td>
-                                        <td>tim@microsoft.com</td>
-                                        <td>11.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10240</td>
-                                        <td>tim@microsoft.com</td>
-                                        <td>16.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10245</td>
-                                        <td>tim@microsoft.com</td>
-                                        <td>21.10.2013</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10250</td>
-                                        <td>tim@microsoft.com</td>
-                                        <td>26.10.2013</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                                <ul class="actions a-alt">
+                                    <li>
+                                        <a href="#">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="zmdi zmdi-check"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="zmdi zmdi-time"></i>
+                                        </a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" data-toggle="dropdown" aria-expanded="true">
+                                            <i class="zmdi zmdi-sort"></i>
+                                        </a>
 
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>Selection Example <small>Ensure that the data attribute [data-identifier="true"] is set on one column header.</small></h2>
-                        </div>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li>
+                                                <a href="#">Latest</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Oldest</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" data-toggle="dropdown" aria-expanded="true">
+                                            <i class="zmdi zmdi-more-vert"></i>
+                                        </a>
 
-                        <table id="data-table-command" class="table table-striped table-vmiddle">
-                            <thead>
-                                <tr>
-                                    <th data-column-id="id" data-type="numeric">ID</th>
-                                    <th data-column-id="sender">Sender</th>
-                                    <th data-column-id="received" data-order="desc">Received</th>
-                                    <th data-column-id="commands" data-formatter="commands" data-sortable="false">Commands</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                                        <tr>
-                                    <td>10238</td>
-                                    <td>eduardo@pingpong.com</td>
-                                    <td>14.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10243</td>
-                                    <td>eduardo@pingpong.com</td>
-                                    <td>19.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10248</td>
-                                    <td>eduardo@pingpong.com</td>
-                                    <td>24.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10253</td>
-                                    <td>eduardo@pingpong.com</td>
-                                    <td>29.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10234</td>
-                                    <td>lila@google.com</td>
-                                    <td>10.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10239</td>
-                                    <td>lila@google.com</td>
-                                    <td>15.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10244</td>
-                                    <td>lila@google.com</td>
-                                    <td>20.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10249</td>
-                                    <td>lila@google.com</td>
-                                    <td>25.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10237</td>
-                                    <td>robert@bingo.com</td>
-                                    <td>13.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10242</td>
-                                    <td>robert@bingo.com</td>
-                                    <td>18.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10247</td>
-                                    <td>robert@bingo.com</td>
-                                    <td>23.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10252</td>
-                                    <td>robert@bingo.com</td>
-                                    <td>28.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10236</td>
-                                    <td>simon@yahoo.com</td>
-                                    <td>12.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10241</td>
-                                    <td>simon@yahoo.com</td>
-                                    <td>17.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10246</td>
-                                    <td>simon@yahoo.com</td>
-                                    <td>22.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10251</td>
-                                    <td>simon@yahoo.com</td>
-                                    <td>27.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10235</td>
-                                    <td>tim@microsoft.com</td>
-                                    <td>11.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10240</td>
-                                    <td>tim@microsoft.com</td>
-                                    <td>16.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10245</td>
-                                    <td>tim@microsoft.com</td>
-                                    <td>21.10.2013</td>
-                                </tr>
-                                <tr>
-                                    <td>10250</td>
-                                    <td>tim@microsoft.com</td>
-                                    <td>26.10.2013</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li>
+                                                <a href="#">Refresh</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Message Settings</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="list-group lg-alt">
+                                <div class="list-group-item media">
+                                    <div class="pull-left">
+                                        <img class="avatar-img" src="img/profile-pics/1.jpg" alt="">
+                                    </div>
+
+                                    <div class="media-body">
+                                        <div>
+                                            <div class="msb-item">
+                                                Quisque consequat arcu eget odio cursus, ut tempor arcu vestibulum. Etiam ex arcu, porta a urna non, lacinia pellentesque orci. Proin semper sagittis erat, eget condimentum sapien viverra et. Mauris volutpat magna nibh, et condimentum est rutrum a. Nunc sed turpis mi. In eu massa a sem pulvinar lobortis.
+                                            </div>
+                                        </div>
+                                        <small class="ms-date"><i class="zmdi zmdi-time"></i> 20/02/2015 at 09:00</small>
+                                    </div>
+                                </div>
+
+                                <div class="list-group-item media">
+                                    <div class="pull-right">
+                                        <img class="avatar-img" src="img/profile-pics/8.jpg" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <div>
+                                            <div class="msb-item">
+                                                Mauris volutpat magna nibh, et condimentum est rutrum a. Nunc sed turpis mi. In eu massa a sem pulvinar lobortis.
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="msb-item">
+                                                Condimentum est rutrum lobortis.
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="msb-item">
+                                                :)
+                                            </div>
+                                        </div>
+                                        <small class="ms-date"><i class="zmdi zmdi-time"></i> 20/02/2015 at 09:30</small>
+                                    </div>
+                                </div>
+
+                                <div class="list-group-item media">
+                                    <div class="pull-left">
+                                        <img class="avatar-img" src="img/profile-pics/1.jpg" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <div>
+                                            <div class="msb-item">
+                                                Etiam ex arcumentum
+                                            </div>
+                                        </div>
+                                        <small class="ms-date"><i class="zmdi zmdi-time"></i> 20/02/2015 at 09:33</small>
+                                    </div>
+                                </div>
+
+                                <div class="list-group-item media">
+                                    <div class="pull-right">
+                                        <img class="avatar-img" src="img/profile-pics/8.jpg" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <div>
+                                            <div class="msb-item">
+                                                Etiam nec facilisis lacus. Nulla imperdiet augue ullamcorper dui ullamcorper, eu laoreet sem consectetur. Aenean et ligula risus. Praesent sed posuere sem. Cum sociis natoque penatibus et magnis dis parturient montes,
+                                            </div>
+                                        </div>
+                                        <small class="ms-date"><i class="zmdi zmdi-time"></i> 20/02/2015 at 10:10</small>
+                                    </div>
+                                </div>
+
+                                <div class="list-group-item media">
+                                    <div class="pull-left">
+                                        <img class="avatar-img" src="img/profile-pics/1.jpg" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <div>
+                                            <div class="msb-item">
+                                                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam ac tortor ut elit sodales varius. Mauris id ipsum id mauris malesuada tincidunt. Vestibulum elit massa, pulvinar at sapien sed, luctus vestibulum eros. Etiam finibus tristique ante, vitae rhoncus sapien volutpat eget
+                                            </div>
+                                        </div>
+                                        <small class="ms-date"><i class="zmdi zmdi-time"></i> 20/02/2015 at 10:24</small>
+                                    </div>
+                                </div>
+
+                                <div class="ms-reply">
+                                    <textarea placeholder="What's on your mind..."></textarea>
+
+                                    <button><i class="zmdi zmdi-mail-send"></i></button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -823,7 +714,6 @@
                     <li><a href="#">Contact</a></li>
                 </ul>
             </footer>
-
         </section>
 
         <!-- Page Loader -->
@@ -877,7 +767,7 @@
                 <p>Sorry for the inconvenience!</p>
             </div>   
         <![endif]-->
-
+    
         <!-- Javascript Libraries -->
         <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
         <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -885,8 +775,7 @@
         <script src="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="vendors/bower_components/Waves/dist/waves.min.js"></script>
         <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
-        <script src="vendors/bootgrid/jquery.bootgrid.updated.min.js"></script>
-        
+
         <!-- Placeholder for IE9 -->
         <!--[if IE 9 ]>
             <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
@@ -895,55 +784,7 @@
         <script src="js/functions.js"></script>
         <script src="js/actions.js"></script>
         <script src="js/demo.js"></script>
-
-        <!-- Data Table -->
-        <script type="text/javascript">
-            $(document).ready(function(){
-                //Basic Example
-                $("#data-table-basic").bootgrid({
-                    css: {
-                        icon: 'zmdi icon',
-                        iconColumns: 'zmdi-view-module',
-                        iconDown: 'zmdi-expand-more',
-                        iconRefresh: 'zmdi-refresh',
-                        iconUp: 'zmdi-expand-less'
-                    },
-                });
-                
-                //Selection
-                $("#data-table-selection").bootgrid({
-                    css: {
-                        icon: 'zmdi icon',
-                        iconColumns: 'zmdi-view-module',
-                        iconDown: 'zmdi-expand-more',
-                        iconRefresh: 'zmdi-refresh',
-                        iconUp: 'zmdi-expand-less'
-                    },
-                    selection: true,
-                    multiSelect: true,
-                    rowSelect: true,
-                    keepSelection: true
-                });
-                
-                //Command Buttons
-                $("#data-table-command").bootgrid({
-                    css: {
-                        icon: 'zmdi icon',
-                        iconColumns: 'zmdi-view-module',
-                        iconDown: 'zmdi-expand-more',
-                        iconRefresh: 'zmdi-refresh',
-                        iconUp: 'zmdi-expand-less'
-                    },
-                    formatters: {
-                        "commands": function(column, row) {
-                            return "<button type=\"button\" class=\"btn btn-icon command-edit waves-effect waves-circle\" data-row-id=\"" + row.id + "\"><span class=\"zmdi zmdi-edit\"></span></button> " + 
-                                "<button type=\"button\" class=\"btn btn-icon command-delete waves-effect waves-circle\" data-row-id=\"" + row.id + "\"><span class=\"zmdi zmdi-delete\"></span></button>";
-                        }
-                    }
-                });
-            });
-        </script>
     </body>
-  
-<!-- Mirrored from byrushan.com/projects/mae/1-0/data-tables.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Oct 2018 07:22:48 GMT -->
+
+<!-- Mirrored from byrushan.com/projects/mae/1-0/messages.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Oct 2018 07:24:41 GMT -->
 </html>
