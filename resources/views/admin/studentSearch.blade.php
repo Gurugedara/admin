@@ -129,7 +129,7 @@
 @endsection
 @push('js')
     <!-- Data Table -->
-    <script src="vendors/bootgrid/jquery.bootgrid.updated.min.js"></script>
+    <script src="/admin/vendors/bootgrid/jquery.bootgrid.updated.min.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function(){

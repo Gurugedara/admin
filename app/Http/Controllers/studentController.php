@@ -15,6 +15,7 @@ class studentController extends Controller
         $allstudents=student::with(array('institutes'=>function($query){
             $query->where('status',0);
         }))->get();
+//        dd($allstudents);
         return view('admin.studentVerify',compact('allstudents'));
     }
 

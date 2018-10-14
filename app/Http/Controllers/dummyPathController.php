@@ -9,7 +9,7 @@ class dummyPathController extends Controller
     public function findPath($path){
         switch ($path){
             case "dashboard": return view('admin.dashboard'); break;
-            case "studentVerify": return view('admin.student'); break;
+            case "studentVerify": return view('admin.studentVerify'); break;
             case "forms":return view('admin.forms'); break;
             case "calendar": return view('admin.calendar');break;
             case "forum": return view('admin.forum'); break;

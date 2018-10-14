@@ -16,95 +16,39 @@
     </ul>
 
     <ul class="main-menu">
-        <li>
-            <a href="index-2.html"><i class="zmdi zmdi-home"></i> Home</a>
+        <li {{(Request::is('admin/dashboard') ? 'class=active' : '')}}>
+            <a href="/admin/dashboard"><i class="zmdi zmdi-home"></i> Home</a>
         </li>
-        <li class="sub-menu active">
-            <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-view-compact"></i> Headers</a>
+        <li class= "{{((Request::is('admin/verify/student')||Request::is('admin/search/student')) ? 'sub-menu toggled active' : 'sub-menu')}}">
+            <a href="students" data-ma-action="submenu-toggle"><i class="zmdi zmdi-view-compact"></i> Students</a>
 
             <ul>
-                <li class="active"><a href="alternative-header.html">Altenative</a></li>
-                <li><a href="colored-header.html">Colored</a></li>
+                <li {{(Request::is('admin/verify/student') ? 'class=active' : '')}}><a href="{{url('admin/verify/student')}}">Verify</a></li>
+                <li {{(Request::is('admin/search/student') ? 'class=active' : '')}}><a href="{{url('admin/search/student')}}">Search</a></li>
             </ul>
         </li>
-        <li><a href="typography.html"><i class="zmdi zmdi-format-underlined"></i> Typography</a></li>
-        <li><a href="widgets.html"><i class="zmdi zmdi-widgets"></i> Widgets</a></li>
-        <li class="sub-menu">
-            <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-view-list"></i> Tables</a>
+        <li class="{{((Request::is('admin/verify/teacher')||Request::is('admin/search/teacher')) ? 'sub-menu toggled active' : 'sub-menu')}}">
+            <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-view-compact"></i> Teachers</a>
 
             <ul>
-                <li><a href="tables.html">Normal Tables</a></li>
-                <li><a href="data-tables.html">Data Tables</a></li>
+                <li {{(Request::is('admin/verify/teacher') ? 'class=active' : '')}}><a href="{{url('admin/verify/teacher')}}">Verify</a></li>
+                <li {{(Request::is('admin/search/teacher') ? 'class=active' : '')}}><a href="{{url('admin/search/teacher')}}">Search</a></li>
             </ul>
         </li>
-        <li class="sub-menu">
-            <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-collection-text"></i> Forms</a>
+        <li class="{{((Request::is('admin/institiue/syllabus')||Request::is('institute/reviews')||Request::is('institute/stories')||Request::is('institute/carrierpath')) ? 'sub-menu toggled active' : 'sub-menu')}}">
+            <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-view-compact"></i> Institute</a>
 
             <ul>
-                <li><a href="form-elements.html">Basic Form Elements</a></li>
-                <li><a href="form-components.html">Form Components</a></li>
-                <li><a href="form-examples.html">Form Examples</a></li>
-                <li><a href="form-validations.html">Form Validation</a></li>
+                <li {{(Request::is('admin/institiue/syllabus') ? 'class=active' : '')}}><a href="{{url('institiue/syllabus')}}">Syllabus</a></li>
+                <li {{(Request::is('admin/institiue/reviews') ? 'class=active' : '')}}><a href="{{url('institute/reviews')}}">Reviews</a></li>
+                <li {{(Request::is('admin/institiue/stories') ? 'class=active' : '')}}><a href="{{url('institute/stories')}}">Success Stories</a></li>
+                <li {{(Request::is('admin/institiue/carrierpath') ? 'class=active' : '')}}><a href="{{url('institute/carrierpath')}}">Carrier Path</a></li>
             </ul>
         </li>
-        <li class="sub-menu">
-            <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-swap-alt"></i>User Interface</a>
-            <ul>
-                <li><a href="colors.html">Colors</a></li>
-                <li><a href="animations.html">Animations</a></li>
-                <li><a href="box-shadow.html">Box Shadow</a></li>
-                <li><a href="buttons.html">Buttons</a></li>
-                <li><a href="icons.html">Icons</a></li>
-                <li><a href="alerts.html">Alerts</a></li>
-                <li><a href="preloaders.html">Preloaders</a></li>
-                <li><a href="notification-dialog.html">Notifications & Dialogs</a></li>
-                <li><a href="media.html">Media</a></li>
-                <li><a href="components.html">Components</a></li>
-                <li><a href="other-components.html">Others</a></li>
-            </ul>
-        </li>
-        <li><a href="flot-charts.html"><i class="zmdi zmdi-trending-up"></i> Flot Charts</a></li>
-        <li class="sub-menu">
-            <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-image"></i>Photo Gallery</a>
-            <ul>
-                <li><a href="photos.html">Default</a></li>
-                <li><a href="photo-timeline.html">Timeline</a></li>
-            </ul>
-        </li>
-        <li><a href="calendar.html"><i class="zmdi zmdi-calendar"></i> Calendar</a></li>
-        <li><a href="generic-classes.html"><i class="zmdi zmdi-layers"></i> Generic Classes</a></li>
-        <li class="sub-menu">
-            <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-collection-item"></i> Sample Pages</a>
-            <ul>
-                <li><a href="profile-about.html">Profile</a></li>
-                <li><a href="list-view.html">List View</a></li>
-                <li><a href="messages.html">Messages</a></li>
-                <li><a href="pricing-table.html">Pricing Table</a></li>
-                <li><a href="contacts.html">Contacts</a></li>
-                <li><a href="wall.html">Wall</a></li>
-                <li><a href="invoice.html">Invoice</a></li>
-                <li><a href="login.html">Login and Sign Up</a></li>
-                <li><a href="lockscreen.html">Lockscreen</a></li>
-                <li><a href="404.html">Error 404</a></li>
-            </ul>
-        </li>
-        <li class="sub-menu">
-            <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-menu"></i> 3 Level Menu</a>
+        <li {{(Request::is('admin/message/inbox') ? 'class=active' : '')}}><a href="{{url('message/inbox')}}"><i class="zmdi zmdi-format-underlined"></i> Message Inbox</a></li>
+        <li {{(Request::is('admin/forum') ? 'class=active' : '')}}><a href="{{url('institiue/syllabus')}}forum"><i class="zmdi zmdi-format-underlined"></i> Forum</a></li>
+        <li {{(Request::is('admin/schedule') ? 'class=active' : '')}}><a href="{{url('institiue/syllabus')}}schedule"><i class="zmdi zmdi-format-underlined"></i> Schedule</a></li>
+        <li {{(Request::is('admin/settings') ? 'class=active' : '')}}><a href="{{url('institiue/syllabus')}}settings"><i class="zmdi zmdi-format-underlined"></i> Settings</a></li>
 
-            <ul>
-                <li><a href="form-elements.html">Level 2 link</a></li>
-                <li><a href="form-components.html">Another level 2 Link</a></li>
-                <li class="sub-menu">
-                    <a href="#" data-ma-action="submenu-toggle">I have children too</a>
-
-                    <ul>
-                        <li><a href="#">Level 3 link</a></li>
-                        <li><a href="#">Another Level 3 link</a></li>
-                        <li><a href="#">Third one</a></li>
-                    </ul>
-                </li>
-                <li><a href="form-validations.html">One more 2</a></li>
-            </ul>
-        </li>
     </ul>
 </aside>

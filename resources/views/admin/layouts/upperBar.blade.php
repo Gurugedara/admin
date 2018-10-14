@@ -1,8 +1,8 @@
 <header id="header" class="media">
     <div class="pull-left h-logo">
-        <a href="index-2.html" class="hidden-xs">
-            Material
-            <small>admin extended</small>
+        <a href="/admin/dashboard" class="hidden-xs">
+            GuruGedara
+            <small>The Place for Learners</small>
         </a>
 
         <div class="menu-collapse" data-ma-action="sidebar-open" data-ma-target="main-menu">
@@ -87,7 +87,7 @@
         </li>
         <li class="dropdown hm-profile">
             <a data-toggle="dropdown" href="#">
-                <img src="img/profile-pics/1.jpg" alt="">
+                <img src="/admin/img/profile-pics/1.jpg" alt="">
             </a>
 
             <ul class="dropdown-menu pull-right dm-icon">
