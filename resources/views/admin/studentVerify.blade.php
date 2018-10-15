@@ -13,19 +13,29 @@
                 <table id="data-table-command" class="table table-striped table-vmiddle">
                     <thead>
                     <tr>
-                        <th data-column-id="id" data-type="numeric">ID</th>
-                        <th data-column-id="sender">Sender</th>
-                        <th data-column-id="received" data-order="desc">Received</th>
-
+                        <th data-column-id="id" data-type="numeric" data-order="desc">Reg Number</th>
+                        <th data-column-id="nic">NIC</th>
+                        <th data-column-id="name">Name</th>
+                        <th data-column-id="institute">Institute</th>
+                        <th data-column-id="course">Course</th>
+                        <th data-column-id="commands" data-formatter="commands" data-sortable="false">Actions</th>
                     </tr>
                     </thead>
                     <tbody>
                         @foreach($allstudents as $student)
-                            <tr>
-                                <td>10238</td>
-                                <td>eduardo@pingpong.com</td>
-                                <td>14.10.2013</td>
-                            </tr>
+                            @foreach($student->institutes as $institute)
+                                @foreach(auth()->user()->institutes as $userInstitute)
+                                    @if($institute->id==$userInstitute->id)
+                                        <tr>
+                                            <td>{{$institute->pivot->regNumber}}</td>
+                                            <td>{{$student->nic}}</td>
+                                            <td>{{$student->user->firstname." ".$student->user->Lastname}}</td>
+                                            <td>{{$institute->name}}</td>
+                                            <td>{{$institute->pivot->course_id}}</td>
+                                        </tr>
+                                    @endif
+                                @endforeach
+                            @endforeach
                         @endforeach
                     </tbody>
                 </table>
@@ -77,12 +87,13 @@
                 },
                 formatters: {
                     "commands": function(column, row) {
-                        return "<button type=\"button\" class=\"btn btn-icon command-edit waves-effect waves-circle\" data-row-id=\"" + row.id + "\"><span class=\"zmdi zmdi-edit\"></span></button> " +
-                            "<button type=\"button\" class=\"btn btn-icon command-delete waves-effect waves-circle\" data-row-id=\"" + row.id + "\"><span class=\"zmdi zmdi-delete\"></span></button>";
+                        return "<button type=\"button\" class=\"btn btn-icon palette-Green bg command-edit waves-effect waves-circle waves-float\" data-row-id=\"" + row.id + "\"><span class=\"zmdi zmdi-check\"></span></button> " +
+                            "<button type=\"button\" class=\"btn btn-icon palette-Red bg command-edit waves-effect waves-circle waves-float\" data-row-id=\"" + row.id + "\"><span class=\"zmdi zmdi-close\"></span></button>";
                     }
                 }
             });
         });
     </script>
+
 
 @endpush

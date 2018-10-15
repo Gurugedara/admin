@@ -19,7 +19,7 @@ $this->post('password/reset', 'Auth\ResetPasswordController@reset')->name('auth.
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
 //    Route::get('/home', 'HomeController@index');
     Route::get('/verify/student', 'studentController@index');
-//    Route::get('/studentVerify/verify/{id}', 'studentController@changeStatus');
+    Route::get('/verify/student/{institute_id}/{student_id}', 'studentController@changeStatus');
 //    Route::get('/studentVerify/Deny/{id}', 'studentController@deny');
     Route::get('/verify/teacher', 'teacherController@index');
 //    Route::get('/teacherVerify/verify/{id}', 'teacherController@changeStatus');
@@ -33,6 +33,4 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
     $this->get('{path}','dummyPathController@findPath');
 
-
- 
 });

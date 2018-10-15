@@ -19,6 +19,7 @@ class CreateInstitutesTable extends Migration
             $table->string('address');
             $table->string('telephone');
             $table->timestamps();
+            $table->primary('id');
         });
     }
 

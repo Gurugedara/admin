@@ -48,6 +48,10 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class, 'role_id');
     }
+
+    public function institutes(){
+        return $this->belongsToMany('App\institute','institute_owners','user_id','institute_id');
+    }
     
     public function sendPasswordResetNotification($token)
     {

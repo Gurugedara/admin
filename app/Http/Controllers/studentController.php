@@ -11,21 +11,23 @@ use App\studentInstitute;
 class studentController extends Controller
 {
     public function index(){
-        $user_id = Auth::user()->role_id;
         $allstudents=student::with(array('institutes'=>function($query){
             $query->where('status',0);
         }))->get();
-//        dd($allstudents);
+
         return view('admin.studentVerify',compact('allstudents'));
     }
 
-    public function changeStatus($id){
-        $institutes = student::with('institutes')->findOrFail($id);
+    public function changeStatus($institite_id,$student_id){
+        $institutes = student::with('institutes')->findOrFail($student_id);
         foreach($institutes->institutes as $institute){
-            $institute->pivot->status =1;
-            $institute->pivot->save();
+            if($institute->id==$institite_id) {
+                $institute->pivot->status = 1;
+                $institute->pivot->save();
+                return redirect('/admin/verify/student');
+            }
         }
-        return redirect('/admin/studentVerify');
+        return view('admin.404');
     }
     public function deny($id){
         $institutes = student::with('institutes')->findOrFail($id);
