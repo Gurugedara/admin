@@ -3,47 +3,43 @@
     <section id="content">
         <div class="container">
             <div class="c-header">
-                <h2>Data Table</h2>
+                <h2>All courses Registered with your Institute</h2>
             </div>
             <div class="card">
                 <div class="card-header">
-                    <h2>Verify Teacher <small>If each teacher is registered under your institute click on verify, otherwise deny</small></h2>
+                    <h2>Manage Courses <small>These courses will be visible under your institute for students</small></h2>
                 </div>
 
                 <table id="data-table" class="table table-striped table-vmiddle">
                     <thead>
                     <tr>
-                        <th data-column-id="id" data-type="numeric" data-order="desc">Reg Number</th>
-                        <th data-column-id="nic">NIC</th>
+                        <th data-column-id="id" data-type="numeric" data-order="desc">Course ID</th>
                         <th data-column-id="name">Name</th>
                         <th data-column-id="institute">Institute</th>
-                        <th data-column-id="course">Course</th>
-                        <th data-column-id="commands" data-sortable="false">Actions</th>
+                        <th data-column-id="nos">Registered Students</th>
+                        <th data-column-id="action">Action</th>
+
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($allteachers as $teacher)
-                        @foreach($teacher->institutes as $institute)
+                    @foreach($allCourses as $course)
+                        @foreach($course->institutes as $institute)
                             @foreach(auth()->user()->institutes as $userInstitute)
-                                <script>console.log("done")</script>
                                 @if($institute->id==$userInstitute->id)
-                                    <tr>
-                                        <td>{{$institute->pivot->regNumber}}</td>
-                                        <td>{{$teacher->nic}}</td>
-                                        <td>{{$teacher->user->firstname." ".$teacher->user->Lastname}}</td>
-                                        <td>{{$institute->name}}</td>
-                                        <td>{{$institute->pivot->course_id}}</td>
-                                        <td>
-                                            <a href='/admin/verify/teacher/{{$institute->id}}/{{$teacher->id}}'> <button type="button" class="btn btn-icon palette-Green bg command-edit waves-effect waves-circle waves-float"><span class="zmdi zmdi-check"></span></button> </a>
-                                            <a href='/admin/deny/teacher/{{$institute->id}}/{{$teacher->id}}'><button type="button" class="btn btn-icon palette-Red bg command-edit waves-effect waves-circle waves-float" data-row-id=\""><span class="zmdi zmdi-close"></span></button></a>
-                                        </td>
-                                    </tr>
+                                   <tr>
+                                       <td>{{$course->id}}</td>
+                                       <td>{{$course->name}}</td>
+                                       <td>{{$institute->name}}</td>
+                                       <td>{{$countData[$course->id]}}</td>
+                                       <td><a href="/admin/institute/course/delete/{{$institute->id}}/{{$course->id}}"> <button class="btn waves-effect btn-danger">Delete</button></a></td>
+                                   </tr>
                                 @endif
                             @endforeach
                         @endforeach
                     @endforeach
                     </tbody>
                 </table>
+                <a href="/admin/institute/courses/add"> <button class="btn btn-float btn-success m-btn"><i class="zmdi zmdi-plus"></i></button></a>
             </div>
         </div>
     </section>
@@ -92,12 +88,13 @@
                 },
                 formatters: {
                     "commands": function(column, row) {
-                        return "<button type=\"button\" class=\"btn btn-icon palette-Green bg command-edit waves-effect waves-circle waves-float\" data-row-id=\"" + row.id + "\"><span class=\"zmdi zmdi-check\"></span></button> " +
+                        return "<a href='/admin/verify/student/'> <button type=\"button\" class=\"btn btn-icon palette-Green bg command-edit waves-effect waves-circle waves-float\" data-row-id=\"" + row.id + "\"><span class=\"zmdi zmdi-check\"></span></button> </a>" +
                             "<button type=\"button\" class=\"btn btn-icon palette-Red bg command-edit waves-effect waves-circle waves-float\" data-row-id=\"" + row.id + "\"><span class=\"zmdi zmdi-close\"></span></button>";
                     }
                 }
             });
         });
     </script>
+
 
 @endpush

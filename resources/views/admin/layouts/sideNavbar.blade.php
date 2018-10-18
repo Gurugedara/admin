@@ -35,11 +35,11 @@
                 <li {{(Request::is('admin/search/teacher') ? 'class=active' : '')}}><a href="{{url('admin/search/teacher')}}">Search</a></li>
             </ul>
         </li>
-        <li class="{{((Request::is('admin/institiue/syllabus')||Request::is('institute/reviews')||Request::is('institute/stories')||Request::is('institute/carrierpath')) ? 'sub-menu toggled active' : 'sub-menu')}}">
+        <li class="{{((Request::is('admin/institute/courses')||Request::is('institute/reviews')||Request::is('institute/stories')||Request::is('institute/carrierpath')) ? 'sub-menu toggled active' : 'sub-menu')}}">
             <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-view-compact"></i> Institute</a>
 
             <ul>
-                <li {{(Request::is('admin/institiue/syllabus') ? 'class=active' : '')}}><a href="{{url('institiue/syllabus')}}">Syllabus</a></li>
+                <li {{(Request::is('admin/institute/courses') ? 'class=active' : '')}}><a href="{{url('/admin/institute/courses')}}">Courses</a></li>
                 <li {{(Request::is('admin/institiue/reviews') ? 'class=active' : '')}}><a href="{{url('institute/reviews')}}">Reviews</a></li>
                 <li {{(Request::is('admin/institiue/stories') ? 'class=active' : '')}}><a href="{{url('institute/stories')}}">Success Stories</a></li>
                 <li {{(Request::is('admin/institiue/carrierpath') ? 'class=active' : '')}}><a href="{{url('institute/carrierpath')}}">Carrier Path</a></li>

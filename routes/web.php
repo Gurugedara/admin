@@ -23,19 +23,23 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::get('/deny/student/{institute_id}/{student_id}', 'studentController@deny');
     Route::get('/search/student', 'studentController@search');
     Route::get('/search/student/{student_id}', 'studentController@viewProfile');
-//Teacher Section
+
+    //Teacher Section
     Route::get('/verify/teacher', 'teacherController@index');
     Route::get('/verify/teacher/{institute_id}/{teacher_id}', 'teacherController@changeStatus');
     Route::get('/deny/teacher/{institute_id}/{teacher_id}', 'teacherController@deny');
     Route::get('/search/teacher', 'teacherController@search');
     Route::get('/search/teacher/{teacher_id}', 'teacherController@viewProfile');
-//    Route::get('/courses', 'adminController@viewCourses');
-//
+
+    // Course Section
+    Route::get('/institute/courses','courseController@index');
+    Route::get('/institute/course/delete/{institute_id}/{course_id}','courseController@delete');
+
+
 //    Route::resource('roles', 'Admin\RolesController');
 //    Route::post('roles_mass_destroy', ['uses' => 'Admin\RolesController@massDestroy', 'as' => 'roles.mass_destroy']);
 //    Route::resource('users', 'Admin\UsersController');
 //    Route::post('users_mass_destroy', ['uses' => 'Admin\UsersController@massDestroy', 'as' => 'users.mass_destroy']);
 
-    $this->get('{path}','dummyPathController@findPath');
 
 });

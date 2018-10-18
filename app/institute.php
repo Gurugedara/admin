@@ -16,4 +16,7 @@ class institute extends Model
     {
         return $this->belongsToMany('App\teacher', 'institute_teacher', 'institute_id', 'teacher_id')->withTimestamps()->withPivot('regNumber','status');
     }
+    public function courses(){
+        return $this->belongsToMany('App\course','course_institutes','institute_id','course_id');
+    }
 }
