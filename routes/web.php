@@ -17,13 +17,18 @@ $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 $this->post('password/reset', 'Auth\ResetPasswordController@reset')->name('auth.password.reset');
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
-//    Route::get('/home', 'HomeController@index');
+//Student Section
     Route::get('/verify/student', 'studentController@index');
     Route::get('/verify/student/{institute_id}/{student_id}', 'studentController@changeStatus');
-//    Route::get('/studentVerify/Deny/{id}', 'studentController@deny');
+    Route::get('/deny/student/{institute_id}/{student_id}', 'studentController@deny');
+    Route::get('/search/student', 'studentController@search');
+    Route::get('/search/student/{student_id}', 'studentController@viewProfile');
+//Teacher Section
     Route::get('/verify/teacher', 'teacherController@index');
-//    Route::get('/teacherVerify/verify/{id}', 'teacherController@changeStatus');
-//    Route::get('/teacherVerify/Deny/{id}', 'teacherController@deny');
+    Route::get('/verify/teacher/{institute_id}/{teacher_id}', 'teacherController@changeStatus');
+    Route::get('/deny/teacher/{institute_id}/{teacher_id}', 'teacherController@deny');
+    Route::get('/search/teacher', 'teacherController@search');
+    Route::get('/search/teacher/{teacher_id}', 'teacherController@viewProfile');
 //    Route::get('/courses', 'adminController@viewCourses');
 //
 //    Route::resource('roles', 'Admin\RolesController');

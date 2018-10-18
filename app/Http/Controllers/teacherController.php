@@ -9,28 +9,42 @@ use App\teacher;
 class teacherController extends Controller
 {
     public function index(){
-        //$user_id = Auth::user()->role_id;
         $allteachers=teacher::with(array('institutes'=>function($query){
             $query->where('status',0);
         }))->get();
-        //dd($allteachers);
         return view('admin.teacherVerify',compact('allteachers'));
 
     }
-    public function changeStatus($id){
-        $institutes = teacher::with('institutes')->findOrFail($id);
-        foreach($institutes->institutes as $institute){
-            $institute->pivot->status =1;
-            $institute->pivot->save();
+    public function changeStatus($institute_id, $student_id){
+        $teacher = teacher::with('institutes')->findOrFail($student_id);
+        foreach($teacher->institutes as $institute){
+            if($institute->id==$institute_id) {
+                $institute->pivot->status = 1;
+                $institute->pivot->save();
+                return redirect('/admin/verify/teacher');
+            }
         }
-        return redirect('/admin/teacherVerify');
+        return view('admin.404');
     }
-    public function deny($id){
-        $institutes = teacher::with('institutes')->findOrFail($id);
-        foreach($institutes->institutes as $institute){
-            $institute->pivot->status =-1;
-            $institute->pivot->save();
+    public function deny($institute_id, $teacher_id){
+        $teacher = teacher::with('institutes')->findOrFail($teacher_id);
+        foreach($teacher->institutes as $institute){
+            if($institute->id==$institute_id) {
+                $institute->pivot->status = -1;
+                $institute->pivot->save();
+                return redirect('/admin/verify/teacher');
+            }
         }
-        return redirect('/admin/teacherVerify');
+        return view('admin.404');
+    }
+    public function search(){
+        $allteachers = teacher::with(array('institutes'=>function($query){
+            $query->where('status',1);
+        }))->get();
+        return view('admin.teacherSearch',compact('allteachers'));
+    }
+    public function viewProfile($teacher_id){
+        $teacher = teacher::findOrFail($teacher_id);
+        return view('admin.teacherProfile',compact('teacher'));
     }
 }

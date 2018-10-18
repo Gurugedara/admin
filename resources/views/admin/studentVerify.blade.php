@@ -10,7 +10,7 @@
                     <h2>Verify Students <small>If each student is registered under your institute click on verify, otherwise deny</small></h2>
                 </div>
 
-                <table id="data-table-command" class="table table-striped table-vmiddle">
+                <table id="data-table" class="table table-striped table-vmiddle">
                     <thead>
                     <tr>
                         <th data-column-id="id" data-type="numeric" data-order="desc">Reg Number</th>
@@ -18,7 +18,7 @@
                         <th data-column-id="name">Name</th>
                         <th data-column-id="institute">Institute</th>
                         <th data-column-id="course">Course</th>
-                        <th data-column-id="commands" data-formatter="commands" data-sortable="false">Actions</th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -32,6 +32,10 @@
                                             <td>{{$student->user->firstname." ".$student->user->Lastname}}</td>
                                             <td>{{$institute->name}}</td>
                                             <td>{{$institute->pivot->course_id}}</td>
+                                            <td>
+                                                <a href='/admin/verify/student/{{$institute->id}}/{{$student->id}}'> <button type="button" class="btn btn-icon palette-Green bg command-edit waves-effect waves-circle waves-float"><span class="zmdi zmdi-check"></span></button> </a>
+                                                <a href='/admin/deny/student/{{$institute->id}}/{{$student->id}}'><button type="button" class="btn btn-icon palette-Red bg command-edit waves-effect waves-circle waves-float" data-row-id=\""><span class="zmdi zmdi-close"></span></button></a>
+                                            </td>
                                         </tr>
                                     @endif
                                 @endforeach
@@ -87,7 +91,7 @@
                 },
                 formatters: {
                     "commands": function(column, row) {
-                        return "<a href='/admin/'> <button type=\"button\" class=\"btn btn-icon palette-Green bg command-edit waves-effect waves-circle waves-float\" data-row-id=\"" + row.id + "\"><span class=\"zmdi zmdi-check\"></span></button> </a>" +
+                        return "<a href='/admin/verify/student/{{$institute->id}}/{{$student->id}}'> <button type=\"button\" class=\"btn btn-icon palette-Green bg command-edit waves-effect waves-circle waves-float\" data-row-id=\"" + row.id + "\"><span class=\"zmdi zmdi-check\"></span></button> </a>" +
                             "<button type=\"button\" class=\"btn btn-icon palette-Red bg command-edit waves-effect waves-circle waves-float\" data-row-id=\"" + row.id + "\"><span class=\"zmdi zmdi-close\"></span></button>";
                     }
                 }

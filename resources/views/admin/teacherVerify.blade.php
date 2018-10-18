@@ -33,6 +33,10 @@
                                         <td>{{$teacher->user->firstname." ".$teacher->user->Lastname}}</td>
                                         <td>{{$institute->name}}</td>
                                         <td>{{$institute->pivot->course_id}}</td>
+                                        <td>
+                                            <a href='/admin/verify/teacher/{{$institute->id}}/{{$teacher->id}}'> <button type="button" class="btn btn-icon palette-Green bg command-edit waves-effect waves-circle waves-float"><span class="zmdi zmdi-check"></span></button> </a>
+                                            <a href='/admin/deny/teacher/{{$institute->id}}/{{$teacher->id}}'><button type="button" class="btn btn-icon palette-Red bg command-edit waves-effect waves-circle waves-float" data-row-id=\""><span class="zmdi zmdi-close"></span></button></a>
+                                        </td>
                                     </tr>
                                 @endif
                             @endforeach

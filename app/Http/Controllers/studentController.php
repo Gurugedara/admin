@@ -19,8 +19,8 @@ class studentController extends Controller
     }
 
     public function changeStatus($institite_id,$student_id){
-        $institutes = student::with('institutes')->findOrFail($student_id);
-        foreach($institutes->institutes as $institute){
+        $student = student::with('institutes')->findOrFail($student_id);
+        foreach($student->institutes as $institute){
             if($institute->id==$institite_id) {
                 $institute->pivot->status = 1;
                 $institute->pivot->save();
@@ -29,12 +29,26 @@ class studentController extends Controller
         }
         return view('admin.404');
     }
-    public function deny($id){
-        $institutes = student::with('institutes')->findOrFail($id);
-        foreach($institutes->institutes as $institute){
-            $institute->pivot->status =-1;
-            $institute->pivot->save();
+    public function deny($institute_id,$student_id){
+        $student = student::with('institutes')->findOrFail($student_id);
+        foreach($student->institutes as $institute){
+            if($institute->id==$institute_id) {
+                $institute->pivot->status = -1;
+                $institute->pivot->save();
+                return redirect('/admin/verify/student');
+            }
         }
-        return redirect('/admin/studentVerify');
+        return view('admin.404');
+    }
+    public function search(){
+        $allstudents = student::with(array('institutes'=>function($query){
+            $query->where('status',1);
+        }))->get();
+        return view('admin.studentSearch',compact('allstudents'));
+    }
+
+    public function viewProfile($student_id){
+        $student = student::findOrFail($student_id);
+        return view('admin.studentProfile',compact('student'));
     }
 }
