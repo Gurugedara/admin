@@ -31,7 +31,7 @@
                                        <td>{{$course->name}}</td>
                                        <td>{{$institute->name}}</td>
                                        <td>{{$countData[$course->id]}}</td>
-                                       <td><a href="/admin/institute/course/delete/{{$institute->id}}/{{$course->id}}"> <button class="btn waves-effect btn-danger">Delete</button></a></td>
+                                       <td><a id="sa-params" href="/admin/institute/course/delete/{{$institute->id}}/{{$course->id}}"> <button class="btn waves-effect btn-danger">Delete</button></a></td>
                                    </tr>
                                 @endif
                             @endforeach
@@ -39,7 +39,7 @@
                     @endforeach
                     </tbody>
                 </table>
-                <a href="/admin/institute/courses/add"> <button class="btn btn-float btn-success m-btn"><i class="zmdi zmdi-plus"></i></button></a>
+                <a href="/admin/institute/course/add"> <button class="btn btn-float btn-success m-btn"><i class="zmdi zmdi-plus"></i></button></a>
             </div>
         </div>
     </section>
@@ -48,6 +48,7 @@
 @push('js')
     <!-- Data Table -->
     <script src="/admin/vendors/bootgrid/jquery.bootgrid.updated.min.js"></script>
+    <script src="/admin/vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function(){

@@ -32,8 +32,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::get('/search/teacher/{teacher_id}', 'teacherController@viewProfile');
 
     // Course Section
-    Route::get('/institute/courses','courseController@index');
+    Route::get('/institute/course','courseController@index');
     Route::get('/institute/course/delete/{institute_id}/{course_id}','courseController@delete');
+    Route::get('/institute/course/add','courseController@addCourse');
 
 
 //    Route::resource('roles', 'Admin\RolesController');
