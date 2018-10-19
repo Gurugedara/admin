@@ -3,212 +3,95 @@
             <section id="content">
                 <div class="container">
                     <div class="c-header">
-                        <h2>Courses</h2>
+                        <h2>Add new Course</h2>
                     </div>
 
                     <div class="card">
                         <div class="card-header">
-                            <h2>Input Groups <small>Extend form controls by adding text or buttons before, after, or on both sides of any text-based inputs.</small></h2>
+                            <h2>Select the New Course <small>These courses will be visible to the students as they can enroll with them</small></h2>
                         </div>
 
                         <div class="card-body card-padding">
-                            <p class="c-black f-500 m-b-5">Basic Example</p>
-                            <small>Place one add-on or button on either side of an input. You may also place one on both sides of an input.</small>
-
                             <br/><br/>
-
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
-                                        <div class="fg-line">
-                                                <input type="text" class="form-control" placeholder="Full Name">
+                                        <span class="input-group-addon"><i class="zmdi zmdi-home"></i></span>
+                                        <div class="select">
+                                                <select class="form-control" id="institute">
+                                                    <option disabled="disabled">Select and Option</option>
+                                                    @foreach($institutes as $institute)
+                                                        @foreach(auth()->user()->institutes as $userInstitute)
+                                                            @if($institute->id==$userInstitute->id)
+                                                                <option value="{{$institute->id}}">{{$institute->name}}</option>
+                                                            @endif
+                                                        @endforeach
+                                                    @endforeach
+                                                </select>
                                         </div>
                                     </div>
 
                                     <br/>
-
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="zmdi zmdi-local-phone"></i></span>
-                                        <div class="fg-line">
-                                            <input type="text" class="form-control" placeholder="Contact Number">
-                                        </div>
-                                    </div>
-
-                                    <br/>
-
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
-                                        <div class="fg-line">
-                                            <input type="text" class="form-control" placeholder="Email Address">
-                                        </div>
-                                    </div>
-
-                                    <br/>
-
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="zmdi zmdi-pin"></i></span>
-                                        <div class="fg-line">
-                                            <input type="text" class="form-control" placeholder="Home Address">
-                                        </div>
-                                    </div>
                                 </div>
-
                                 <div class="col-sm-4">
                                     <div class="input-group">
-                                        <div class="fg-line">
-                                            <input type="text" class="form-control" placeholder="Landscape">
+                                        <span class="input-group-addon"><i class="zmdi zmdi-book"></i></span>
+                                        <div class="select">
+                                           <select class="form-control" id="course">
+                                               <option disabled>Please Select an Option</option>
+                                               @foreach($courses as $course)
+                                                   <option value="{{$course->id}}">{{$course->name}}</option>
+                                               @endforeach
+                                           </select>
                                         </div>
-                                        <span class="input-group-addon last"><i class="zmdi zmdi-landscape"></i></span>
                                     </div>
 
                                     <br/>
-
-                                    <div class="input-group">
-                                        <div class="fg-line">
-                                            <input type="text" class="form-control" placeholder="Weather">
-                                        </div>
-                                        <span class="input-group-addon last"><i class="zmdi zmdi-sun"></i></span>
-                                    </div>
-
-                                    <br/>
-
-                                    <div class="input-group">
-                                        <div class="fg-line">
-                                            <input type="text" class="form-control" placeholder="Flight">
-                                        </div>
-                                        <span class="input-group-addon last"><i class="zmdi zmdi-airplane"></i></span>
-                                    </div>
-
-                                    <br/>
-
-                                    <div class="input-group">
-                                        <div class="fg-line">
-                                            <input type="text" class="form-control" placeholder="Location">
-                                        </div>
-                                        <span class="input-group-addon last"><i class="zmdi zmdi-my-location"></i></span>
-                                    </div>
                                 </div>
-
                                 <div class="col-sm-4">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="zmdi zmdi-arrow-missed"></i></span>
-                                        <div class="fg-line">
-                                            <input type="text" class="form-control" placeholder="Internet">
-                                        </div>
-                                        <span class="input-group-addon last"><i class="zmdi zmdi-globe"></i></span>
-                                    </div>
-
-                                    <br/>
-
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="zmdi zmdi-money"></i></span>
-                                        <div class="fg-line">
-                                            <input type="text" class="form-control" placeholder="Notifications">
-                                        </div>
-                                        <span class="input-group-addon last"><i class="zmdi zmdi-plus-circle-o"></i></span>
-                                    </div>
-
-                                    <br/>
-
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="zmdi zmdi-mail-send"></i></span>
-                                        <div class="fg-line">
-                                            <input type="text" class="form-control" placeholder="Layers">
-                                        </div>
-                                        <span class="input-group-addon last"><i class="zmdi zmdi-layers "></i></span>
-                                    </div>
-
-                                    <br/>
-
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="zmdi zmdi-portable-wifi"></i></span>
-                                        <div class="fg-line">
-                                            <input type="text" class="form-control" placeholder="Messages">
-                                        </div>
-                                        <span class="input-group-addon last"><i class="zmdi zmdi-dialpad"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <br/><br/>
-                            <p class="c-black f-500 m-b-5 m-t-20">Floating Labels</p>
-                            <small>Basic example for input groups with floating labels</small>
-
-                            <br/>
-                            <br/>
-                            <br/>
-
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="input-group fg-float">
-                                        <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
-                                        <div class="fg-line">
-                                            <input type="text" class="form-control">
-                                            <label class="fg-label">Full Name</label>
+                                    <div>
+                                        <div >
+                                            <button class="btn btn-primary" onclick="select()">Add</button>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col-sm-4">
-                                    <div class="input-group fg-float">
-                                        <div class="fg-line">
-                                            <input type="text" class="form-control">
-                                            <label class="fg-label">Location</label>
-                                        </div>
-                                        <span class="input-group-addon last"><i class="zmdi zmdi-my-location"></i></span>
-                                    </div>
                                 </div>
-
-                                <div class="col-sm-4">
-                                    <div class="input-group fg-float">
-                                        <span class="input-group-addon"><i class="zmdi zmdi-mail-send"></i></span>
-                                        <div class="fg-line">
-                                            <input type="text" class="form-control">
-                                            <label class="fg-label">Layers</label>
-                                        </div>
-                                        <span class="input-group-addon last"><i class="zmdi zmdi-layers "></i></span>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <br/>
-
-                            <p class="c-black f-500 m-b-5 m-t-20">Different Sizes</p>
-                            <small>You may use the extra sizing classes to change size of the feilds.</small>
-
-                            <br/><br/>
-
-                            <div class="input-group input-group-lg">
-                                <span class="input-group-addon"><i class="zmdi zmdi-sun"></i></span>
-                                <div class="fg-line">
-                                    <input type="text" class="form-control input-lg" placeholder="Weather">
-                                </div>
-                            </div>
-
-                            <br/>
-
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="zmdi zmdi-sun"></i></span>
-                                <div class="fg-line">
-                                    <input type="text" class="form-control" placeholder="Weather">
-                                </div>
-                            </div>
-
-                            <br/>
-
-                            <div class="input-group input-group-sm">
-                                <span class="input-group-addon"><i class="zmdi zmdi-sun"></i></span>
-                                <div class="fg-line">
-                                    <input type="text" class="form-control input-sm" placeholder="Weather">
-                                </div>
-                            </div>
                         </div>
-
                         <br/>
                     </div>
 
                 </div>
             </section>
 @endsection
+
+@push('js')
+    <script type="text/javascript">
+        function select(){
+
+            var course = document.getElementById('course');
+            var institute = document.getElementById('institute');
+
+            var selectedCourse = course.selectedIndex;
+            var selectedInstitute = institute.selectedIndex;
+
+            $.ajax({
+                url: '{{url('admin/institute/course/add')}}/'+selectedInstitute+'/'+selectedCourse,
+                type: 'get',
+                // dataType: 'JSON',
+                // data: {_token: {{ csrf_token() }}},
+            })
+                .done(function(result) {
+                    if(result==='true'){
+                        swal("Done!", "Course Added to your institute Successfully", "success")
+                    }else{
+                        swal("Failed!", "This course is already registered with your institute", "error");
+                    }
+                    return "true";
+                })
+                .fail(function() {
+                    console.log('Fail');
+                    return "false";
+                });
+        }
+    </script>
+@endpush

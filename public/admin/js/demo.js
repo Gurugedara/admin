@@ -24,9 +24,6 @@ $(window).load(function(){
         });
     };
 
-    if (!$('.login-content')[0]) {
-        notify('Welcome back Mallinda Hollaway', 'inverse');
-    }
 });
 
 $(document).ready(function() {
@@ -216,6 +213,13 @@ $(document).ready(function() {
     $('body').on('click', '#btn-color-targets > .btn', function(){
         var color = $(this).data('target-color');
         $('#modalColor').attr('data-modal-color', color);
+    });
+
+    /*--------------------------------------
+    Course Components
+    ---------------------------------------*/
+    $('#courseAdd').click(function(){
+        swal("Done!", "Course Added to your institute Successfully", "success")
     });
 });
 

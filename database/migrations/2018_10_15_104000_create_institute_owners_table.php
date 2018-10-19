@@ -14,7 +14,7 @@ class CreateInstituteOwnersTable extends Migration
     public function up()
     {
         Schema::create('institute_owners', function (Blueprint $table) {
-            $table->string('institute_id');
+            $table->integer('institute_id');
             $table->integer('user_id');
             $table->primary(['institute_id','user_id']);
             $table->timestamps();

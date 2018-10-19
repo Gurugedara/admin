@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\institute;
+use App\student;
 use Illuminate\Http\Request;
 use App\course;
 use App\institute_student;
@@ -26,6 +28,21 @@ class courseController extends Controller
         return redirect('/admin/institute/course');
     }
     public function addCourse(){
-        return view('admin.coursesAdd');
+        $courses=course::all();
+        $institutes = institute::all();
+        return view('admin.coursesAdd',compact('courses','institutes'));
+    }
+
+    public function checkCourse($institute_id,$course_id){
+        $result = course_institute::where('institute_id',$institute_id)->where('course_id',$course_id)->first();
+        if($result!=null){
+            return "false";
+        }else{
+            $newInstituteCourse = new course_institute();
+            $newInstituteCourse->institute_id = $institute_id;
+            $newInstituteCourse->course_id = $course_id;
+            $newInstituteCourse->save();
+            return "true";
+        }
     }
 }
