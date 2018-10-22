@@ -24,9 +24,6 @@ $(window).load(function(){
         });
     };
 
-    if (!$('.login-content')[0]) {
-        notify('Welcome back Mallinda Hollaway', 'inverse');
-    }
 });
 
 $(document).ready(function() {
@@ -153,7 +150,7 @@ $(document).ready(function() {
     $('#sa-warning').click(function(){
         swal({
             title: "Are you sure?",
-            text: "You will not be able to recover this imaginary file!",
+            text: "This Record will be permanently delete",
             type: "warning",
             showCancelButton: true,
             confirmButtonColor: "#DD6B55",
@@ -165,22 +162,28 @@ $(document).ready(function() {
     });
 
     //Parameter
-    $('#sa-params').click(function(){
+    $('#sa-params').click(function(e){
+        let self = this;
+        e.preventDefault();
+        let target=$(this).attr('href');
         swal({
             title: "Are you sure?",
-            text: "You will not be able to recover this imaginary file!",
+            text: "This Record will be permanently delete!",
             type: "warning",
             showCancelButton: true,
             confirmButtonColor: "#DD6B55",
             confirmButtonText: "Yes, delete it!",
-            cancelButtonText: "No, cancel plx!",
+            cancelButtonText: "No, cancel please!",
             closeOnConfirm: false,
             closeOnCancel: false
         }, function(isConfirm){
+            // e.trigger();
             if (isConfirm) {
                 swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                window.location.href=target;
             } else {
                 swal("Cancelled", "Your imaginary file is safe :)", "error");
+                return false;
             }
         });
     });
@@ -210,6 +213,13 @@ $(document).ready(function() {
     $('body').on('click', '#btn-color-targets > .btn', function(){
         var color = $(this).data('target-color');
         $('#modalColor').attr('data-modal-color', color);
+    });
+
+    /*--------------------------------------
+    Course Components
+    ---------------------------------------*/
+    $('#courseAdd').click(function(){
+        swal("Done!", "Course Added to your institute Successfully", "success")
     });
 });
 

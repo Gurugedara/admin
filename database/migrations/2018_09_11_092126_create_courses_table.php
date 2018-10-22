@@ -14,7 +14,7 @@ class CreateCoursesTable extends Migration
     public function up()
     {
         Schema::create('courses', function (Blueprint $table) {
-            $table->string('id');
+            $table->integer('id');
             $table->string('name');
             $table->primary('id');
             $table->timestamps();

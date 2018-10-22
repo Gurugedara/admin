@@ -12,9 +12,9 @@ class courseSeed extends Seeder
     public function run()
     {
         $items = [
-            ['id' => 'CIMA', 'name' => 'CIMA'],
-            ['id' => 'AAT', 'name' => 'AAT'],
-            ['id' => 'GIT', 'name' => 'General Information Technology'],
+            ['id' => 1, 'name' => 'CIMA'],
+            ['id' => 2, 'name' => 'AAT'],
+            ['id' => 3, 'name' => 'General Information Technology'],
         ];
 
         foreach ($items as $item) {
