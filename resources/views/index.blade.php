@@ -18,6 +18,8 @@
       font: 400 15px Lato, sans-serif;
       line-height: 1.8;
       color: #818181;
+      max-width: 100%;
+      overflow-x: hidden;
   }
   h2 {
       font-size: 24px;
@@ -43,9 +45,32 @@
   .container-fluid {
       padding: 60px 50px;
   }
+  input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url("frontend/img/logo/search.png");
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    width: 100%;
+  }
+
+  input[type=text]:focus {
+      
+  }
+
+  .strt {
+  background-image:url("frontend/img/slide/1.png");
+  padding: 270px ;
+  }
+
    /* section-2 background color*/
   .bg-grey {
-      background-color: #f6f6f6;
+      
   }
    /* logos in section-3 */
   .logo-small {
@@ -108,22 +133,26 @@
   }
   .navbar {
       margin-bottom: 0;
-      background-color: #fff;
+      background-color: transparent;
+      background: transparent;
+      border-color: transparent;
       z-index: 9999;
       border: 0;
+
       font-size: 12px !important;
       line-height: 1.42857143 !important;
       letter-spacing: 4px;
       border-radius: 0;
       font-family: Montserrat, sans-serif;
   }
+
    
   .navbar li a, .navbar .navbar-brand {
-      color: #f4511e !important;
+      color: #fff !important;
   }
   .navbar-nav li a:hover, .navbar-nav li.active a {
       color:  #ad42f4 !important;
-      background-color: #fff !important;
+      background-color: transparent !important;
   }
   .navbar-default .navbar-toggle {
       border-color: transparent;
@@ -134,7 +163,14 @@
       margin-bottom: 20px;
       color: #f4511e;
   }
-  .slideanim {visibility:hidden;}
+  .slideanim {
+    visibility:hidden;
+  }
+
+  .slideanim2 {
+    visibility:hidden;
+  }
+
   .slide {
       animation-name: slide;
       -webkit-animation-name: slide;
@@ -185,15 +221,7 @@
 
 body {font-family: Arial, Helvetica, sans-serif;}
 
-/* Full-width input fields */
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin:  0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
+
 
 /* Set a style for all buttons */
 button {
@@ -304,6 +332,8 @@ span.psw {
        width: 100%;
     }
 }
+
+
 /* -----------------------------------------*/
   </style>
 
@@ -311,41 +341,48 @@ span.psw {
 
 <!-- mainpage -->
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="/">Gurugedara</a>
+<div class="col-sm-8">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="col-sm-2 navbar-header">
+        <a class="navbar-brand" href="/">Gurugedara</a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+      </div>
+      
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#vision">VISION & MISSION</a></li>
+          <li><a href="#services">SERVICES</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+          <li><a href="#footer" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"> LOGIN</a></li> 
+        </ul>
+      </div>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#vision">VISION & MISSION</a></li>
-        <li><a href="#services">SERVICES</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-        <li><a href="#footer" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"> LOGIN</a></li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
+  </nav>
+</div>
 
-<div id="start" class="container-fluid">
+<!-- container(start) -->
+
+<div id="start" class="strt">
   <div class="row">
-    <div class="col-sm-8">
-      <h2>Let,s Get started</h2><br>
+    <div >
+
+    <!--
       <div class="col-sm-4">
-        <button type="button" class="btn btn-success btn-md">Create account</button>
+        <button type="button" class="btn btn-success btn-lg">Create account</button>
       </div>
       <div class="col-sm-4">
-        <button type="button" class="btn btn-default btn-md">Create account</button>
+        <button type="button" class="btn btn-default btn-lg">Create account</button>
       </div>  
-      
+    -->
+
+
+
     </div>
   </div>
 </div>
@@ -369,9 +406,9 @@ span.psw {
 <div id=vision class="container-fluid bg-grey">
   <div class="row">
     <div class="col-sm-4">
-      <span class="slideanim"><img src="/frontend/img/logo/teacher.png"></span>
+      <span class="slideanim2"><img src="/frontend/img/logo/teacher.png"></span>
     </div>
-    <div class="col-sm-8">
+    <div class="col col-lg-auto">
       <h2>Our Values</h2><br>
       <h4><strong>MISSION:</strong> Our mission is to help students to get a quality education and Help teachers to give a quality education by breaking student teacher barrier using modern tecnology.</h4><br>
       <p><strong>VISION:</strong> Our vision is to take current education system to new standerd. By using this system we hope to help students to choose best institutes to learn and by doing so make a competition between institutes. With this competition institutes will get better and better.</p>
@@ -536,7 +573,31 @@ $(document).ready(function(){
         }
     });
   });
+
+  $(window).scroll(function() {
+    $(".slideanim2").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
 })
+</script>
+
+<!-- function for make nav bar transparent when scrolling -->
+<script>
+    $(document).ready(function(){
+      $(window).scroll(function() { // check if scroll event happened
+        if ($(document).scrollTop() > 50) { // check if user scrolled more than 50 from top of the browser window
+          $(".navbar").css("background-color", "#fff"); // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
+        } else {
+          $(".navbar").css("background-color", "transparent"); // if not, change it back to transparent
+        }
+      });
+    });
 </script>
 
 </body>
