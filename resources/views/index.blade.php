@@ -7,6 +7,7 @@
   <link rel="icon" href="img/logo/guru.png" type="image/png" sizes="16x16">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
@@ -333,6 +334,65 @@ span.psw {
     }
 }
 
+/* styles of search window*/
+
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+}
+
+.overlay-content {
+    position: relative;
+    top: 46%;
+    width: 80%;
+    text-align: center;
+    margin-top: 30px;
+    margin: auto;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    cursor: pointer;
+    color: white;
+}
+
+.overlay .closebtn:hover {
+    color: #ccc;
+}
+
+.overlay input[type=text] {
+    padding: 15px;
+    font-size: 17px;
+    float: left;
+    width: 100%;
+    border-color: #fff;
+    background: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    color:#fff;
+}
+
+    
+
+.overlay input[type=text]:hover {
+    background: transparent;
+}
+
 
 /* -----------------------------------------*/
   </style>
@@ -359,11 +419,25 @@ span.psw {
           <li><a href="#vision">VISION & MISSION</a></li>
           <li><a href="#services">SERVICES</a></li>
           <li><a href="#contact">CONTACT</a></li>
-          <li><a href="#footer" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"> LOGIN</a></li> 
+          <li><a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"> LOGIN</a></li> 
+          <li><a onclick="openSearch()"><i class="fa fa-search"></i></a></li> 
         </ul>
       </div>
     </div>
   </nav>
+</div>
+
+<!-- search window -->
+
+<div id="myOverlay" class="overlay">
+  <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+  <div class="overlay-content">
+    <form action="#">
+      <div>
+        <input type="text" placeholder="Search.." name="search">
+      </div>
+    </form>
+  </div>
 </div>
 
 <!-- container(start) -->
@@ -598,6 +672,18 @@ $(document).ready(function(){
         }
       });
     });
+</script>
+
+<!-- function for  open and close search window -->
+
+<script>
+function openSearch() {
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function closeSearch() {
+    document.getElementById("myOverlay").style.display = "none";
+}
 </script>
 
 </body>
