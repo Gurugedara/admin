@@ -53,7 +53,6 @@
     border-radius: 4px;
     font-size: 16px;
     background-color: white;
-    background-image: url("frontend/img/logo/search.png");
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
@@ -65,7 +64,7 @@
   }
 
   .strt {
-  background-image:url("frontend/img/slide/1.png");
+  background-image:url("frontend/img/logo/back.jpg");
   padding: 270px ;
   }
 
@@ -139,7 +138,6 @@
       border-color: transparent;
       z-index: 9999;
       border: 0;
-
       font-size: 12px !important;
       line-height: 1.42857143 !important;
       letter-spacing: 4px;
@@ -149,7 +147,7 @@
 
    
   .navbar li a, .navbar .navbar-brand {
-      color: #fff !important;
+      color: #ff6600 !important;
   }
   .navbar-nav li a:hover, .navbar-nav li.active a {
       color:  #ad42f4 !important;
@@ -541,6 +539,7 @@ span.psw {
       <p><span class="glyphicon glyphicon-map-marker"></span> Raid ave, Colombo 00700</p>
       <p><span class="glyphicon glyphicon-phone"></span> +94 770095174</p>
       <p><span class="glyphicon glyphicon-envelope"></span> gurugedara@gmail.com</p>
+      <span class="slideanim"><img src="/frontend/img/logo/std.gif"></span>
     </div>
     <div class="col-sm-7 slideanim">
       <div class="row">
