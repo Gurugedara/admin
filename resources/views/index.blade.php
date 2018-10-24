@@ -21,6 +21,9 @@
       color: #818181;
       max-width: 100%;
       overflow-x: hidden;
+      opacity:0;
+      transition: opacity 3s;
+      -webkit-transition: opacity 3s;
   }
   h2 {
       font-size: 24px;
@@ -28,6 +31,7 @@
       color: #303030;
       font-weight: 600;
       margin-bottom: 30px;
+      font-family: Montserrat, sans-serif;
   }
   h4 {
       font-size: 19px;
@@ -35,6 +39,7 @@
       color: #303030;
       font-weight: 400;
       margin-bottom: 30px;
+      font-family: Montserrat, sans-serif;
   }  
   .jumbotron {
       background-color: #fff;
@@ -69,9 +74,24 @@
   }
 
    /* section-2 background color*/
-  .bg-grey {
-      
+  .head-title {
+      color: #f4511e;
+      text-align: center;
   }
+  
+  .head-title h1 {
+    font-size: 60px;
+    font-family: Montserrat, sans-serif;
+  }
+  .bt-set div{
+    margin-left: 32%;
+  }
+  .btn-success:hover{
+    color:#f4511e;
+    background-color: transparent;
+    font-weight:bold;
+  }
+
    /* logos in section-3 */
   .logo-small {
       color: #ad42f4;
@@ -214,6 +234,11 @@
         font-size: 150px;
     }
   }
+
+  @font-face {
+   font-family: myFirstFont;
+   src: url(sansation_light.woff);
+}
 /* -----------------------------------------*/
 
 /* Styles for login panel */
@@ -398,7 +423,7 @@ span.psw {
 </head>
 
 <!-- mainpage -->
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" onload="document.body.style.opacity='1'">
 <div class="col-sm-8">
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -442,20 +467,17 @@ span.psw {
 
 <div id="start" class="strt">
   <div class="row">
-    <div >
-
-    <!--
+    <div class="head-title">
+      <h1>Place for Learners.</h1>
+    </div>
+    <div class= bt-set>
       <div class="col-sm-4">
+        <br>
         <button type="button" class="btn btn-success btn-lg">Create account</button>
       </div>
-      <div class="col-sm-4">
-        <button type="button" class="btn btn-default btn-lg">Create account</button>
-      </div>  
-    -->
+    </div>  
 
-
-
-    </div>
+    
   </div>
 </div>
 
@@ -649,6 +671,17 @@ $(document).ready(function(){
 
   $(window).scroll(function() {
     $(".slideanim2").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+
+  $(window).scroll(function() {
+    $(".head-title").each(function(){
       var pos = $(this).offset().top;
 
       var winTop = $(window).scrollTop();
