@@ -19,4 +19,7 @@ class institute extends Model
     public function courses(){
         return $this->belongsToMany('App\course','course_institutes','institute_id','course_id');
     }
+    public function reviews(){
+        return $this->hasMany('App\review','institute_id');
+    }
 }

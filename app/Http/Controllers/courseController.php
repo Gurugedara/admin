@@ -20,7 +20,7 @@ class courseController extends Controller
             $count = institute_student::where('course_id',$course->id)->count();
             $countData[$course->id]=$count;
         }
-        return view('admin.courses',compact('allCourses','countData'));
+        return view('admin.courses.courses',compact('allCourses','countData'));
     }
     // Delete a record from the pivot table
     public function delete($institute_id, $course_id){
@@ -30,7 +30,7 @@ class courseController extends Controller
     public function addCourse(){
         $courses=course::all();
         $institutes = institute::all();
-        return view('admin.coursesAdd',compact('courses','institutes'));
+        return view('admin.courses.coursesAdd',compact('courses','institutes'));
     }
 
     public function checkCourse($institute_id,$course_id){

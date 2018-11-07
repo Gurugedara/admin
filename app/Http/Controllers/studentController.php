@@ -15,7 +15,7 @@ class studentController extends Controller
             $query->where('status',0);
         }))->get();
 
-        return view('admin.studentVerify',compact('allstudents'));
+        return view('admin.students.studentVerify',compact('allstudents'));
     }
 
     public function changeStatus($institite_id,$student_id){
@@ -44,11 +44,11 @@ class studentController extends Controller
         $allstudents = student::with(array('institutes'=>function($query){
             $query->where('status',1);
         }))->get();
-        return view('admin.studentSearch',compact('allstudents'));
+        return view('admin.students.studentSearch',compact('allstudents'));
     }
 
     public function viewProfile($student_id){
         $student = student::findOrFail($student_id);
-        return view('admin.studentProfile',compact('student'));
+        return view('admin.students.studentProfile',compact('student'));
     }
 }

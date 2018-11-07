@@ -14,12 +14,15 @@ class student extends Model
     }
 
     public function user(){
-        return $this->hasOne('App\user', 'id');
+        return $this->hasOne('App\User', 'id');
     }
 
     public function unapprovedStudents() {
         return $this->institutes()->wherePivot('status', 0);
     }
 
-}
+    public function reviews(){
+        return $this->hasMany('App\review','id');
+    }
 
+}
