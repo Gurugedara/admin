@@ -35,14 +35,14 @@
                 <li {{(Request::is('admin/search/teacher') ? 'class=active' : '')}}><a href="{{url('admin/search/teacher')}}">Search</a></li>
             </ul>
         </li>
-        <li class="{{((Request::is('admin/institute/course')||Request::is('institute/reviews')||Request::is('institute/stories')||Request::is('institute/carrierpath')) ? 'sub-menu toggled active' : 'sub-menu')}}">
+        <li class="{{((Request::is('admin/institute/course')||Request::is('admin/institute/reviews')||Request::is('admin/institute/stories')||Request::is('admin/institute/carrierpath')) ? 'sub-menu toggled active' : 'sub-menu')}}">
             <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-view-compact"></i> Institute</a>
 
             <ul>
                 <li {{(Request::is('admin/institute/course') ? 'class=active' : '')}}><a href="{{url('/admin/institute/course')}}">Courses</a></li>
-                <li {{(Request::is('admin/institiue/reviews') ? 'class=active' : '')}}><a href="{{url('institute/reviews')}}">Reviews</a></li>
-                <li {{(Request::is('admin/institiue/stories') ? 'class=active' : '')}}><a href="{{url('institute/stories')}}">Success Stories</a></li>
-                <li {{(Request::is('admin/institiue/carrierpath') ? 'class=active' : '')}}><a href="{{url('institute/carrierpath')}}">Carrier Path</a></li>
+                <li {{(Request::is('admin/institute/reviews') ? 'class=active' : '')}}><a href="{{url('/admin/institute/reviews')}}">Reviews</a></li>
+                <li {{(Request::is('admin/institute/stories') ? 'class=active' : '')}}><a href="{{url('/admin/institute/stories')}}">Success Stories</a></li>
+                <li {{(Request::is('admin/institute/carrierpath') ? 'class=active' : '')}}><a href="{{url('/admin/institute/carrierpath')}}">Carrier Path</a></li>
             </ul>
         </li>
         <li {{(Request::is('admin/message/inbox') ? 'class=active' : '')}}><a href="{{url('message/inbox')}}"><i class="zmdi zmdi-format-underlined"></i> Message Inbox</a></li>

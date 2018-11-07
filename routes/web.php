@@ -17,7 +17,14 @@ $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 $this->post('password/reset', 'Auth\ResetPasswordController@reset')->name('auth.password.reset');
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
-//Student Section
+
+    Route::get('/dashboard',function (){
+       return view('admin.dashboard');
+    });
+    Route::get('/home',function (){
+        return redirect('/admin/dashboard');
+    });
+    //Student Section
     Route::get('/verify/student', 'studentController@index');
     Route::get('/verify/student/{institute_id}/{student_id}', 'studentController@changeStatus');
     Route::get('/deny/student/{institute_id}/{student_id}', 'studentController@deny');
@@ -37,7 +44,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::get('/institute/course/add','courseController@addCourse');
     Route::get('/institute/course/add/{institute_id}/{course_id}','courseController@checkCourse');
 
-
+    // Reviews Section
+    Route::get('/institute/reviews','reviewsController@index');
 //    Route::resource('roles', 'Admin\RolesController');
 //    Route::post('roles_mass_destroy', ['uses' => 'Admin\RolesController@massDestroy', 'as' => 'roles.mass_destroy']);
 //    Route::resource('users', 'Admin\UsersController');
