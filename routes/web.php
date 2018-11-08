@@ -50,6 +50,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::get('/institute/reviews/hide/{review}','reviewsController@hide');
     Route::get('/institute/reviews/comment/{review}','reviewsController@comment');
     Route::post('/institute/review/{review_id}/comment/add','reviewsController@addComment');
+
+    // SucessStories
+    Route::get('/institute/stories','successStoriesController@index');
 //    Route::resource('roles', 'Admin\RolesController');
 //    Route::post('roles_mass_destroy', ['uses' => 'Admin\RolesController@massDestroy', 'as' => 'roles.mass_destroy']);
 //    Route::resource('users', 'Admin\UsersController');
