@@ -673,11 +673,11 @@ $(document).ready(function(){
      */
     if ($('.wcc-toggle')[0]) {
         var z = '<div class="wcc-inner">' +
-                    '<textarea class="wcci-text auto-size" placeholder="Write Something..."></textarea>' +
+                    '<textarea name="comment" class="wcci-text auto-size" placeholder="Write Something..."></textarea>' +
                 '</div>' +
                 '<div class="m-t-15">' +
-                    '<button class="btn btn-sm btn-primary">Post</button>' +
-                    '<button class="btn btn-sm btn-link wcc-cencel">Cancel</button>' +
+                    '<button type="submit" class="btn btn-sm btn-primary">Post</button>' +
+                    '<button class="btn btn-sm btn-link wcc-cencel" style="color: #797979">Cancel</button>' +
                 '</div>'
 
 

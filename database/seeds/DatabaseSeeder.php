@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(OwnerSeeder::class);
         $this->call(courseInstitute::class);
         $this->call(reviewsSeeder::class);
+        $this->call(reviewCommentSeed::class);
     }
 }

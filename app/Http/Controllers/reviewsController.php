@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\review;
+use App\review_comment;
 
 class reviewsController extends Controller
 {
@@ -26,5 +27,16 @@ class reviewsController extends Controller
 
     public function comment(review $review){
         return view('admin.institutes.comments',compact('review'));
+    }
+
+    public function addComment(Request $request,$review_id)
+    {
+        $comment = new review_comment();
+        $comment -> comment = $request->comment;
+        $comment -> user_id = auth()->user()->id;
+        $comment -> type = 1;
+        $comment -> review_id = $review_id;
+        $comment -> save();
+        return redirect("/admin/institute/reviews/comment/$review_id");
     }
 }

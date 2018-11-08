@@ -13,23 +13,23 @@
                         <div class="card-header">
                             <div class="media">
                                 <div class="pull-left">
-                                    <img class="avatar-img a-lg" src="img/profile-pics/1.jpg" alt="">
+                                    <img class="avatar-img a-lg" src="/admin/img/profile-pics/1.jpg" alt="">
                                 </div>
 
                                 <div class="media-body m-t-5">
-                                    <h2>{{$review->student->user->firstname." ".$review->student->user->Lastname}} <small>Posted on 31st Aug 2015 at 07:00</small></h2>
+                                    <h2>{{$review->student->user->firstname." ".$review->student->user->Lastname}} <small>Posted on {{$review->created_at}}</small></h2>
                                 </div>
                             </div>
                         </div>
 
                         <div class="card-body card-padding">
-                            <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce eget dolor id justo luctus commodo vel pharetra nisi. Donec velit libero, gravida vel diam ut, lobortis mollis quam. Morbi posuere egestas posuere. Curabitur in dui sollicitudin, lacinia magna at, laoreet sapien. Integer vitae eros nulla.</p>
+                            <p>{{$review->comment}}</p>
 
                             <ul class="wall-attrs clearfix list-inline list-unstyled">
                                 <li class="wa-stats">
-                                    <span><i class="zmdi zmdi-comments"></i> 36</span>
-                                    <span class="active"><i class="zmdi zmdi-thumb-up"></i> 220</span>
-                                    <span class="active"><i class="zmdi zmdi-thumb-down"></i> 220</span>
+                                    <span><i class="zmdi zmdi-comments"></i> {{count($review->comments)}}</span>
+                                    <span class="active"><i class="zmdi zmdi-thumb-up"></i> {{$review->up}}</span>
+                                    <span class="active"><i class="zmdi zmdi-thumb-down"></i> {{$review->down}}</span>
                                 </li>
                             </ul>
                         </div>
@@ -38,73 +38,50 @@
 
                             <!-- Comment Listing -->
                             <div class="wcl-list">
+                                @foreach($review->comments as $comment)
                                 <div class="media">
                                     <a href="#" class="pull-left">
-                                        <img src="img/profile-pics/5.jpg" alt="" class="avatar-img">
+                                        <img src="/admin/img/profile-pics/5.jpg" alt="" class="avatar-img">
                                     </a>
-
-                                    <div class="pull-right p-0">
+                                    @if($comment->user_id==auth()->user()->id)
+                                    <div class="pull-right">
                                         <ul class="actions">
-                                            <li class="dropdown" dropdown="">
-                                                <a href="#" dropdown-toggle="" aria-haspopup="true" aria-expanded="false">
+                                            <li class="dropdown">
+                                                <a href="#" data-toggle="dropdown" aria-expanded="false">
                                                     <i class="zmdi zmdi-more-vert"></i>
                                                 </a>
 
                                                 <ul class="dropdown-menu dropdown-menu-right">
                                                     <li>
-                                                        <a href="#">Report</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Delete</a>
+                                                        <a href="/admin/institute/reviews/comment/delete/{{$comment->id}}">Delete</a>
                                                     </li>
                                                 </ul>
                                             </li>
                                         </ul>
                                     </div>
+                                    @endif
 
                                     <div class="media-body">
-                                        <a href="#" class="a-title">David Nathan</a> <small class="c-gray m-l-10">3 mins ago...</small>
-                                        <p class="m-t-5 m-b-0">Maecenas dignissim in neque id commodo. Nam pretium a tortor a convallis. Curabitur in arcu quis nulla aliquam condimentum. Morbi eu cursus diam, vitae tristique dui.</p>
+                                        <a href="#" class="a-title">{{$comment->user->firstname." ".$comment->user->lastName}}</a>
+                                        <p class="m-t-5 m-b-0">{{$comment->comment}}</p>
                                     </div>
                                 </div>
-
-                                <div class="media">
-                                    <a href="#" class="pull-left">
-                                        <img src="img/profile-pics/4.jpg" alt="" class="avatar-img">
-                                    </a>
-
-                                    <div class="media-body">
-                                        <a href="#" class="a-title">Sam Anderson</a> <small class="c-gray m-l-10">3 mins ago...</small>
-                                        <p class="m-t-5 m-b-0">Curabitur in arcu quis nulla aliquam condimentum.</p>
-                                    </div>
-
-                                    <ul class="actions">
-                                        <li class="dropdown" dropdown="">
-                                            <a href="#" dropdown-toggle="" aria-haspopup="true" aria-expanded="false">
-                                                <i class="zmdi zmdi-more-vert"></i>
-                                            </a>
-
-                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                <li>
-                                                    <a href="#">Report</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Delete</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
+                                @endforeach
                             </div>
 
                             <!-- Comment form -->
+
                             <div class="wcl-form">
-                                <div class="wc-comment">
-                                    <div class="wcc-inner wcc-toggle">
-                                        Write Something...
+                                <form method="POST" action="/admin/institute/review/{{$review->id}}/comment/add">
+                                    @csrf
+                                    <div class="wc-comment">
+                                        <div class="wcc-inner wcc-toggle">
+                                            Write Something...
+                                        </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
+
                         </div>
                     </div>
                     <!-- One post ends in here -->
@@ -113,36 +90,34 @@
                 <div class="col-md-4 hidden-sm">
                     <div class="card">
                         <div class="card-header">
-                            <h2>Contact Information <small>Fusce eget dolor id justo luctus commodo vel pharetra nisi. Donec velit libero</small></h2>
+                            <h2>Contact Information <small>Details about the reviewer</small></h2>
                         </div>
                         <div class="card-body card-padding">
                             <div class="pmo-contact">
                                 <ul>
-                                    <li class="ng-binding"><i class="zmdi zmdi-phone"></i> 00971123456789</li>
-                                    <li class="ng-binding"><i class="zmdi zmdi-email"></i> malinda.h@gmail.com</li>
-                                    <li class="ng-binding"><i class="zmdi zmdi-facebook-box"></i> malinda.hollaway</li>
-                                    <li class="ng-binding"><i class="zmdi zmdi-twitter"></i> @malinda (twitter.com/malinda)</li>
-                                    <li>
-                                        <i class="zmdi zmdi-pin"></i>
-                                        <address class="m-b-0 ng-binding">
-                                            44-46 Morningside Road,<br>
-                                            Edinburgh,<br>
-                                            Scotland
-                                        </address>
-                                    </li>
+                                    <li class="ng-binding"><i class="zmdi zmdi-phone"></i> {{$review->student->phone}}</li>
+                                    <li class="ng-binding"><i class="zmdi zmdi-email"></i> {{$review->student->user->email}}</li>
+                                    <li class="ng-binding"><i class="zmdi zmdi-assignment-account"></i>{{$review->student->school}}</li>
+                                    <li class="ng-binding"><i class="zmdi zmdi-accounts-list"></i> <a href="/admin/search/student/{{$review->student->id}}">Profile</a></li>
                                 </ul>
                             </div>
 
-                            <a class="pmo-map" href="#">
-                                <img src="img/demo/map.png" alt="">
-                            </a>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <a href="/admin/institute/course/add"> <button class="btn btn-float btn-primary m-btn"><i class="zmdi zmdi-arrow-back"></i></button></a>
+        <a href="/admin/institute/reviews"> <button class="btn btn-float btn-primary m-btn"><i class="zmdi zmdi-arrow-back"></i></button></a>
     </section>
 
 
 @endsection
+
+@push('css')
+    <link href="/admin/vendors/bower_components/lightgallery/dist/css/lightgallery.min.css" rel="stylesheet">
+@endpush
+@push('js')
+    <script src="/admin/vendors/bower_components/lightgallery/dist/js/lightgallery-all.min.js"></script>
+    <script src="/admin/vendors/bower_components/autosize/dist/autosize.min.js"></script>
+@endpush
