@@ -12,7 +12,7 @@ class teacherController extends Controller
         $allteachers=teacher::with(array('institutes'=>function($query){
             $query->where('status',0);
         }))->get();
-        return view('admin.teacher.teacherVerify',compact('allteachers'));
+        return view('admin.teachers.teacherVerify',compact('allteachers'));
 
     }
     public function changeStatus($institute_id, $student_id){
@@ -41,10 +41,10 @@ class teacherController extends Controller
         $allteachers = teacher::with(array('institutes'=>function($query){
             $query->where('status',1);
         }))->get();
-        return view('admin.teacher.teacherSearch',compact('allteachers'));
+        return view('admin.teachers.teacherSearch',compact('allteachers'));
     }
     public function viewProfile($teacher_id){
         $teacher = teacher::findOrFail($teacher_id);
-        return view('admin.teacher.teacherProfile',compact('teacher'));
+        return view('admin.teachers.teacherProfile',compact('teacher'));
     }
 }

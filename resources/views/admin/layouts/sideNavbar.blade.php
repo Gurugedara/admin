@@ -45,8 +45,8 @@
                 <li {{(Request::is('admin/institute/carrierpath') ? 'class=active' : '')}}><a href="{{url('/admin/institute/carrierpath')}}">Carrier Path</a></li>
             </ul>
         </li>
-        <li {{(Request::is('admin/message/inbox') ? 'class=active' : '')}}><a href="{{url('message/inbox')}}"><i class="zmdi zmdi-format-underlined"></i> Message Inbox</a></li>
-        <li {{(Request::is('admin/forum') ? 'class=active' : '')}}><a href="{{url('institiue/syllabus')}}forum"><i class="zmdi zmdi-format-underlined"></i> Forum</a></li>
+        <li {{(Request::is('admin/message/view') ? 'class=active' : '')}}><a href="{{url('/admin/message/view')}}"><i class="zmdi zmdi-format-underlined"></i> Message Inbox</a></li>
+        <li {{(Request::is('admin/forum') ? 'class=active' : '')}}><a href="{{url('/admin/forum')}}forum"><i class="zmdi zmdi-format-underlined"></i> Forum</a></li>
         <li {{(Request::is('admin/schedule') ? 'class=active' : '')}}><a href="{{url('institiue/syllabus')}}schedule"><i class="zmdi zmdi-format-underlined"></i> Schedule</a></li>
         <li {{(Request::is('admin/settings') ? 'class=active' : '')}}><a href="{{url('institiue/syllabus')}}settings"><i class="zmdi zmdi-format-underlined"></i> Settings</a></li>
 

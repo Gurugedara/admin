@@ -13,12 +13,14 @@
 
                         <div class="card-body card-padding">
                             <br/><br/>
+                            <form method="POST" action="/admin/institute/course/add" enctype="multipart/form-data" id = "addCourse">
+                                @csrf
                             <div class="row">
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="zmdi zmdi-home"></i></span>
                                         <div class="select">
-                                                <select class="form-control" id="institute">
+                                                <select class="form-control" id="institute_id" name="institute_id">
                                                     <option disabled="disabled">Select and Option</option>
                                                     @foreach($institutes as $institute)
                                                         @foreach(auth()->user()->institutes as $userInstitute)
@@ -33,11 +35,11 @@
 
                                     <br/>
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="zmdi zmdi-book"></i></span>
                                         <div class="select">
-                                           <select class="form-control" id="course">
+                                           <select class="form-control" id="course_id" name="course_id">
                                                <option disabled>Please Select an Option</option>
                                                @foreach($courses as $course)
                                                    <option value="{{$course->id}}">{{$course->name}}</option>
@@ -48,14 +50,30 @@
 
                                     <br/>
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-3">
+                                        <div class="col-sm-4">
+                                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <span class="btn btn-success btn-file m-r-10 waves-effect">
+                                            <span class="fileinput-new">Add Syllabus</span>
+                                            <span class="fileinput-exists">Change</span>
+                                            <input type="hidden" value="" name="..."><input type="file" name="syllabus" accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf">
+                                        </span>
+                                                <span class="fileinput-filename"></span>
+                                                <a href="#" class="close fileinput-exists" data-dismiss="fileinput">×</a>
+                                            </div>
+                                        </div>
+                                    <br/>
+                                </div>
+                                <div class="col-sm-3">
                                     <div>
                                         <div >
                                             <button class="btn btn-primary" onclick="select()">Add</button>
+                                            {{--<button class="btn btn-primary">Add</button>--}}
                                         </div>
                                     </div>
                                 </div>
-                                </div>
+                            </div>
+                            </form>
                         </div>
                         <br/>
                     </div>
@@ -65,20 +83,23 @@
 @endsection
 
 @push('js')
+    <script src="/admin/vendors/bower_components/chosen/chosen.jquery.min.js"></script>
+    <script src="/admin/vendors/fileinput/fileinput.min.js"></script>
+    <script src="/admin/vendors/input-mask/input-mask.min.js"></script>
+    <script src="/admin/vendors/farbtastic/farbtastic.min.js"></script>
+
     <script type="text/javascript">
         function select(){
-
-            var course = document.getElementById('course');
-            var institute = document.getElementById('institute');
-
-            var selectedCourse = course.selectedIndex;
-            var selectedInstitute = institute.selectedIndex;
-
+            var form = $('#addCourse');
+            $(form).submit(function (event) {
+                event.preventDefault();
+            });
+            var formData = $(form).serialize();
             $.ajax({
-                url: '{{url('admin/institute/course/add')}}/'+selectedInstitute+'/'+selectedCourse,
-                type: 'get',
+                url: '{{url('/admin/institute/course/add')}}',
+                type: 'post',
                 // dataType: 'JSON',
-                // data: {_token: {{ csrf_token() }}},
+                data: formData,
             })
                 .done(function(result) {
                     if(result==='true'){

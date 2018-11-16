@@ -33,14 +33,21 @@ class courseController extends Controller
         return view('admin.courses.coursesAdd',compact('courses','institutes'));
     }
 
-    public function checkCourse($institute_id,$course_id){
-        $result = course_institute::where('institute_id',$institute_id)->where('course_id',$course_id)->first();
+    public function checkCourse(Request $request){
+        dd($request);
+        $result = course_institute::where('institute_id',$request->institute_id)->where('course_id',$request->course_id)->first();
         if($result!=null){
             return "false";
         }else{
+            if($request->syllabus!=null) {
+                $filename = $request->syllabus->store('syllabus');
+            }else{
+                $filename = "#";
+            }
             $newInstituteCourse = new course_institute();
-            $newInstituteCourse->institute_id = $institute_id;
-            $newInstituteCourse->course_id = $course_id;
+            $newInstituteCourse->institute_id = $request->institute_id;
+            $newInstituteCourse->course_id = $request->course_id;
+            $newInstituteCourse->syllabus = $filename;
             $newInstituteCourse->save();
             return "true";
         }

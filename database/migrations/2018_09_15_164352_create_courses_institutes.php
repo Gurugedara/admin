@@ -16,6 +16,7 @@ class CreateCoursesInstitutes extends Migration
         Schema::create('course_institutes', function (Blueprint $table) {
             $table->string('institute_id');
             $table->string('course_id');
+            $table->string('syllabus',191)->default('#');
             $table->timestamps();
             $table->primary(['institute_id','course_id']);
         });

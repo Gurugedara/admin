@@ -42,7 +42,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::get('/institute/course','courseController@index');
     Route::get('/institute/course/delete/{institute_id}/{course_id}','courseController@delete');
     Route::get('/institute/course/add','courseController@addCourse');
-    Route::get('/institute/course/add/{institute_id}/{course_id}','courseController@checkCourse');
+    Route::post('/institute/course/add','courseController@checkCourse');
 
     // Reviews Section
     Route::get('/institute/reviews','reviewsController@index');
@@ -53,6 +53,12 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
     // SucessStories
     Route::get('/institute/stories','successStoriesController@index');
+
+    // Message
+    Route::get('/message/view','messageController@index');
+
+    //Forum
+    Route::get('/forum','forumController@index');
 //    Route::resource('roles', 'Admin\RolesController');
 //    Route::post('roles_mass_destroy', ['uses' => 'Admin\RolesController@massDestroy', 'as' => 'roles.mass_destroy']);
 //    Route::resource('users', 'Admin\UsersController');
