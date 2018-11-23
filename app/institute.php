@@ -6,6 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class institute extends Model
 {
+    //Table name
+    protected $table = 'institutes';
+    //Primary key
+    public $primarykey = 'id';
+    //Timestamps
+    public $timestamps = true;
+
     protected $fillable = ['id', 'name', 'address', 'telephone'];
 
     public function students()
@@ -22,4 +29,5 @@ class institute extends Model
     public function reviews(){
         return $this->hasMany('App\review','institute_id');
     }
+
 }
