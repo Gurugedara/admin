@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\institute;
 
 class instituteController extends Controller
 {
@@ -13,7 +14,7 @@ class instituteController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -23,7 +24,7 @@ class instituteController extends Controller
      */
     public function create()
     {
-        //
+        return view('register.institute');
     }
 
     /**
@@ -34,7 +35,21 @@ class instituteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'name'=>'required',
+            'address'=>'required',
+            'telephone'=>'required'
+        ]);
+
+        $institute = new institute;
+        $institute->name = $request->input('name');
+        $institute->address = $request->input('address');
+        $institute->telephone = $request->input('telephone');
+        $institute->save();
+
+        return redirect('/')->with('success', 'Post Created');
+        
+        
     }
 
     /**
