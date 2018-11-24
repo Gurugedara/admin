@@ -51,9 +51,9 @@ class successStoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(SuccessStory $story)
     {
-        //
+        return view('admin.institutes.showStories',compact('story'));
     }
 
     /**

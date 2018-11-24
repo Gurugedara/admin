@@ -3,7 +3,7 @@
     <section id="content">
         <div class="container">
             <div class="c-header">
-                <h2>Contacts</h2>
+                <h2>Success Stories</h2>
             </div>
 
             <!-- Add button -->
@@ -89,7 +89,7 @@
                                 </div>
 
                                 <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
+                                    <button class="waves-effect"><a href="{{route('admin.stories.show',$story->id)}}"> <i class="zmdi zmdi-person-add"></i>show</a></button>
                                 </div>
                             </div>
                         </div>
