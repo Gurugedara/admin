@@ -52,7 +52,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::post('/institute/review/{review_id}/comment/add','reviewsController@addComment');
 
     // SucessStories
-    Route::get('/institute/stories','successStoriesController@index');
+    Route::resource('/institute/stories','successStoriesController');
 
     // Message
     Route::get('/message/view','messageController@index');

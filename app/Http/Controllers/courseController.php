@@ -34,13 +34,13 @@ class courseController extends Controller
     }
 
     public function checkCourse(Request $request){
-        dd($request);
+//        dd($request);
         $result = course_institute::where('institute_id',$request->institute_id)->where('course_id',$request->course_id)->first();
         if($result!=null){
             return "false";
         }else{
             if($request->syllabus!=null) {
-                $filename = $request->syllabus->store('syllabus');
+                $filename = $request->syllabus->store('public/syllabus');
             }else{
                 $filename = "#";
             }
@@ -49,7 +49,7 @@ class courseController extends Controller
             $newInstituteCourse->course_id = $request->course_id;
             $newInstituteCourse->syllabus = $filename;
             $newInstituteCourse->save();
-            return "true";
         }
+        return back();
     }
 }

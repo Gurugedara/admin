@@ -320,3 +320,12 @@
                 </div>
             </section>
 @endsection
+
+@push('css')
+    <!-- Vendor CSS -->
+    <link href="/admin/vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+    <link href="/admin/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+    <link href="/admin/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="/admin/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="/admin/vendors/bower_components/google-material-color/dist/palette.css" rel="stylesheet">
+@endpush

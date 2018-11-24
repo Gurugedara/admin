@@ -7,12 +7,12 @@
             </div>
 
             <!-- Add button -->
-            <button class="btn btn-float btn-danger m-btn"><i class="zmdi zmdi-plus"></i></button>
+            <a href="{{route('admin.stories.create')}}"><button class="btn btn-float btn-danger m-btn"><i class="zmdi zmdi-plus"></i></button></a>
 
 
             <div class="card">
                 <div class="action-header palette-Teal-400 bg clearfix">
-                    <div class="ah-label hidden-xs palette-White text">Some text here</div>
+                    <div class="ah-label hidden-xs palette-White text">Success Stories of the Institute</div>
 
                     <div class="ah-search">
                         <input type="text" placeholder="Start typing..." class="ahs-input">
@@ -76,15 +76,16 @@
 
                 <div class="card-body card-padding">
                     <div class="contacts clearfix row">
-                        <div class="col-md-2 col-sm-4 col-xs-6">
+                        @foreach($stories as $story)
+                            <div class="col-md-2 col-sm-4 col-xs-6">
                             <div class="c-item">
                                 <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/1.jpg" alt="">
+                                    <img src="{{\Illuminate\Support\Facades\Storage::url($story->image)}}" alt="">
                                 </a>
 
                                 <div class="c-info">
-                                    <strong>Cathy Shelton</strong>
-                                    <small>cathy.shelton31@example.com</small>
+                                    <strong>{{$story->student->user->firstname." ".$story->student->user->Lastname}}</strong>
+                                    <small>{{$story->student->user->email}}</small>
                                 </div>
 
                                 <div class="c-footer">
@@ -92,502 +93,27 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/2.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Stella Flores</strong>
-                                    <small>stella@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/3.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Marilyn Thomas</strong>
-                                    <small>marilyn@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/4.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Dwight Gilbert</strong>
-                                    <small>dwight@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/5.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Cody Moreno</strong>
-                                    <small>moreno@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/6.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Jamie Freeman</strong>
-                                    <small>freeman@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/7.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Charles Spencer</strong>
-                                    <small>charles@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/8.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Vickie Reed</strong>
-                                    <small>reed@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/9.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Lauren Ruiz</strong>
-                                    <small>ruiz@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/10.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Marlene Vasquez</strong>
-                                    <small>vasquez@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/11.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Loretta Morrisonz</strong>
-                                    <small>morrisonz@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/12.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Yvonne Wood</strong>
-                                    <small>wood@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/13.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Denise Franklin</strong>
-                                    <small>franklin@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/14.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Joseph Gonzalez</strong>
-                                    <small>gonzalez@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/15.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Rick Graham</strong>
-                                    <small>graham@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/16.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Alexander Bailey</strong>
-                                    <small>bailey@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/1.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Cathy Shelton</strong>
-                                    <small>cathy.shelton31@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/2.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Stella Flores</strong>
-                                    <small>stella@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/3.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Marilyn Thomas</strong>
-                                    <small>marilyn@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/4.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Dwight Gilbert</strong>
-                                    <small>dwight@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/5.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Cody Moreno</strong>
-                                    <small>moreno@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/6.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Jamie Freeman</strong>
-                                    <small>freeman@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/7.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Charles Spencer</strong>
-                                    <small>charles@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/8.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Vickie Reed</strong>
-                                    <small>reed@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/9.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Lauren Ruiz</strong>
-                                    <small>ruiz@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/10.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Marlene Vasquez</strong>
-                                    <small>vasquez@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/11.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Loretta Morrisonz</strong>
-                                    <small>morrisonz@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/12.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Yvonne Wood</strong>
-                                    <small>wood@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/13.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Denise Franklin</strong>
-                                    <small>franklin@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/contacts/14.jpg" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>Joseph Gonzalez</strong>
-                                    <small>gonzalez@example.com</small>
-                                </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i> Add</button>
-                                </div>
-                            </div>
-                        </div>
-
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </section>
 @endsection
+
+@push('js')
+    <script src="/admin/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/admin/vendors/bower_components/Waves/dist/waves.min.js"></script>
+    <script src="/admin/vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+    <script src="/admin/vendors/bootgrid/jquery.bootgrid.updated.min.js"></script>
+@endpush
+
+@push('css')
+
+    <!-- Vendor CSS -->
+    <link href="/admin/vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+    <link href="/admin/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+    <link href="/admin/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="/admin/vendors/bower_components/google-material-color/dist/palette.css" rel="stylesheet">
+
+@endpush

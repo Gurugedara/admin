@@ -48,8 +48,6 @@ class instituteController extends Controller
         $institute->save();
 
         return redirect('/')->with('success', 'Post Created');
-        
-        
     }
 
     /**
