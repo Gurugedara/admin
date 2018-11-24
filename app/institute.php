@@ -29,5 +29,8 @@ class institute extends Model
     public function reviews(){
         return $this->hasMany('App\review','institute_id');
     }
+    public function papers(){
+        return $this->hasMany('App\Paper','institute_id');
+    }
 
 }

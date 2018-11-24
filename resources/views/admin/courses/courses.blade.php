@@ -32,7 +32,7 @@
                                        <td>{{$course->name}}</td>
                                        <td>{{$institute->name}}</td>
                                        <td>{{$countData[$course->id]}}</td>
-                                       <td><a href="mysyllabus">3rd version</a></td>
+                                       <td><a href="{{\Illuminate\Support\Facades\Storage::url($institute->pivot->syllabus)}}">View</a></td>
                                        <td>
                                            <a id="sa-params" href="/admin/institute/course/edit/{{$institute->id}}/{{$course->id}}"> <button class="btn waves-effect btn-success">Edit</button></a>
                                            <a id="sa-params" href="/admin/institute/course/delete/{{$institute->id}}/{{$course->id}}"> <button class="btn waves-effect btn-danger">Delete</button></a>

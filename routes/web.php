@@ -54,6 +54,12 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     // SucessStories
     Route::resource('/institute/stories','successStoriesController');
 
+    //Papers
+    Route::resource('/institute/papers','paperController');
+
+    //mcq
+    Route::resource('/institute/papers/mcq','mcqController');
+
     // Message
     Route::get('/message/view','messageController@index');
 
