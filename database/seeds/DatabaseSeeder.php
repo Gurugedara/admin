@@ -23,5 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call(courseInstitute::class);
         $this->call(reviewsSeeder::class);
         $this->call(reviewCommentSeed::class);
+        $this->call(syllabusSeeder::class);
+        $this->call(moduleSeeder::class);
     }
 }

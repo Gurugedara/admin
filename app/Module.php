@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class course_institute extends Model
+class Module extends Model
 {
-    protected $fillable = ['institute_id','course_id','syllabus'];
+    protected $fillable = ['name','description','syllabus_id','learning_points'];
 
     public function syllabus(){
         return $this->belongsTo('App\Syllabus','syllabus_id');

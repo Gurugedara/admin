@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\course;
 use App\institute_student;
 use App\course_institute;
+use App\Syllabus;
 
 
 class courseController extends Controller
@@ -44,12 +45,40 @@ class courseController extends Controller
             }else{
                 $filename = "#";
             }
+            $syllabus = new Syllabus();
+            $syllabus->name = $request->name;
+            $syllabus->version = $request->version;
+            $syllabus->document = $filename;
+            $syllabus->save();
+
             $newInstituteCourse = new course_institute();
             $newInstituteCourse->institute_id = $request->institute_id;
             $newInstituteCourse->course_id = $request->course_id;
-            $newInstituteCourse->syllabus = $filename;
+            $newInstituteCourse->syllabus_id = $syllabus->id;
             $newInstituteCourse->save();
         }
+        return back();
+    }
+    public function edit($institute_id,$course_id){
+        $course = course_institute::where('institute_id',$institute_id)->where('course_id',$course_id)->first();
+        $syllabus = Syllabus::find($course->syllabus_id);
+        return view('admin.courses.coursesEdit',compact('course','syllabus'));
+    }
+
+    public function update($syllabus,Request $request){
+
+        $oldSyllabus = Syllabus::find($syllabus);
+        $oldSyllabus->name = $request->name;
+        $oldSyllabus->version = $request->version;
+
+        if($request->syllabus!=null) {
+            $filename = $request->syllabus->store('public/syllabus');
+        }else{
+            $filename = $oldSyllabus->document;
+        }
+
+        $oldSyllabus->document = $filename;
+        $oldSyllabus->save();
         return back();
     }
 }

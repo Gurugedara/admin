@@ -42,6 +42,7 @@
                 <li {{((Request::is('admin/institute/course')||(Request::is('admin/institute/course/*'))) ? 'class=active' : '')}}><a href="{{url('/admin/institute/course')}}">Courses</a></li>
                 <li {{((Request::is('admin/institute/papers')||(Request::is('admin/institute/papers/*'))) ? 'class=active' : '')}}><a href="{{route('admin.papers.index')}}">papers</a></li>
                 <li {{((Request::is('admin/institute/reviews'))||(Request::is('admin/institute/reviews/*')) ? 'class=active' : '')}}><a href="{{url('/admin/institute/reviews')}}">Reviews</a></li>
+                <li {{((Request::is('admin/institute/syllabus'))||(Request::is('admin/institute/syllabus/*')) ? 'class=active' : '')}}><a href="{{url('/admin/institute/syllabus')}}">syllabus</a></li>
                 <li {{((Request::is('admin/institute/stories'))||(Request::is('admin/institute/stories/*')) ? 'class=active' : '')}}><a href="{{url('/admin/institute/stories')}}">Success Stories</a></li>
                 <li {{((Request::is('admin/institute/carrierpath'))||(Request::is('admin/institute/carrierpath/*')) ? 'class=active' : '')}}><a href="{{url('/admin/institute/carrierpath')}}">Carrier Path</a></li>
             </ul>

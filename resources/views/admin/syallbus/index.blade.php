@@ -3,49 +3,35 @@
     <section id="content">
         <div class="container">
             <div class="c-header">
-                <h2>All courses Registered with your Institute</h2>
+                <h2>All Syllabus Registered</h2>
             </div>
             <div class="card">
                 <div class="card-header">
-                    <h2>Manage Courses <small>These courses will be visible under your institute for students</small></h2>
+                    <h2>Manage Syllabus <small>These syllabus will be visible under your institute for students</small></h2>
                 </div>
 
                 <table id="data-table" class="table table-striped table-vmiddle">
                     <thead>
                     <tr>
-                        <th data-column-id="id" data-type="numeric" data-order="desc">Course ID</th>
+                        <th data-column-id="id" data-type="numeric" data-order="desc"> ID</th>
                         <th data-column-id="name">Name</th>
-                        <th data-column-id="institute">Institute</th>
-                        <th data-column-id="nos">Registered Students</th>
-                        <th data-column-id="syllabus">Syllabus</th>
-                        <th data-column-id="action">Action</th>
-
+                        <th data-column-id="institute">Document</th>
+                        <th data-column-id="nos">Version</th>
+                        <th data-column-id="syllabus">Modules</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($allCourses as $course)
-                        @foreach($course->institutes as $institute)
-                            @foreach(auth()->user()->institutes as $userInstitute)
-                                @if($institute->id==$userInstitute->id)
-                                   <tr>
-                                       <td>{{$course->id}}</td>
-                                       <td>{{$course->name}}</td>
-                                       <td>{{$institute->name}}</td>
-                                       <td>{{$countData[$course->id]}}</td>
-                                       {{--<td><a href="{{\Illuminate\Support\Facades\Storage::url($institute->pivot->syllabus)}}">View</a></td>--}}
-                                       <td>View</td>
-                                       <td>
-                                           <a id="sa-params" href="/admin/institute/course/edit/{{$institute->id}}/{{$course->id}}"> <button class="btn waves-effect btn-success">Edit</button></a>
-                                           <a id="sa-params" href="/admin/institute/course/delete/{{$institute->id}}/{{$course->id}}"> <button class="btn waves-effect btn-danger">Delete</button></a>
-                                       </td>
-                                   </tr>
-                                @endif
-                            @endforeach
-                        @endforeach
+                    @foreach($syllabi as $syllabus)
+                    <tr>
+                        <td>{{$syllabus->id}}</td>
+                        <td>{{$syllabus->name}}</td>
+                        <td><a href="{{\Illuminate\Support\Facades\Storage::url($syllabus->document)}}" target="_blank">View</a></td>
+                        <td>{{$syllabus->version}}</td>
+                        <td><a href="{{route('admin.modules.view',$syllabus->id)}}">Show</a></td>
+                    </tr>
                     @endforeach
                     </tbody>
                 </table>
-                <a href="/admin/institute/course/add"> <button class="btn btn-float btn-success m-btn"><i class="zmdi zmdi-plus"></i></button></a>
             </div>
         </div>
     </section>
@@ -68,7 +54,6 @@
     <script src="/admin/vendors/bower_components/Waves/dist/waves.min.js"></script>
     <script src="/admin/vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
     <script src="/admin/vendors/bootgrid/jquery.bootgrid.updated.min.js"></script>
-
     <script type="text/javascript">
         $(document).ready(function(){
             //Basic Example

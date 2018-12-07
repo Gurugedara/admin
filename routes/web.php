@@ -43,6 +43,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::get('/institute/course/delete/{institute_id}/{course_id}','courseController@delete');
     Route::get('/institute/course/add','courseController@addCourse');
     Route::post('/institute/course/add','courseController@checkCourse');
+    Route::get('/institute/course/edit/{institute_id}/{course_id}','courseController@edit')->name('course.edit');
+    Route::post('/institute/course/update/{syllabus_id}','courseController@update')->name('course.update');
 
     // Reviews Section
     Route::get('/institute/reviews','reviewsController@index');
@@ -50,6 +52,13 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::get('/institute/reviews/hide/{review}','reviewsController@hide');
     Route::get('/institute/reviews/comment/{review}','reviewsController@comment');
     Route::post('/institute/review/{review_id}/comment/add','reviewsController@addComment');
+
+    //Syllabus Section
+    Route::resource('/institute/syllabus','syllabusController');
+
+    //Modules Section
+    Route::get('/institute/syllabus/{syllabus_id}/modules','moduleController@index')->name('modules.view');
+    Route::resource('/institute/syllabus/modules','moduleController');
 
     // SucessStories
     Route::resource('/institute/stories','successStoriesController');

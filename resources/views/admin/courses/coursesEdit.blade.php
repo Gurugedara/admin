@@ -3,7 +3,7 @@
             <section id="content">
                 <div class="container">
                     <div class="c-header">
-                        <h2>Add new Course</h2>
+                        <h2>Edit Course</h2>
                     </div>
 
                     <div class="card">
@@ -13,51 +13,16 @@
 
                         <div class="card-body card-padding">
                             <br/><br/>
-                            <form method="POST" action="/admin/institute/course/add" enctype="multipart/form-data" id = "addCourse">
+                            <form method="POST" action="/admin/institute/course/update/{{$syllabus->id}}" enctype="multipart/form-data" id = "addCourse">
                                 @csrf
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="zmdi zmdi-home"></i></span>
-                                        <div class="select">
-                                                <select class="form-control" id="institute_id" name="institute_id">
-                                                    <option disabled="disabled">Select and Option</option>
-                                                    @foreach($institutes as $institute)
-                                                        @foreach(auth()->user()->institutes as $userInstitute)
-                                                            @if($institute->id==$userInstitute->id)
-                                                                <option value="{{$institute->id}}">{{$institute->name}}</option>
-                                                            @endif
-                                                        @endforeach
-                                                    @endforeach
-                                                </select>
-                                        </div>
-                                    </div>
-
-                                    <br/>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="zmdi zmdi-book"></i></span>
-                                        <div class="select">
-                                           <select class="form-control" id="course_id" name="course_id">
-                                               <option disabled>Please Select an Option</option>
-                                               @foreach($courses as $course)
-                                                   <option value="{{$course->id}}">{{$course->name}}</option>
-                                               @endforeach
-                                           </select>
-                                        </div>
-                                    </div>
-
-                                    <br/>
-                                </div>
-                            </div>
                                 <br>
                             <div class="row">
                                 <div class="col-sm-3">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="zmdi zmdi-book"></i></span>
                                         <div class="select">
-                                            <input class="form-control" type="text" name="name" placeholder="Name of the Syllabus">
+                                            <input class="form-control" type="text" name="name"
+                                                   placeholder="Name of the Syllabus" value="{{$syllabus->name}}">
                                         </div>
                                     </div>
 
@@ -67,7 +32,8 @@
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="zmdi zmdi-book"></i></span>
                                         <div class="select">
-                                            <input class="form-control" type="text" name="version" placeholder="Version">
+                                            <input class="form-control" type="text" name="version"
+                                                   placeholder="Version" value="{{$syllabus->version}}">
                                         </div>
                                     </div>
 
@@ -91,7 +57,7 @@
                                     <div>
                                         <div >
                                             {{--<button class="btn btn-primary" onclick="select()">Add</button>--}}
-                                            <button class="btn btn-primary">Save</button>
+                                            <button class="btn btn-primary">Update</button>
                                         </div>
                                     </div>
                                 </div>
