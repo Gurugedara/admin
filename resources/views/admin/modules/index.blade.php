@@ -29,8 +29,18 @@
                            <td>{{$module->description}}</td>
                            <td>{{$module->learning_points}}</td>
                            <td>
-                               <a id="sa-params" href="{{route('admin.modules.edit',$module->id)}}"> <button class="btn waves-effect btn-success">Edit</button></a>
-                               <a id="sa-params" href="#"> <button class="btn waves-effect btn-danger">Delete</button></a>
+                               <div class="row">
+                                   <div class="col">
+                                   <a id="sa-params" href="{{route('admin.modules.edit',$module->id)}}"> <button class="btn waves-effect btn-success">Edit</button></a>
+                                   </div>
+                                   <div class="col">
+                                       <form method="POST" action="{{route('admin.modules.destroy',$module->id)}}">
+                                           @method('DELETE')
+                                           @csrf
+                                            <button type="submit" class="btn waves-effect btn-danger">Delete</button>
+                                        </form>
+                                   </div>
+                               </div>
                            </td>
                        </tr>
                     @endforeach

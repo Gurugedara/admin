@@ -3,85 +3,71 @@
             <section id="content">
                 <div class="container">
                     <div class="c-header">
-                        <h2>Add new Course</h2>
+                        <h2>Syllabus Module</h2>
                     </div>
 
                     <div class="card">
                         <div class="card-header">
-                            <h2>Select the New Course <small>These courses will be visible to the students as they can enroll with them</small></h2>
+                            <h2>Add new Syllabus Module <small>These modules will be visible to the students.</small></h2>
                         </div>
 
                         <div class="card-body card-padding">
                             <br/><br/>
-                            <form method="POST" action="/admin/institute/course/add" enctype="multipart/form-data" id = "addCourse">
+                            <form method="POST" action="{{route('admin.modules.store')}}" enctype="multipart/form-data" id = "addCourse">
                                 @csrf
                             <div class="row">
-                                <div class="col-sm-3">
+                                <div class="col-sm-4">
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="zmdi zmdi-home"></i></span>
+
                                         <div class="select">
-                                               <input type="text">
+                                               <input type="text" class="form-control" name="name" placeholder="module Name">
                                         </div>
                                     </div>
 
                                     <br/>
                                 </div>
-                                <div class="col-sm-3">
+                                <div class="col-sm-4">
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="zmdi zmdi-book"></i></span>
                                         <div class="select">
-
+                                            <input type="text" class="form-control" name="description" placeholder="description">
                                         </div>
                                     </div>
-
                                     <br/>
                                 </div>
                             </div>
                                 <br>
                             <div class="row">
-                                <div class="col-sm-3">
+                                <div class="col-sm-4">
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="zmdi zmdi-book"></i></span>
                                         <div class="select">
-                                            <input class="form-control" type="text" name="name" placeholder="Name of the Syllabus">
+                                            <textarea class="form-control" cols="20" rows="10" name="learning_points" placeholder="Learning Points"></textarea>
                                         </div>
                                     </div>
 
                                     <br/>
                                 </div>
-                                <div class="col-sm-3">
+                                <div class="col-sm-4">
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="zmdi zmdi-book"></i></span>
                                         <div class="select">
-                                            <input class="form-control" type="text" name="version" placeholder="Version">
+                                            <select class="form-control" name="syllabus_id" style="width: 180px">
+                                                @foreach($syllabi as $syllabus)
+                                                    <option value="{{$syllabus->id}}">{{$syllabus->name}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
 
                                     <br/>
                                 </div>
-                                <div class="col-sm-3">
-                                        <div class="col-sm-4">
-                                            <div class="fileinput fileinput-new" data-provides="fileinput">
-                                        <span class="btn btn-success btn-file m-r-10 waves-effect">
-                                            <span class="fileinput-new">Add Downloadable Version</span>
-                                            <span class="fileinput-exists">Change</span>
-                                            <input type="hidden" value="" name="..."><input type="file" name="syllabus" accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf">
-                                        </span>
-                                                <span class="fileinput-filename"></span>
-                                                <a href="#" class="close fileinput-exists" data-dismiss="fileinput">×</a>
-                                            </div>
-                                        </div>
-                                    <br/>
-                                </div>
+
+                            </div>
                                 <div class="col-sm-3">
                                     <div>
                                         <div >
-                                            {{--<button class="btn btn-primary" onclick="select()">Add</button>--}}
                                             <button class="btn btn-primary">Save</button>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             </form>
                         </div>
                         <br/>
@@ -110,41 +96,4 @@
     <script src="/admin/vendors/fileinput/fileinput.min.js"></script>
     <script src="/admin/vendors/input-mask/input-mask.min.js"></script>
     <script src="/admin/vendors/farbtastic/farbtastic.min.js"></script>
-
-    {{--<script type="text/javascript">--}}
-        {{--function select(){--}}
-            {{--var form = $('#addCourse');--}}
-            {{--$(form).submit(function (event) {--}}
-                {{--event.preventDefault();--}}
-            {{--});--}}
-            {{--//var formData = $(form).serialize();--}}
-	    {{--var formData = new FormData();--}}
-	    {{--var institute_id = $('#institute_id');--}}
-	    {{--var course_id = $('#course_id');--}}
-	    {{--var syllabus = $('#syllabus');--}}
-
-	    {{--formData.append('institute_id', institute_id);--}}
-	    {{--formData.append('course_id', course_id);--}}
-	    {{--formData.append('syllabus', syllabus);--}}
-
-            {{--$.ajax({--}}
-                {{--url: '{{url('/admin/institute/course/add')}}',--}}
-                {{--type: 'post',--}}
-                {{--// dataType: 'JSON',--}}
-                {{--data: formData.values(),--}}
-            {{--})--}}
-                {{--.done(function(result) {--}}
-                    {{--if(result==='true'){--}}
-                        {{--swal("Done!", "Course Added to your institute Successfully", "success")--}}
-                    {{--}else{--}}
-                        {{--swal("Failed!", "This course is already registered with your institute", "error");--}}
-                    {{--}--}}
-                    {{--return "true";--}}
-                {{--})--}}
-                {{--.fail(function() {--}}
-                    {{--console.log('Fail');--}}
-                    {{--return "false";--}}
-                {{--});--}}
-        {{--}--}}
-    {{--</script>--}}
 @endpush

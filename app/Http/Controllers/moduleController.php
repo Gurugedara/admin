@@ -26,7 +26,8 @@ class moduleController extends Controller
      */
     public function create()
     {
-        return view('admin.modules.create');
+        $syllabi = Syllabus::all();
+        return view('admin.modules.create',compact('syllabi'));
     }
 
     /**
@@ -37,7 +38,14 @@ class moduleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $module = new Module();
+        $module->name = $request->name;
+        $module->description = $request->description;
+        $module->learning_points = $request->learning_points;
+        $module->syllabus_id = $request->syllabus_id;
+        $module->save();
+        $url = "/admin/institute/syllabus/".$request->syllabus_id."/modules";
+        return redirect($url);
     }
 
     /**
@@ -57,9 +65,10 @@ class moduleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Module $module)
     {
-        //
+        $syllabi = Syllabus::all();
+        return view('admin.modules.edit',compact('syllabi','module'));
     }
 
     /**
@@ -69,9 +78,14 @@ class moduleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Module $module)
     {
-        //
+        $module->name = $request->name;
+        $module->description = $request->description;
+        $module->learning_points = $request->learning_points;
+        $module->syllabus_id = $request->syllabus_id;
+        $module->save();
+        return back();
     }
 
     /**
@@ -80,8 +94,9 @@ class moduleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Module $module)
     {
-        //
+        $module->delete();
+        return back();
     }
 }
