@@ -67,6 +67,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::resource('/institute/papers','paperController');
 
     //mcq
+    Route::get('/institute/papers/mcq/{id}/create','mcqController@create')->name('mcq.addnew');
     Route::resource('/institute/papers/mcq','mcqController');
 
     // Message

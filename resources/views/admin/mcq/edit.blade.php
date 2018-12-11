@@ -3,22 +3,22 @@
     <section id="content">
         <div class="container">
             <div class="c-header">
-                <h2>Add new MCQ</h2>
+                <h2>Edit MCQ</h2>
             </div>
             <a href="{{route('admin.papers.index')}}"> <button class="btn btn-float btn-success m-btn"><i class="zmdi zmdi-arrow-back"></i></button></a>
-            <form method="POST" action="{{route('admin.mcq.store')}}">
+            <form method="POST" action="{{route('admin.mcq.update',$mcq->id)}}">
+                @method('POST')
                 @csrf
-                <input type="hidden" value="{{$id}}" name="paper_id">
             <div class="card">
                 <div class="card-header">
-                    <h2>Enter MCQ Details </h2>
+                    <h2>Edit MCQ Details </h2>
                 </div>
 
                 <div class="card-body card-padding">
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="fg-line form-group">
-                                <input type="text" name="description" class="form-control input-sm" placeholder="Enter the Question">
+                                <input type="text" value="{{$mcq->description}}" name="description" class="form-control input-sm" placeholder="Enter the Question">
                             </div>
                         </div>
                     </div>
@@ -78,10 +78,10 @@
                     <div class="row">
                     <div class="col-xs-4">
                         <div class="fg-line form-group">
-                            <input type="number" name="marks" class="form-control input-sm" placeholder="Marks">
+                            <input type="number" value="{{$mcq->marks}}" name="marks" class="form-control input-sm" placeholder="Marks">
                         </div>
                     </div>
-                    <button type="submit" name="submit" class="btn btn-success sa-btn-medium">Save</button>
+                    <button type="submit" name="submit" class="btn btn-success sa-btn-medium">Update</button>
                     </div>
                 </div>
             </div>

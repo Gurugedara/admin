@@ -5,7 +5,7 @@
             <div class="c-header">
                 <h2>Questions</h2>
             </div>
-            <a href="{{route('admin.mcq.create')}}"> <button class="btn btn-float btn-success m-btn"><i class="zmdi zmdi-plus"></i></button></a>
+            <a href="{{route('admin.mcq.addnew',$paper->id)}}"> <button class="btn btn-float btn-success m-btn"><i class="zmdi zmdi-plus"></i></button></a>
             <div class="card">
                 <div class="action-header palette-Teal-400 bg clearfix">
                     <div class="ah-label hidden-xs palette-White text">Manage MCQ</div>
@@ -57,7 +57,8 @@
                 </div>
 
                 <div class="list-group lg-alt lg-even-black">
-                    <div class="list-group-item media">
+                    @foreach($mcqs as $mcq)
+                        <div class="list-group-item media">
                         <div class="checkbox pull-left lgi-checkbox">
                             <label>
                                 <input type="checkbox" value="">
@@ -81,7 +82,7 @@
                                             <a href="#">View</a>
                                         </li>
                                         <li>
-                                            <a href="#">Edit</a>
+                                            <a href="{{route('admin.mcq.edit',$mcq->id)}}">Edit</a>
                                         </li>
                                         <li>
                                             <a href="#">Delete</a>
@@ -92,11 +93,11 @@
                         </div>
 
                         <div class="media-body">
-                            <div class="lgi-heading">Per an error perpetua, fierent fastidii recteque ad pro. Mei id brute intellegam</div>
-                            <small class="lgi-text">Quisque non tortor ultricies, posuere elit id, lacinia purus curabitur.</small>
+                            <div class="lgi-heading">{{$mcq->description}}</div>
+                            <small class="lgi-text">Marks: {{$mcq->marks}}</small>
                         </div>
                     </div>
-
+                    @endforeach
                 </div>
             </div>
         </div>

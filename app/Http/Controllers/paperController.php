@@ -58,7 +58,8 @@ class paperController extends Controller
      */
     public function show(Paper $paper)
     {
-        return view('admin.papers.show',compact('paper'));
+        $mcqs = $paper->mcqs;
+        return view('admin.papers.show',compact('paper','mcqs'));
     }
 
     /**
