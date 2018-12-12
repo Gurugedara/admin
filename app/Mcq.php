@@ -12,6 +12,6 @@ class Mcq extends Model
         return $this->belongsTo('App\Paper','paper_id');
     }
     public function answers(){
-        return $this->belongsTo('App\McqAnswer','mcq_id');
+        return $this->hasMany('App\McqAnswer','mcq_id');
     }
 }

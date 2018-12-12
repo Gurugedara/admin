@@ -79,7 +79,7 @@
 
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <li>
-                                            <a href="#">View</a>
+                                            <a href="{{route('admin.mcq.show',$mcq->id)}}">View</a>
                                         </li>
                                         <li>
                                             <a href="{{route('admin.mcq.edit',$mcq->id)}}">Edit</a>

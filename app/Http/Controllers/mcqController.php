@@ -61,9 +61,9 @@ class mcqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Mcq $mcq)
     {
-        //
+        return view('admin.mcq.show',compact('mcq'));
     }
 
     /**
@@ -74,7 +74,13 @@ class mcqController extends Controller
      */
     public function edit(Mcq $mcq)
     {
-        return view('admin.mcq.edit',compact('mcq'));
+        $answers = $mcq->answers;
+        $answer1 = $answers[0];
+        $answer2 = $answers[1];
+        $answer3 = $answers[2];
+        $answer4 = $answers[3];
+
+        return view('admin.mcq.edit',compact('mcq','answer1','answer2','answer3','answer4'));
     }
 
     /**
@@ -84,9 +90,27 @@ class mcqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Mcq $mcq)
     {
-        //
+        $answers = $mcq->answers;
+        $mcq->description = $request->description;
+        $mcq->marks = $request->marks;
+        $mcq->save();
+//        dd($request->answers[0]);
+        $answers[0]->answer = $request->answers[0];
+        $answers[0]->status = 0;
+        $answers[1]->answer = $request->answers[1];
+        $answers[1]->status = 0;
+        $answers[2]->answer = $request->answers[2];
+        $answers[2]->status = 0;
+        $answers[3]->answer = $request->answers[3];
+        $answers[3]->status = 0;
+        $answers[$request->answer-1]->status=1;
+        $answers[0]->save();
+        $answers[1]->save();
+        $answers[2]->save();
+        $answers[3]->save();
+        return back();
     }
 
     /**

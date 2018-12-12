@@ -7,7 +7,7 @@
             </div>
             <a href="{{route('admin.papers.index')}}"> <button class="btn btn-float btn-success m-btn"><i class="zmdi zmdi-arrow-back"></i></button></a>
             <form method="POST" action="{{route('admin.mcq.update',$mcq->id)}}">
-                @method('POST')
+                @method('PUT')
                 @csrf
             <div class="card">
                 <div class="card-header">
@@ -26,12 +26,15 @@
                     <div class="row">
                         <div class="col-xs-4">
                             <div class="fg-line form-group">
-                                <input type="text" name="answers[]" class="form-control input-sm" placeholder="Answer 1">
+                                <input type="text" name="answers[]" class="form-control input-sm" placeholder="Answer 1"
+                                value="{{$answer1->answer}}">
                             </div>
                         </div>
                         <div class="col-sm-4 m-b-20">
                             <div class="toggle-switch" data-ts-color="blue">
-                                <input id="ans1" name="answer" type="radio" hidden="hidden" value="1">
+                                <input id="ans1" name="answer" type="radio" hidden="hidden" value="1"
+                                {{($answer1->status==1) ? "checked":""}}
+                                >
                                 <label for="ans1" class="ts-helper"></label>
                             </div>
                         </div>
@@ -39,12 +42,14 @@
                     <div class="row">
                         <div class="col-xs-4">
                             <div class="fg-line form-group">
-                                <input type="text" name="answers[]" class="form-control input-sm" placeholder="Answer 2">
+                                <input type="text" name="answers[]" class="form-control input-sm" placeholder="Answer 2"
+                                       value="{{$answer2->answer}}">
                             </div>
                         </div>
                         <div class="col-sm-4 m-b-20">
                             <div class="toggle-switch" data-ts-color="blue">
-                                <input id="ans2" name="answer" type="radio" hidden="hidden" value="2">
+                                <input id="ans2" name="answer" type="radio" hidden="hidden" value="2"
+                                        {{($answer2->status==1) ? "checked":""}}>
                                 <label for="ans2" class="ts-helper"></label>
                             </div>
                         </div>
@@ -52,12 +57,14 @@
                     <div class="row">
                         <div class="col-xs-4">
                             <div class="fg-line form-group">
-                                <input type="text" name="answers[]" class="form-control input-sm" placeholder="Answer 3">
+                                <input type="text" name="answers[]" class="form-control input-sm" placeholder="Answer 3"
+                                       value="{{$answer3->answer}}">
                             </div>
                         </div>
                         <div class="col-sm-4 m-b-20">
                             <div class="toggle-switch" data-ts-color="blue">
-                                <input id="ans3" name="answer" type="radio" hidden="hidden" value="3">
+                                <input id="ans3" name="answer" type="radio" hidden="hidden" value="3"
+                                        {{($answer3->status==1) ? "checked":""}}>
                                 <label for="ans3" class="ts-helper"></label>
                             </div>
                         </div>
@@ -65,12 +72,14 @@
                     <div class="row">
                         <div class="col-xs-4">
                             <div class="fg-line form-group">
-                                <input type="text" name="answers[]" class="form-control input-sm" placeholder="Answer 4">
+                                <input type="text" name="answers[]" class="form-control input-sm" placeholder="Answer 4"
+                                       value="{{$answer4->answer}}">
                             </div>
                         </div>
                         <div class="col-sm-4 m-b-20">
                             <div class="toggle-switch" data-ts-color="blue">
-                                <input id="ans4" name="answer" type="radio" hidden="hidden" value="4">
+                                <input id="ans4" name="answer" type="radio" hidden="hidden" value="4"
+                                        {{($answer4->status==1) ? "checked":""}}>
                                 <label for="ans4" class="ts-helper"></label>
                             </div>
                         </div>
