@@ -35,7 +35,6 @@
                         @endforeach
                     </tbody>
                 </table>
-                {{-- <a href="/admin/institute/course/add"> <button class="btn btn-float btn-success m-btn"><i class="zmdi zmdi-plus"></i></button></a> --}}
             </div>
         </div>
     </section>

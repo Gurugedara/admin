@@ -72,6 +72,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
     // Message
     Route::get('/message/view','messageController@index');
+    Route::get('/message/getUsers', 'messageController@getUsers');
 
     //Forum
     Route::get('/forum','forumController@index');
@@ -80,6 +81,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
     // Institute 
     Route::get('/institute/details','instituteController@index');
+    Route::get('/institute/edit/{id}','instituteController@edit');
+    Route::post('/institute/update/{id}','instituteController@update');
+
 //    Route::resource('roles', 'Admin\RolesController');
 //    Route::post('roles_mass_destroy', ['uses' => 'Admin\RolesController@massDestroy', 'as' => 'roles.mass_destroy']);
 //    Route::resource('users', 'Admin\UsersController');

@@ -69,7 +69,8 @@ class instituteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $institute = institute::find($id);
+        return view('admin.institutes.edit',compact('institute'));
     }
 
     /**
@@ -81,7 +82,12 @@ class instituteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $institute = institute::findOrFail($id);
+        $institute->name = $request->name;
+        $institute->address = $request->address;
+        $institute->telephone = $request->telephone;
+        $institute->save();
+        return back();
     }
 
     /**

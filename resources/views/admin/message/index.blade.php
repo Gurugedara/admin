@@ -14,6 +14,9 @@
                     </div>
 
                     <div class="list-group lg-alt m-t-10">
+                        <div style="width:80%;margin-left:15%">
+                            <input id="search" class="typeahead1 form-control" name="name" type="text" placeholder="Enter the Name of User" autocomplete="off">
+                        </div>
                         <a class="list-group-item media" href="#">
                             <div class="pull-left">
                                 <img src="/admin/img/profile-pics/4.jpg" alt="" class="avatar-img">
@@ -97,7 +100,7 @@
                         </ul>
                     </div>
 
-                    <div class="list-group lg-alt">
+                    <div class="list-group lg-alt" id="messageWindow">
                         <div class="list-group-item media">
                             <div class="pull-left">
                                 <img class="avatar-img" src="/admin/img/profile-pics/1.jpg" alt="">
@@ -190,3 +193,60 @@
         </div>
     </section>
 @endsection
+@push('css')
+
+    <link href="/admin/vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+    <link href="/admin/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+    <link href="/admin/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="/admin/vendors/bower_components/google-material-color/dist/palette.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+
+@endpush
+
+@push('js')
+    <script src="/admin/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/admin/vendors/bower_components/Waves/dist/waves.min.js"></script>
+    <script src="/admin/vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+    <script src="/admin/js/chat.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+
+
+
+    <script>
+            $(document).ready(function() {
+                var bloodhound = new Bloodhound({
+                    datumTokenizer: Bloodhound.tokenizers.whitespace,
+                    queryTokenizer: Bloodhound.tokenizers.whitespace,
+                    remote: {
+                        url: '/admin/message/getUsers?query=%QUERY%',
+                        wildcard: '%QUERY%'
+                    },
+                });
+                
+                $('#search').typeahead({
+                    hint: true,
+                    highlight: true,
+                    minLength: 1
+                }, {
+                    name: 'users',
+                    source: bloodhound,
+                    display: function(data) {
+                        return data.firstname  //Input value to be set when you select a suggestion. 
+                    },
+                    templates: {
+                        empty: [
+                            '<div class="list-group search-results-dropdown"><div class="list-group-item">Nothing found.</div></div>'
+                        ],
+                        header: [
+                            '<div class="list-group search-results-dropdown">'
+                        ],
+                        suggestion: function(data) {
+                        return '<div style="font-weight:normal; margin-top:-10px ! important;" class="list-group-item">' + data.firstname +' '+data.Lastname + '</div></div>'
+                        }
+                    }
+                });
+            });
+        </script>
+@endpush

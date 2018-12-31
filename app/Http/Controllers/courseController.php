@@ -61,7 +61,7 @@ class courseController extends Controller
     }
     public function edit($institute_id,$course_id){
         $course = course_institute::where('institute_id',$institute_id)->where('course_id',$course_id)->first();
-        $syllabus = Syllabus::find($course->syllabus_id);
+        $syllabus = Syllabus::findOrFail($course->syllabus_id);
         return view('admin.courses.coursesEdit',compact('course','syllabus'));
     }
 
