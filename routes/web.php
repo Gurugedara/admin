@@ -75,6 +75,11 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
     //Forum
     Route::get('/forum','forumController@index');
+    Route::post('/forum/post','forumController@post');
+    Route::post('/forum/comment','forumController@comment');
+
+    // Institute 
+    Route::get('/institute/details','instituteController@index');
 //    Route::resource('roles', 'Admin\RolesController');
 //    Route::post('roles_mass_destroy', ['uses' => 'Admin\RolesController@massDestroy', 'as' => 'roles.mass_destroy']);
 //    Route::resource('users', 'Admin\UsersController');

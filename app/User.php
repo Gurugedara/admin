@@ -19,7 +19,7 @@ use Hash;
 class User extends Authenticatable
 {
     use Notifiable;
-    protected $fillable = ['firstname','lastname', 'email', 'password', 'role_id'];
+    protected $fillable = ['firstname','lastname', 'email', 'password','avatar', 'role_id'];
     protected $hidden = ['password','remember_token'];
     
     

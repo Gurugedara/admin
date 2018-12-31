@@ -87,7 +87,7 @@
         </li>
         <li class="dropdown hm-profile">
             <a data-toggle="dropdown" href="#">
-                <img src="/admin/img/profile-pics/1.jpg" alt="">
+                <img src="{{\Auth::user()->avatar}}" alt="">
             </a>
 
             <ul class="dropdown-menu pull-right dm-icon">

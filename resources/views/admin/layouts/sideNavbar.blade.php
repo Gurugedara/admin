@@ -39,6 +39,7 @@
             <a href="#" data-ma-action="submenu-toggle"><i class="zmdi zmdi-view-compact"></i> Institute</a>
 
             <ul>
+                <li {{((Request::is('admin/institute/details')||(Request::is('admin/institute/details/*'))) ? 'class=active' : '')}}><a href="{{url('/admin/institute/details')}}">Details</a></li>
                 <li {{((Request::is('admin/institute/course')||(Request::is('admin/institute/course/*'))) ? 'class=active' : '')}}><a href="{{url('/admin/institute/course')}}">Courses</a></li>
                 <li {{((Request::is('admin/institute/papers')||(Request::is('admin/institute/papers/*'))) ? 'class=active' : '')}}><a href="{{route('admin.papers.index')}}">papers</a></li>
                 <li {{((Request::is('admin/institute/reviews'))||(Request::is('admin/institute/reviews/*')) ? 'class=active' : '')}}><a href="{{url('/admin/institute/reviews')}}">Reviews</a></li>
@@ -49,7 +50,6 @@
         </li>
         <li {{(Request::is('admin/message/view') ? 'class=active' : '')}}><a href="{{url('/admin/message/view')}}"><i class="zmdi zmdi-format-underlined"></i> Message Inbox</a></li>
         <li {{(Request::is('admin/forum') ? 'class=active' : '')}}><a href="{{url('/admin/forum')}}"><i class="zmdi zmdi-format-underlined"></i> Forum</a></li>
-        <li {{(Request::is('admin/schedule') ? 'class=active' : '')}}><a href="{{url('institiue/syllabus')}}schedule"><i class="zmdi zmdi-format-underlined"></i> Schedule</a></li>
         <li {{(Request::is('admin/settings') ? 'class=active' : '')}}><a href="{{url('institiue/syllabus')}}settings"><i class="zmdi zmdi-format-underlined"></i> Settings</a></li>
 
     </ul>

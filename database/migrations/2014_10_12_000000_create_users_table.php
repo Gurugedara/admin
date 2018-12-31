@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('Lastname');
             $table->string('email');
             $table->string('password');
+            $table->string('avatar')->default('/admin/img/profile-pics/2.jpg');
             $table->string('remember_token')->nullable();
             $table->timestamps();
         });
