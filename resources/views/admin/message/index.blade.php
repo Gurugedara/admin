@@ -9,41 +9,32 @@
             <div class="card clearfix" id="messages">
                 <div class="ms-menu">
                     <div class="ms-user clearfix palette-Teal-400 bg">
-                        <img src="/admin/img/profile-pics/1.jpg" alt="">
-                        <div>Signed in as <br/> m-hollaway@gmail.com</div>
+                        <img src="{{Auth::user()->avatar}}" alt="">
+                    <div>Signed in as <br/> {{Auth::user()->email}}</div>
                     </div>
 
                     <div class="list-group lg-alt m-t-10">
                         <div style="width:80%;margin-left:15%">
                             <input id="search" class="typeahead1 form-control" name="name" type="text" placeholder="Enter the Name of User" autocomplete="off">
                         </div>
-                        <a class="list-group-item media" href="#">
+                        @foreach($users as $user)
+                        <a class="list-group-item media" href="#" onclick="getMessages({{$user}})">
+                            {{-- {{dd($users)}} --}}
                             <div class="pull-left">
-                                <img src="/admin/img/profile-pics/4.jpg" alt="" class="avatar-img">
+                                <img src="{{\App\User::find($user)->avatar}}" alt="" class="avatar-img">
                             </div>
                             <div class="media-body">
-                                <div class="lgi-heading">Davil Parnell</div>
-                                <small class="lgi-text">Fierent fastidii recteque ad pro</small>
+                                <div class="lgi-heading">{{\App\User::find($user)->firstname." ".\App\User::find($user)->Lastname}}</div>
                             </div>
                         </a>
-
-                        <a class="list-group-item media" href="#">
-                            <div class="pull-left">
-                                <img src="/admin/img/profile-pics/2.jpg" alt="" class="avatar-img">
-                            </div>
-                            <div class="media-body">
-                                <div class="lgi-heading">Ann Watkinson</div>
-                                <small class="lgi-text">Cum sociis natoque penatibus </small>
-                            </div>
-                        </a>
-
+                        @endforeach
                     </div>
 
                 </div>
 
                 <div class="ms-body">
                     <div class="action-header clearfix palette-Teal-400 bg">
-                        <div class="ah-label hidden-xs palette-White text">Marsh Walter</div>
+                        <div class="ah-label hidden-xs palette-White text">{{Auth::user()->firstname." ".Auth::user()->Lastname}}</div>
 
                         <div class="menu-collapse visible-xs" data-ma-action="message-toggle">
                             <div class="mc-wrap">
@@ -99,95 +90,17 @@
                             </li>
                         </ul>
                     </div>
-
-                    <div class="list-group lg-alt" id="messageWindow">
-                        <div class="list-group-item media">
-                            <div class="pull-left">
-                                <img class="avatar-img" src="/admin/img/profile-pics/1.jpg" alt="">
-                            </div>
-
-                            <div class="media-body">
-                                <div>
-                                    <div class="msb-item">
-                                        Quisque consequat arcu eget odio cursus, ut tempor arcu vestibulum. Etiam ex arcu, porta a urna non, lacinia pellentesque orci. Proin semper sagittis erat, eget condimentum sapien viverra et. Mauris volutpat magna nibh, et condimentum est rutrum a. Nunc sed turpis mi. In eu massa a sem pulvinar lobortis.
-                                    </div>
-                                </div>
-                                <small class="ms-date"><i class="zmdi zmdi-time"></i> 20/02/2015 at 09:00</small>
+                    <form method="POST" action="/admin/message/send">
+                        @csrf
+                        <div class="list-group lg-alt" id="messageWindow">
+                            <div id = "chatWindow"></div>
+                            <div class="ms-reply">
+                                <textarea name="content" placeholder="What's on your mind..."></textarea>
+                                <input type="hidden" name="reciever" value="2" id="reciever">
+                                <button type="submit"><i class="zmdi zmdi-mail-send"></i></button>
                             </div>
                         </div>
-
-                        <div class="list-group-item media">
-                            <div class="pull-right">
-                                <img class="avatar-img" src="/admin/img/profile-pics/8.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <div>
-                                    <div class="msb-item">
-                                        Mauris volutpat magna nibh, et condimentum est rutrum a. Nunc sed turpis mi. In eu massa a sem pulvinar lobortis.
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="msb-item">
-                                        Condimentum est rutrum lobortis.
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="msb-item">
-                                        :)
-                                    </div>
-                                </div>
-                                <small class="ms-date"><i class="zmdi zmdi-time"></i> 20/02/2015 at 09:30</small>
-                            </div>
-                        </div>
-
-                        <div class="list-group-item media">
-                            <div class="pull-left">
-                                <img class="avatar-img" src="/admin/img/profile-pics/1.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <div>
-                                    <div class="msb-item">
-                                        Etiam ex arcumentum
-                                    </div>
-                                </div>
-                                <small class="ms-date"><i class="zmdi zmdi-time"></i> 20/02/2015 at 09:33</small>
-                            </div>
-                        </div>
-
-                        <div class="list-group-item media">
-                            <div class="pull-right">
-                                <img class="avatar-img" src="/admin/img/profile-pics/8.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <div>
-                                    <div class="msb-item">
-                                        Etiam nec facilisis lacus. Nulla imperdiet augue ullamcorper dui ullamcorper, eu laoreet sem consectetur. Aenean et ligula risus. Praesent sed posuere sem. Cum sociis natoque penatibus et magnis dis parturient montes,
-                                    </div>
-                                </div>
-                                <small class="ms-date"><i class="zmdi zmdi-time"></i> 20/02/2015 at 10:10</small>
-                            </div>
-                        </div>
-
-                        <div class="list-group-item media">
-                            <div class="pull-left">
-                                <img class="avatar-img" src="/admin/img/profile-pics/1.jpg" alt="">
-                            </div>
-                            <div class="media-body">
-                                <div>
-                                    <div class="msb-item">
-                                        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam ac tortor ut elit sodales varius. Mauris id ipsum id mauris malesuada tincidunt. Vestibulum elit massa, pulvinar at sapien sed, luctus vestibulum eros. Etiam finibus tristique ante, vitae rhoncus sapien volutpat eget
-                                    </div>
-                                </div>
-                                <small class="ms-date"><i class="zmdi zmdi-time"></i> 20/02/2015 at 10:24</small>
-                            </div>
-                        </div>
-
-                        <div class="ms-reply">
-                            <textarea placeholder="What's on your mind..."></textarea>
-
-                            <button><i class="zmdi zmdi-mail-send"></i></button>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -249,4 +162,85 @@
                 });
             });
         </script>
+
+        <script>
+            var messageWindow = document.getElementById('chatWindow');
+            getMessages({{$users[0]}});
+            function getMessages(userId){
+                $.ajax({
+                    type: 'GET',
+                    url: '/admin/message/get/{{\Auth::user()->id}}/'+userId,
+                    data: {},
+                    success: function(response) {
+                        writeThread(response);
+                    },
+                    error: function() {
+                        alert("Fuck");
+                    }
+
+                });
+            }
+
+            function writeThread(response){
+                var text = "";
+                var previous = -1;
+                for(i=0;i<response.length;i++){
+                    var align = "right";
+                    if(response[i].sender_id=={{Auth::user()->id}}) align="left";
+                    if(previous==-1) {
+                        text = text+"<div class='list-group-item media'>\
+                                    <div class='pull-"+align+"'>\
+                                        <img class='avatar-img' id='"+response[i].id+"' src='#' alt=''>\
+                                    </div>\
+                                    <div class='media-body'>\
+                                        <div>\
+                                            <div class='msb-item'>\
+                                                "+response[i].content+".\
+                                            </div>\
+                                        </div>\
+                                        ";
+                        getAvatar(response[i].id,response[i].sender_id)
+                    }else if(previous==response[i].sender_id){
+                        text = text+"<div><div class='msb-item'>\
+                                                "+response[i].content+".\
+                                            </div></div>";
+                    }else{
+                        text = text+"</div>\
+                                        <small class='ms-date'><i class='zmdi zmdi-time'></i> 20/02/2015 at 09:00</small>\
+                                    </div>\
+                                </div>";
+                        text = text + "<div class='list-group-item media'>\
+                                    <div class='pull-"+align+"'>\
+                                        <img class='avatar-img' id='"+response[i].id+"' src='#' alt=''>\
+                                    </div>\
+                                    <div class='media-body'>\
+                                        <div>\
+                                            <div class='msb-item'>\
+                                                    "+response[i].content+".\
+                                            </div>";
+                        getAvatar(response[i].id,response[i].sender_id)
+                    }
+                    previous=(response[i].sender_id);
+                }
+                messageWindow.innerHTML = text;
+            }
+
+            function getAvatar(imageId,userId){
+                var avatar;
+                $.ajax({
+                    type: 'GET',
+                    url: '/admin/message/avatar/'+userId,
+                    data: {},
+                    success: function(response) {
+                        var tempImageHolder = document.getElementById(imageId)
+                        tempImageHolder.setAttribute('src',response);
+                    },
+                    error: function() {
+                        alert("Something Went Wrong!");
+                    }
+                });
+                return avatar;
+            }
+        </script>
+
 @endpush

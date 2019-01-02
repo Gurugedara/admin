@@ -73,6 +73,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     // Message
     Route::get('/message/view','messageController@index');
     Route::get('/message/getUsers', 'messageController@getUsers');
+    Route::get('message/get/{sender}/{reciever}','messageController@getMessages');
+    Route::get('message/avatar/{userId}','messageController@getAvatar');
+    Route::post('message/send','messageController@sendMessage');
 
     //Forum
     Route::get('/forum','forumController@index');
