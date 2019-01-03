@@ -38,13 +38,14 @@ class messageController extends Controller
         return response()->json($avatar);
     }
     public function sendMessage(Request $request){
+        // dd($request);
         $message = new Message();
         $message->sender_id = \Auth::user()->id;
         $message->reciever_id = $request->reciever;
         $message->content = $request->content;
         $message->sent_time = now();
         $message->save();
-        return back();
+        
     }
 
 }

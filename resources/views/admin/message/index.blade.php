@@ -90,14 +90,14 @@
                             </li>
                         </ul>
                     </div>
-                    <form method="POST" action="/admin/message/send">
+                    <form action="" id="messageForm">
                         @csrf
                         <div class="list-group lg-alt" id="messageWindow">
                             <div id = "chatWindow"></div>
                             <div class="ms-reply">
-                                <textarea name="content" placeholder="What's on your mind..."></textarea>
+                                <textarea id="contentMessage1" name="content" placeholder="What's on your mind..."></textarea>
                                 <input type="hidden" name="reciever" value="2" id="reciever">
-                                <button type="submit"><i class="zmdi zmdi-mail-send"></i></button>
+                                <button><i onclick="sendMessage()" class="zmdi zmdi-mail-send"></i></button>
                             </div>
                         </div>
                     </form>
@@ -240,6 +240,32 @@
                     }
                 });
                 return avatar;
+            }
+            document.getElementById('messageForm').addEventListener("click",function(event){
+                    event.preventDefault();
+                });
+            function sendMessage(){
+                var message = document.getElementById('contentMessage1');
+                var reciever = document.getElementById('reciever');
+                var CSRF_TOKEN = document.getElementsByName('_token');
+                // console.log("hi");
+                
+                $.ajax({
+                    type:'POST',
+                    url: '/admin/message/send',
+                    data:{
+                        _token: CSRF_TOKEN[0].value,
+                        reciever:reciever.value,
+                        content:message.value
+                    },  
+                    success: function(response){
+                        getMessages(reciever.value);
+                        document.getElementById('contentMessage1').value='';
+                    },
+                    error: function(){
+
+                    }
+                })
             }
         </script>
 
