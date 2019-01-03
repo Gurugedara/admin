@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\institute;
+use App\institute_owner;
 
 class instituteController extends Controller
 {
@@ -46,6 +47,11 @@ class instituteController extends Controller
         $institute->address = $request->input('address');
         $institute->telephone = $request->input('telephone');
         $institute->save();
+        
+
+        $institute_owner = new institute_owner;
+        $institute_owner->user_id = 1;
+        $institute_owner->save();
 
         return redirect('/')->with('success', 'Post Created');
     }
@@ -58,7 +64,8 @@ class instituteController extends Controller
      */
     public function show($id)
     {
-        //
+        $institutes = institutes::find($id);
+        return view('admin.institutes.index')->with('institutes',$institutes);
     }
 
     /**
@@ -69,7 +76,7 @@ class instituteController extends Controller
      */
     public function edit($id)
     {
-        $institute = institute::find($id);
+        $institute = institutes::find($id);
         return view('admin.institutes.edit',compact('institute'));
     }
 
