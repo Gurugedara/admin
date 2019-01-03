@@ -11,4 +11,7 @@ class course_institute extends Model
     public function syllabus(){
         return $this->belongsTo('App\Syllabus','syllabus_id');
     }
+    public function institute(){
+        return $this->belongsTo('App\institute');
+    }
 }

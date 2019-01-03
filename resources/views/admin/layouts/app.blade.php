@@ -89,7 +89,47 @@
 
 <!-- Javascript Libraries -->
 <script src="/admin/vendors/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="/admin/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script><script src="/admin/vendors/bootgrid/jquery.bootgrid.updated.min.js"></script>
+<script src="/admin/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/admin/vendors/bootgrid/jquery.bootgrid.updated.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+<script>
+    $(document).ready(function() {
+                var bloodhound = new Bloodhound({
+                    datumTokenizer: Bloodhound.tokenizers.whitespace,
+                    queryTokenizer: Bloodhound.tokenizers.whitespace,
+                    remote: {
+                        url: '/admin/message/getUsers?query=%QUERY%',
+                        wildcard: '%QUERY%'
+                    },
+                });
+                
+                $('#mainSearch').typeahead({
+                    hint: true,
+                    highlight: true,
+                    minLength: 1
+                }, {
+                    name: 'users',
+                    source: bloodhound,
+                    display: function(data) {
+                        return data.firstname  //Input value to be set when you select a suggestion. 
+                    },
+                    templates: {
+                        empty: [
+                            '<div class="list-group search-results-dropdown"><div class="list-group-item">Nothing found.</div></div>'
+                        ],
+                        header: [
+                            '<div class="list-group search-results-dropdown">'
+                        ],
+                        suggestion: function(data) {
+                        return '<div style="font-weight:normal; margin-top:-10px ! important;" class="list-group-item">' + data.firstname +' '+data.Lastname + '</div></div>'
+                        }
+                    }
+                });
+            });
+            // document.getElementsByClassName("tt-menu")[0].setAttribute("style","position:unset");
+            $(".tt-menu").css("position","unset");
+</script>
 @stack('js')
 
 <script src="/admin/js/functions.js"></script>

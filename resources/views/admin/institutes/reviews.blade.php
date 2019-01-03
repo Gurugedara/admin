@@ -72,52 +72,56 @@
 
                 <div class="list-group lg-alt lg-even-black">
                     @foreach($reviews as $review)
-                    <div class="list-group-item media">
-                        <div class="checkbox pull-left lgi-checkbox">
-                            <label>
-                                <input type="checkbox" value="">
-                                <i class="input-helper"></i>
-                            </label>
-                        </div>
+                        @foreach (Auth::user()->institutes as $institute)
+                            @if ($institute->id==$review->institute_id)
+                                <div class="list-group-item media">
+                                    <div class="checkbox pull-left lgi-checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">
+                                            <i class="input-helper"></i>
+                                        </label>
+                                    </div>
 
-                        <div class="pull-right">
-                            <ul class="actions">
-                                <li class="dropdown">
-                                    <a href="#" data-toggle="dropdown" aria-expanded="false">
-                                        <i class="zmdi zmdi-more-vert"></i>
-                                    </a>
+                                    <div class="pull-right">
+                                        <ul class="actions">
+                                            <li class="dropdown">
+                                                <a href="#" data-toggle="dropdown" aria-expanded="false">
+                                                    <i class="zmdi zmdi-more-vert"></i>
+                                                </a>
 
-                                    <ul class="dropdown-menu dropdown-menu-right">
-                                        <li>
-                                            @if($review->status==0)
-                                                <a href="/admin/institute/reviews/publish/{{$review->id}}">Publish</a>
-                                            @else
-                                                <a href="/admin/institute/reviews/hide/{{$review->id}}">hide</a>
-                                            @endif
-                                        </li>
-                                        <li>
-                                            <a href="/admin/institute/reviews/comment/{{$review->id}}">Comment</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
+                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                    <li>
+                                                        @if($review->status==0)
+                                                            <a href="/admin/institute/reviews/publish/{{$review->id}}">Publish</a>
+                                                        @else
+                                                            <a href="/admin/institute/reviews/hide/{{$review->id}}">hide</a>
+                                                        @endif
+                                                    </li>
+                                                    <li>
+                                                        <a href="/admin/institute/reviews/comment/{{$review->id}}">Comment</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
 
-                        <div class="pull-left">
-                            <div class="avatar-char palette-Green-400 bg">P</div>
-                        </div>
+                                    <div class="pull-left">
+                                        <div class="avatar-char palette-Green-400 bg">P</div>
+                                    </div>
 
-                        <div class="media-body">
-                            <div class="lgi-heading">{{$review->comment}}</div>
-                            <ul class="lgi-attrs">
-                                <li>Date Created: 09/06/1988</li>
-                                <li>stars: {{$review->stars}}</li>
-                                <li style="color: #f8f8f8;{{($review->status==0)?"background: orange":"background: blue"}}">status: {{($review->status==1)?"published":"Not Published"}}</li>
-                                <li>Student ID: {{$review->student_id}}</li>
-                                <li>Institute Name: {{$review->institute->name}}</li>
-                            </ul>
-                        </div>
-                    </div>
+                                    <div class="media-body">
+                                        <div class="lgi-heading">{{$review->comment}}</div>
+                                        <ul class="lgi-attrs">
+                                            <li>Date Created: 09/06/1988</li>
+                                            <li>stars: {{$review->stars}}</li>
+                                            <li style="color: #f8f8f8;{{($review->status==0)?"background: orange":"background: blue"}}">status: {{($review->status==1)?"published":"Not Published"}}</li>
+                                            <li>Student ID: {{$review->student_id}}</li>
+                                            <li>Institute Name: {{$review->institute->name}}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            @endif    
+                        @endforeach
                     @endforeach
                 </div>
 

@@ -18,9 +18,7 @@ $this->post('password/reset', 'Auth\ResetPasswordController@reset')->name('auth.
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
 
-    Route::get('/dashboard',function (){
-       return view('admin.dashboard');
-    });
+    Route::get('/dashboard','dashboardController@index');
     Route::get('/home',function (){
         return redirect('/admin/dashboard');
     });

@@ -22,13 +22,17 @@
                     </thead>
                     <tbody>
                     @foreach($syllabi as $syllabus)
-                    <tr>
-                        <td>{{$syllabus->id}}</td>
-                        <td>{{$syllabus->name}}</td>
-                        <td><a href="{{\Illuminate\Support\Facades\Storage::url($syllabus->document)}}" target="_blank">View</a></td>
-                        <td>{{$syllabus->version}}</td>
-                        <td><a href="{{route('admin.modules.view',$syllabus->id)}}">Show</a></td>
-                    </tr>
+                        @foreach (Auth::user()->institutes as $institute)
+                            @if ($syllabus->course->institute_id==$institute->id)
+                                <tr>
+                                    <td>{{$syllabus->id}}</td>
+                                    <td>{{$syllabus->name}}</td>
+                                    <td><a href="{{\Illuminate\Support\Facades\Storage::url($syllabus->document)}}" target="_blank">View</a></td>
+                                    <td>{{$syllabus->version}}</td>
+                                    <td><a href="{{route('admin.modules.view',$syllabus->id)}}">Show</a></td>
+                                </tr>
+                            @endif
+                        @endforeach
                     @endforeach
                     </tbody>
                 </table>

@@ -112,7 +112,7 @@
 
     <div class="media-body h-search">
         <form class="p-relative">
-            <input type="text" class="hs-input" placeholder="Search for people, files & reports">
+            <input type="text" class="hs-input typeahead1" id="mainSearch" placeholder="Search for people, files & reports">
             <i class="zmdi zmdi-search hs-reset" data-ma-action="search-clear"></i>
         </form>
     </div>

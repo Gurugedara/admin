@@ -2,10 +2,11 @@ $(document).ready(function(){
     
     /* Make some random data for the Chart*/
     
-    var d1 = [];
-    for (var i = 0; i <= 10; i += 1) {
-        d1.push([i, parseInt(Math.random() * 30)]);
-    }
+    var d1 = [[12,28],[13,45],[14,32],[15,97],[16,68],
+    [17,78],[18,102]];
+    // for (var i = 0; i <= 10; i += 1) {
+    //     d1.push([i, parseInt(Math.random() * 30)]);
+    // }
     var d2 = [];
     for (var i = 0; i <= 25; i += 4) {
         d2.push([i, parseInt(Math.random() * 30)]);
@@ -21,7 +22,7 @@ $(document).ready(function(){
         series: {
             shadowSize: 0,
             curvedLines: { //This is a third party plugin to make curved lines
-                apply: true,
+                apply: false,
                 active: true,
                 monotonicFit: true
             },
@@ -57,14 +58,13 @@ $(document).ready(function(){
     
     if ($("#curved-line-chart")[0]) {
         $.plot($("#curved-line-chart"), [
-            {data: d1, lines: { show: true, fill: 0.98 }, label: 'Product 1', stack: true, color: '#e3e3e3' },
-            {data: d3, lines: { show: true, fill: 0.98 }, label: 'Product 2', stack: true, color: '#f1dd2c' }
+            {data: d1, lines: { show: true, fill: 0.98 }, label: 'date', stack: true, color: '#f1dd2c' },
         ], options);
     }
     
     if ($("#number-stats-chart")[0]) {
         $.plot($("#number-stats-chart"), [
-            {data: d2, lines: { show: true, fill: 0.4 }, label: 'Product 1', stack: true, color: '#fff' }
+            {data: d2, lines: { show: true, fill: 0.4 }, label: 'Product 1', stack: false, color: '#fff' }
         ], options);
     }
     

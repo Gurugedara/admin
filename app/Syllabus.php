@@ -11,4 +11,7 @@ class Syllabus extends Model
     public function modules(){
         return $this->hasMany('App\Module','syllabus_id');
     }
+    public function course(){
+        return $this->hasOne('App\course_institute','syllabus_id');
+    }
 }

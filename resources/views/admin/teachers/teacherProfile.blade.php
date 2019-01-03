@@ -3,48 +3,15 @@
             <section id="content">
                 <div class="container">
                     <div class="c-header">
-                        <h2>{{$teacher->user->firstname." ".$teacher->user->Lastname}} <small>Web/UI Developer, Edinburgh, Scotland</small></h2>
+                        <h2>{{$teacher->user->firstname." ".$teacher->user->Lastname}} <small>Teacher</small></h2>
                     </div>
 
                     <div class="card" id="profile-main">
-                        <div class="pm-overview c-overflow">
-                            <div class="pmo-pic">
-                                <div class="p-relative">
-                                    <a href="#">
-                                        <img class="img-responsive" src="/admin/img/profile-pics/profile-pic-2.jpg" alt="">
-                                    </a>
-
-                                    <div class="dropdown pmop-message">
-                                        <a data-toggle="dropdown" href="#" class="btn palette-White bg btn-float z-depth-1">
-                                            <i class="zmdi zmdi-comment-text-alt"></i>
-                                        </a>
-
-                                        <div class="dropdown-menu">
-                                            <textarea placeholder="Write something..."></textarea>
-
-                                            <button class="btn bgm-green btn-float"><i class="zmdi zmdi-mail-send"></i></button>
-                                        </div>
-                                    </div>
-
-                                    <a href="#" class="pmop-edit">
-                                        <i class="zmdi zmdi-camera"></i> <span class="hidden-xs">Update Profile Picture</span>
-                                    </a>
-                                </div>
-
-
-                                <div class="pmo-stat">
-                                    <h2 class="m-0 c-white">{{$teacher->user->firstname}}</h2>
-                                    Student
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="pm-body clearfix">
+                        <div class="pm-body clearfix" style="padding-left:0">
                             <ul class="tab-nav tn-justified">
                                 <li class="active waves-effect" id="about" onclick="showAbout()"><a >About</a></li>
                                 <li class="waves-effect" id="institute" onclick="showCourse()"><a >Course Info</a></li>
-                                <li class="waves-effect" id="result" onclick="showResult()"><a >Exam Result</a></li>
+                                <li class="waves-effect hide" id="result" onclick="showResult()"><a >Exam Result</a></li>
                             </ul>
                             <div id="aboutSection">
                                 <div class="pmb-block">
