@@ -95,4 +95,5 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     
 });
 
+Route::get('/institute/register', 'RegisterInstitutesController@index');
 Route::resource('institutes','instituteController');
