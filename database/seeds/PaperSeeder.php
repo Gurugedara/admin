@@ -13,8 +13,8 @@ class PaperSeeder extends Seeder
     {
         $items = [
             
-            ['id' => '1','name' => 'Spot Test', 'course_id' => '1', 'institute_id' => '1','user_id' => '1', 'marks' => '100'],
-            ['id' => '2','name' => 'Spot Test', 'course_id' => '1', 'institute_id' => '2','user_id' => '1', 'marks' => '100'],
+            ['id' => '1','name' => 'Spot Test1', 'course_id' => '1', 'institute_id' => '1','user_id' => '1', 'marks' => '100'],
+            ['id' => '2','name' => 'Spot Test2', 'course_id' => '1', 'institute_id' => '2','user_id' => '1', 'marks' => '100'],
         ];
 
         foreach ($items as $item) {
