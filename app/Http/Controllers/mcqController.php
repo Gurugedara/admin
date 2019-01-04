@@ -15,7 +15,7 @@ class mcqController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.mcq.index');
     }
 
     /**
