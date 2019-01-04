@@ -94,3 +94,4 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 });
 
 Route::resource('institutes','instituteController');
+Route::resource('mcq','mcqController');
