@@ -15,11 +15,21 @@ class CreateSuccessStoriesTable extends Migration
     {
         Schema::create('success_stories', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('student_id');
-            $table->integer('institute_id');
+            $table->integer('student_id')->nullable()->unsigned();
+            $table->integer('institute_id')->unsigned();
             $table->string('image');
             $table->string('description');
             $table->timestamps();
+            $table->foreign('student_id')
+                ->references('id')
+                ->on('students')
+                ->onDelete('set null')
+                ->onUpdate('cascade');
+            $table->foreign('institute_id')
+                ->references('id')
+                ->on('institutes')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

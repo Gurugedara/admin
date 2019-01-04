@@ -16,10 +16,20 @@ class CreateReviewcommentsTable extends Migration
         Schema::create('review_comments', function (Blueprint $table) {
             $table->increments('id');
             $table->string("comment",191);
-            $table->integer("user_id");
+            $table->integer("user_id")->unsigned();
             $table->integer("type")->default(0);
-            $table->integer("review_id");
+            $table->integer("review_id")->unsigned();
             $table->timestamps();
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->foreign('review_id')
+                ->references('id')
+                ->on('reviews')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

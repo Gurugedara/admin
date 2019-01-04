@@ -14,11 +14,21 @@ class CreateCoursesInstitutes extends Migration
     public function up()
     {
         Schema::create('course_institutes', function (Blueprint $table) {
-            $table->string('institute_id');
-            $table->string('course_id');
-            $table->integer('syllabus_id')->default(-1);
+            $table->integer('institute_id')->unsigned();
+            $table->integer('course_id')->unsigned();
+            $table->integer('syllabus_id')->unsigned();
             $table->timestamps();
             $table->primary(['institute_id','course_id']);
+            $table->foreign('institute_id')
+                ->references('id')
+                ->on('institutes')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->foreign('course_id')
+                ->references('id')
+                ->on('courses')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

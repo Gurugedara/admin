@@ -14,10 +14,20 @@ class CreateInstituteOwnersTable extends Migration
     public function up()
     {
         Schema::create('institute_owners', function (Blueprint $table) {
-            $table->integer('institute_id');
-            $table->integer('user_id');
+            $table->integer('institute_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->primary(['institute_id','user_id']);
             $table->timestamps();
+            $table->foreign('institute_id')
+                ->references('id')
+                ->on('institutes')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

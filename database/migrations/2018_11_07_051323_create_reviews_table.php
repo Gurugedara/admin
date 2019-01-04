@@ -17,12 +17,22 @@ class CreateReviewsTable extends Migration
             $table->increments('id');
             $table->string("comment",191);
             $table->integer("stars");
-            $table->integer("student_id");
-            $table->integer("institute_id");
+            $table->integer("student_id")->unsigned();
+            $table->integer("institute_id")->unsigned();
             $table->integer("status");
             $table->integer("up")->default(0);
             $table->integer("down")->default(0);
             $table->timestamps();
+            $table->foreign('student_id')
+                ->references('id')
+                ->on('students')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->foreign('institute_id')
+                ->references('id')
+                ->on('institutes')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

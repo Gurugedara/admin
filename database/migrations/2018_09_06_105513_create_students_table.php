@@ -21,8 +21,13 @@ class CreateStudentsTable extends Migration
             $table->integer('age');
             $table->string('olindex')->default('null');
             $table->string('alindex')->default('null');
-            $table->integer('user_id');
+            $table->integer('user_id')->unique()->unsigned()->nullable();
             $table->timestamps();
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

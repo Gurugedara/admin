@@ -16,11 +16,26 @@ class CreatePapersTable extends Migration
         Schema::create('papers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('course_id');
-            $table->integer('institute_id');
-            $table->integer('user_id');
+            $table->integer('course_id')->unsigned();
+            $table->integer('institute_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->integer('marks')->default(1);
             $table->timestamps();
+            $table->foreign('course_id')
+                ->references('id')
+                ->on('courses')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->foreign('institute_id')
+                ->references('id')
+                ->on('institutes')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

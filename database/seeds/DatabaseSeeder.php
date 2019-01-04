@@ -16,14 +16,17 @@ class DatabaseSeeder extends Seeder
         $this->call(StudentSeed::class);
         $this->call(TeacherSeed::class);
         $this->call(InstituteSeeder::class);
-        $this->call(InstituteStudent::class);
         $this->call(courseSeed::class);
+        $this->call(InstituteStudent::class);
         $this->call(instituteTeacher::class);
         $this->call(OwnerSeeder::class);
+        $this->call(syllabusSeeder::class);
         $this->call(courseInstitute::class);
         $this->call(reviewsSeeder::class);
         $this->call(reviewCommentSeed::class);
-        $this->call(syllabusSeeder::class);
         $this->call(moduleSeeder::class);
+        $this->call(PaperSeeder::class);
+        $this->call(McqSeeder::class);
+        $this->call(McqAnswerSeeder::class);
     }
 }

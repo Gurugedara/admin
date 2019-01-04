@@ -15,10 +15,15 @@ class CreateMcqsTable extends Migration
     {
         Schema::create('mcqs', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('paper_id');
+            $table->integer('paper_id')->unsigned();
             $table->string('description');
             $table->integer('marks');
             $table->timestamps();
+            $table->foreign('paper_id')
+                ->references('id')
+                ->on('papers')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
