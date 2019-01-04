@@ -18,6 +18,7 @@ class CreateInstitutesTable extends Migration
             $table->string('name');
             $table->string('address');
             $table->string('telephone');
+            $table->integer('activeStatus')->default('1');
             $table->timestamps();
         });
     }

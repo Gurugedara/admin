@@ -31,10 +31,10 @@
                            <td>
                                <div class="row">
                                    <div class="col">
-                                   <a id="sa-params" href="{{route('admin.modules.edit',$module->id)}}"> <button class="btn waves-effect btn-success">Edit</button></a>
+                                        <a id="sa-params" href="{{route('admin.modules.edit',$module->id)}}"> <button class="btn waves-effect btn-success">Edit</button></a>
                                    </div>
                                    <div class="col">
-                                       <form method="POST" action="{{route('admin.modules.destroy',$module->id)}}">
+                                       <form method="POST" action="{{route('admin.modules.destroy',$module->id)}}" style="position:inline">
                                            @method('DELETE')
                                            @csrf
                                             <button type="submit" class="btn waves-effect btn-danger">Delete</button>

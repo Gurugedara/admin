@@ -1949,6 +1949,7 @@ select.chosen {
 
 .twitter-typeahead .tt-menu.tt-open:not(.tt-empty) {
   display: block;
+  position: relative!important;
 }
 
 .twitter-typeahead .tt-suggestion {

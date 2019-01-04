@@ -13,7 +13,7 @@
                         <div class="card-header">
                             <div class="media">
                                 <div class="pull-left">
-                                    <img class="avatar-img a-lg" src="/admin/img/profile-pics/1.jpg" alt="">
+                                    <img class="avatar-img a-lg" src="{{$review->student->user->avatar}}" alt="">
                                 </div>
 
                                 <div class="media-body m-t-5">
@@ -41,7 +41,7 @@
                                 @foreach($review->comments as $comment)
                                 <div class="media">
                                     <a href="#" class="pull-left">
-                                        <img src="/admin/img/profile-pics/5.jpg" alt="" class="avatar-img">
+                                        <img src="{{$comment->user->avatar}}" alt="" class="avatar-img">
                                     </a>
                                     @if($comment->user_id==auth()->user()->id)
                                     <div class="pull-right">
@@ -115,9 +115,17 @@
 @endsection
 
 @push('css')
+    <link href="/admin/vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+    <link href="/admin/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+    <link href="/admin/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="/admin/vendors/bower_components/google-material-color/dist/palette.css" rel="stylesheet">
     <link href="/admin/vendors/bower_components/lightgallery/dist/css/lightgallery.min.css" rel="stylesheet">
 @endpush
 @push('js')
     <script src="/admin/vendors/bower_components/lightgallery/dist/js/lightgallery-all.min.js"></script>
     <script src="/admin/vendors/bower_components/autosize/dist/autosize.min.js"></script>
+    <script src="/admin/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/admin/vendors/bower_components/Waves/dist/waves.min.js"></script>
+    <script src="/admin/vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+    <script src="/admin/vendors/bootgrid/jquery.bootgrid.updated.min.js"></script>
 @endpush

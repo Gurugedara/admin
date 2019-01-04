@@ -28,9 +28,13 @@
                                        <td>{{$institute->address}}</td>
                                        <td>{{$institute->telephone}}</td>                                       
                                        <td>
-                                       <a id="sa-params" href="/admin/institute/edit/{{$institute->id}}"> <button class="btn waves-effect btn-success">Edit</button></a>
-                                           <a id="sa-params" href="/admin/institute/delete/{{$institute->id}}"> <button class="btn waves-effect btn-danger">Delete</button></a>
-                                       </td>
+                                        <a id="sa-params" href="/admin/institute/edit/{{$institute->id}}"> <button class="btn waves-effect btn-success">Edit</button></a>
+                                        @if($institute->activeStatus==1)
+                                            <a id="sa-params" href="/admin/institute/hide/{{$institute->id}}"> <button class="btn waves-effect btn-danger">Hide</button></a>
+                                        @else
+                                            <a id="sa-params" href="/admin/institute/unhide/{{$institute->id}}"> <button class="btn waves-effect btn-info">Unhide</button></a>
+                                        @endif
+                                    </td>
                                    </tr>
                         @endforeach
                     </tbody>

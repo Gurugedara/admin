@@ -25,8 +25,8 @@ class messageController extends Controller
         // dd($users);
         return view('admin.message.index',compact('messages','users'));
     }
-    public function getUsers(Request $request){
-        return User::where("firstname","LIKE","%".$request->name."%")->get();
+    public function getUsers($query){
+        return User::where("firstname","LIKE","%".$query."%")->get();
     }
     public function getMessages($sender,$reciever){
         $messages = Message::where('sender_id',$sender)->where('reciever_id',$reciever)

@@ -13,7 +13,7 @@ class institute extends Model
     //Timestamps
     public $timestamps = true;
 
-    protected $fillable = ['id', 'name', 'address', 'telephone'];
+    protected $fillable = ['id', 'name', 'address', 'telephone','activeStatus'];
 
     public function students()
     {

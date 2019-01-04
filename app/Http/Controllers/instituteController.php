@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\institute;
 use App\institute_owner;
+use App\institute_student;
+use App\institute_teacher;
 
 class instituteController extends Controller
 {
@@ -76,7 +78,7 @@ class instituteController extends Controller
      */
     public function edit($id)
     {
-        $institute = institutes::find($id);
+        $institute = institute::find($id);
         return view('admin.institutes.edit',compact('institute'));
     }
 
@@ -106,5 +108,17 @@ class instituteController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function hide($id){
+        $institute = institute::find($id);
+        $institute->activeStatus = 0;
+        $institute->save();
+        return back();
+    }
+    public function unhide($id){
+        $institute = institute::find($id);
+        $institute->activeStatus = 1;
+        $institute->save();
+        return back();
     }
 }

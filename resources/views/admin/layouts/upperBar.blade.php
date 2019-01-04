@@ -21,64 +21,12 @@
             </a>
         </li>
 
-        <li class="dropdown hidden-xs hidden-sm h-apps">
-            <a data-toggle="dropdown" href="#">
-                <i class="hm-icon zmdi zmdi-apps"></i>
-            </a>
-            <ul class="dropdown-menu pull-right">
-                <li>
-                    <a href="#">
-                        <i class="palette-Red-400 bg zmdi zmdi-calendar"></i>
-                        <small>Calendar</small>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i class="palette-Green-400 bg zmdi zmdi-file-text"></i>
-                        <small>Files</small>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="palette-Light-Blue bg zmdi zmdi-email"></i>
-                        <small>Mail</small>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="palette-Orange-400 bg zmdi zmdi-trending-up"></i>
-                        <small>Analytics</small>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="palette-Purple-300 bg zmdi zmdi-view-headline"></i>
-                        <small>News</small>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="palette-Blue-Grey bg zmdi zmdi-image"></i>
-                        <small>Gallery</small>
-                    </a>
-                </li>
-            </ul>
-        </li>
+        
         <li class="dropdown hidden-xs">
             <a data-toggle="dropdown" href="#"><i class="hm-icon zmdi zmdi-more-vert"></i></a>
             <ul class="dropdown-menu dm-icon pull-right">
                 <li class="hidden-xs">
                     <a data-action="fullscreen" href="#"><i class="zmdi zmdi-fullscreen"></i> Toggle Fullscreen</a>
-                </li>
-                <li>
-                    <a data-action="clear-localstorage" href="#"><i class="zmdi zmdi-delete"></i> Clear Local Storage</a>
-                </li>
-                <li>
-                    <a href="#"><i class="zmdi zmdi-face"></i> Privacy Settings</a>
-                </li>
-                <li>
-                    <a href="#"><i class="zmdi zmdi-settings"></i> Other Settings</a>
                 </li>
             </ul>
         </li>
@@ -89,24 +37,6 @@
             <a data-toggle="dropdown" href="#">
                 <img src="{{\Auth::user()->avatar}}" alt="">
             </a>
-
-            <ul class="dropdown-menu pull-right dm-icon">
-                <li>
-                    <a href="profile-about.html"><i class="zmdi zmdi-account"></i> View Profile</a>
-                </li>
-                <li>
-                    <a href="#"><i class="zmdi zmdi-input-antenna"></i> Privacy Settings</a>
-                </li>
-                <li>
-                    <a href="#"><i class="zmdi zmdi-settings"></i> Settings</a>
-                </li>
-                <li>
-                    <a href="{{ route('auth.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="zmdi zmdi-time-restore"></i> Logout</a>
-                    <form id="logout-form" action="{{ route('auth.logout') }}" method="POST" style="display: none;">
-                        {{ csrf_field() }}
-                    </form>
-                </li>
-            </ul>
         </li>
     </ul>
 

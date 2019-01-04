@@ -154,7 +154,7 @@
                                                 <div class="col col-sm-4 card card-padding c-white bgm-blue">
                                                     <div class="card-content bg-white">
                                                         <img class="center-block" src="/admin/img/books.png">
-                                                        <p align="center">{{$institute->pivot->course_id}}</p>
+                                                        <p align="center">{{App\course::find($institute->pivot->course_id)->name}}</p>
                                                         <p align="center">Registration Number: {{$institute->pivot->regNumber}}</p>
                                                     </div>
                                                 </div>

@@ -31,7 +31,7 @@
                                             <td>{{$student->nic}}</td>
                                             <td>{{$student->user->firstname." ".$student->user->Lastname}}</td>
                                             <td>{{$institute->name}}</td>
-                                            <td>{{$institute->pivot->course_id}}</td>
+                                            <td>{{App\course::find($institute->pivot->course_id)->name}}</td>
                                             <td>
                                                 <a href='/admin/verify/student/{{$institute->id}}/{{$student->id}}'> <button type="button" class="btn btn-icon palette-Green bg command-edit waves-effect waves-circle waves-float"><span class="zmdi zmdi-check"></span></button> </a>
                                                 <a href='/admin/deny/student/{{$institute->id}}/{{$student->id}}'><button type="button" class="btn btn-icon palette-Red bg command-edit waves-effect waves-circle waves-float" data-row-id=\""><span class="zmdi zmdi-close"></span></button></a>

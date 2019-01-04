@@ -10,64 +10,6 @@
                 <div class="action-header palette-Teal-400 bg clearfix">
                     <div class="ah-label hidden-xs palette-White text">Student Reviews</div>
 
-                    <div class="ah-search">
-                        <input type="text" placeholder="Start typing..." class="ahs-input">
-
-                        <i class="ah-search-close zmdi zmdi-long-arrow-left" data-ma-action="ah-search-close"></i>
-                    </div>
-
-                    <ul class="ah-actions actions a-alt">
-                        <li>
-                            <a href="#" class="ah-search-trigger" data-ma-action="ah-search-open">
-                                <i class="zmdi zmdi-search"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#">
-                                <i class="zmdi zmdi-time"></i>
-                            </a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" data-toggle="dropdown" aria-expanded="true">
-                                <i class="zmdi zmdi-sort"></i>
-                            </a>
-
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <li>
-                                    <a href="#">Last Modified</a>
-                                </li>
-                                <li>
-                                    <a href="#">Last Edited</a>
-                                </li>
-                                <li>
-                                    <a href="#">Name</a>
-                                </li>
-                                <li>
-                                    <a href="#">Date</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="zmdi zmdi-info"></i>
-                            </a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" data-toggle="dropdown" aria-expanded="true">
-                                <i class="zmdi zmdi-more-vert"></i>
-                            </a>
-
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <li>
-                                    <a href="#">Refresh</a>
-                                </li>
-                                <li>
-                                    <a href="#">Listview Settings</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
                 </div>
 
                 <div class="list-group lg-alt lg-even-black">
@@ -91,10 +33,12 @@
 
                                                 <ul class="dropdown-menu dropdown-menu-right">
                                                     <li>
-                                                        @if($review->status==0)
-                                                            <a href="/admin/institute/reviews/publish/{{$review->id}}">Publish</a>
-                                                        @else
-                                                            <a href="/admin/institute/reviews/hide/{{$review->id}}">hide</a>
+                                                        @if(Auth::user()->role_id==1)
+                                                            @if($review->status==0)
+                                                                <a href="/admin/institute/reviews/publish/{{$review->id}}">Publish</a>
+                                                            @else
+                                                                <a href="/admin/institute/reviews/hide/{{$review->id}}">hide</a>
+                                                            @endif
                                                         @endif
                                                     </li>
                                                     <li>
@@ -112,7 +56,7 @@
                                     <div class="media-body">
                                         <div class="lgi-heading">{{$review->comment}}</div>
                                         <ul class="lgi-attrs">
-                                            <li>Date Created: 09/06/1988</li>
+                                            <li>{{$review->created_at}}</li>
                                             <li>stars: {{$review->stars}}</li>
                                             <li style="color: #f8f8f8;{{($review->status==0)?"background: orange":"background: blue"}}">status: {{($review->status==1)?"published":"Not Published"}}</li>
                                             <li>Student ID: {{$review->student_id}}</li>

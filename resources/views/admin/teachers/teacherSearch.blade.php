@@ -34,7 +34,7 @@
                                         <td>{{$teacher->nic}}</td>
                                         <td>{{$teacher->user->firstname." ".$teacher->user->Lastname}}</td>
                                         <td>{{$institute->name}}</td>
-                                        <td>{{$institute->pivot->course_id}}</td>
+                                        <td>{{App\course::find($institute->pivot->course_id)->name}}</td>
                                     </tr>
                                 @endif
                             @endforeach

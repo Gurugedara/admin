@@ -99,7 +99,7 @@
                     datumTokenizer: Bloodhound.tokenizers.whitespace,
                     queryTokenizer: Bloodhound.tokenizers.whitespace,
                     remote: {
-                        url: '/admin/message/getUsers?query=%QUERY%',
+                        url: '/admin/message/getUsers/%QUERY%',
                         wildcard: '%QUERY%'
                     },
                 });

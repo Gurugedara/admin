@@ -100,6 +100,8 @@ class paperController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $paper = Paper::find($id);
+        $paper->delete();
+        return back();
     }
 }

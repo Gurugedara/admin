@@ -19,7 +19,11 @@
           <li><a href="#vision">VISION & MISSION</a></li>
           <li><a href="#services">SERVICES</a></li>
           <li><a href="#contact">CONTACT</a></li>
+          @if(Auth::user()==null)
           <li><a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"> LOGIN</a></li> 
+          @else
+          <li><a href="/admin/dashboard">ADMIN</a></li>
+          @endif
           <li><a onclick="openSearch()"><i class="fa fa-search"></i></a></li> 
         </ul>
       </div>
@@ -47,16 +51,47 @@
     <div class="head-title">
       <h1>Place for Learners.</h1>
     </div>
+    
     <div class= bt-set>
       <div class="col-sm-4">
         <br>
-        <a class="btn btn-success btn-lg" style="width:200px" href="/institutes/create">Create account</a>
+        <a class="btn btn-success btn-lg" style="width:200px" href="/institutes/create">Create your Institute</a>
       </div>
     </div>  
-
-    
   </div>
+  <div class=" select-part-section p-2 rounded" style="margin-top:50px">
+      <div class="row">
+        <div class="col-lg-3">
+          <select class="form-control form-control-lg pull-left" placeholder="select language">
+              <option>Select language</option>
+              <option>English</option>
+              <option>Gujrati</option>
+              <option>Hindi</option>
+          </select>
+        </div>
+        <div class="col-lg-3 border-left">
+          <select class="form-control form-control-lg" placeholder="select language">
+              <option>Select Country</option>
+              <option>India</option>
+              <option>USA</option>
+              <option>Japan</option>
+          </select>
+        </div>
+        <div class="col-lg-3 border-left">
+          <select class="form-control form-control-lg pull-left" placeholder="select language">
+              <option> Select Company </option>
+              <option>IT</option>
+              <option>Managament</option>
+              <option>Social Work</option>
+          </select>
+        </div>
+        <div class="col-lg-3">
+          <a href="http://nicesnippets.com" target="_blank" class="btn btn-danger btn-block search-btn"><i class="fa fa-search" aria-hidden="true"></i>Search Institutes</a>
+        </div>
+      </div>
+    </div>
 </div>
+
 
 <!-- Container (About Section) -->
 <div id="about" class="container-fluid">

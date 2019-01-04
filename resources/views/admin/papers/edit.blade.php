@@ -13,7 +13,8 @@
 
                 <div class="card-body card-padding">
                     <br/><br/>
-                    <form method="POST" action="{{route('admin.papers.update')}}" id = "addCourse">
+                    <form method="POST" action="{{route('admin.papers.update',$paper->id)}}" id = "addCourse">
+                        @method('PUT')
                         @csrf
                         <div class="row">
                             <div class="col-sm-3">
@@ -60,7 +61,7 @@
                                 <div>
                                     <div >
                                         {{--<button class="btn btn-primary" onclick="select()">Add</button>--}}
-                                        <button class="btn btn-primary">Add</button>
+                                        <button class="btn btn-info">Update</button>
                                     </div>
                                 </div>
                             </div>

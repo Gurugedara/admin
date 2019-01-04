@@ -10,23 +10,27 @@ use App\Comment;
 class forumController extends Controller
 {
     public function index(){
-        $posts = Post::orderBy('id')->take(5)->get();
+        $posts = Post::orderBy('id','dsc')->take(5)->get();
         return view('admin.forum.index',compact('posts'));
     }
     public function post(Request $request){
         // dd($request);
+        $request->validate([
+            'content' => 'required',
+        ]);
         $post = new Post();
         $post->content = $request->content;
         $post->likes = 0;
         $post->user_id = \Auth::user()->id;
         $post->save();
-
-        foreach($request->imageFile as $image){
-            $temp = new Image();
-            $temp->name = $image->getFilename().$image->getClientOriginalExtension();
-            $temp->path = $image->store('public/forum');
-            $temp->post_id = $post->id;
-            $temp->save();
+        if($request->has('imageFile')){
+            foreach($request->imageFile as $image){
+                $temp = new Image();
+                $temp->name = $image->getFilename().$image->getClientOriginalExtension();
+                $temp->path = $image->store('public/forum');
+                $temp->post_id = $post->id;
+                $temp->save();
+            }
         }
 
         return back();

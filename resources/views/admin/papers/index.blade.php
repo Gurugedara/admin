@@ -91,7 +91,11 @@
                                         <div class="c-footer">
                                             <button class="waves-effect"><i class="zmdi zmdi-person-add"></i><a href="{{route('admin.papers.show',$paper->id)}}"> View</a></button>
                                             <button class="waves-effect"><i class="zmdi zmdi-person-add"></i><a href="{{route('admin.papers.edit',$paper->id)}}"> Edit</a></button>
-                                            <button class="waves-effect"><i class="zmdi zmdi-person-add"></i><a href="{{route('admin.papers.destroy',$paper->id)}}"> Delete</a></button>
+                                            <form method="POST" action="{{route('admin.papers.destroy',$paper->id)}}">
+                                                    @method('DELETE')
+                                                    @csrf
+                                            <button class="waves-effect center" style="border:none;background:none;color:red;margin-left:46px;"><i class="zmdi zmdi-person-add"></i>Delete</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>

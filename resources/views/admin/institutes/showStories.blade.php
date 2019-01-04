@@ -5,6 +5,7 @@
             <div class="c-header">
                 <h2>Success Stories</h2>
             </div>
+            <a href="{{route('admin.stories.index')}}"><button class="btn btn-float btn-danger m-btn"><i class="zmdi zmdi-arrow-back"></i></button></a>
 
             <div class="card" id="profile-main">
                 <div class="pm-overview c-overflow">

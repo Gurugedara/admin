@@ -164,7 +164,11 @@
 
         <script>
             var messageWindow = document.getElementById('chatWindow');
-            getMessages({{$users[0]}});
+            getMessages(
+                @if(!empty($users))
+                    {{$users[0]}}
+                @endif
+            );
             function getMessages(userId){
                 $.ajax({
                     type: 'GET',

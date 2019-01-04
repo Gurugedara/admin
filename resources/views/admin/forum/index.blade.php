@@ -13,7 +13,7 @@
                             @csrf
                             <div class="card-body card-padding">
                                 <input type="file" name="imageFile[]" style="display:none" id="imageFile" onchange="readURL(this)">
-                                <textarea name="content" class="wp-text" data-auto-size placeholder="Write Something..."></textarea>
+                                <textarea name="content" class="wp-text" data-auto-size placeholder="Write Something..." required></textarea>
                                 <div class="tab-content p-0">
                                     <div class="wp-media tab-pane" id="wpm-image">
                                         Add a Image
@@ -138,41 +138,6 @@
 
                 </div>
 
-                <div class="col-md-4 hidden-sm">
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>About me</h2>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>Contact Information</h2>
-                        </div>
-                        <div class="card-body card-padding">
-                            <div class="pmo-contact">
-                                <ul>
-                                    <li class="ng-binding"><i class="zmdi zmdi-phone"></i> 00971123456789</li>
-                                    <li class="ng-binding"><i class="zmdi zmdi-email"></i> malinda.h@gmail.com</li>
-                                    <li class="ng-binding"><i class="zmdi zmdi-facebook-box"></i> malinda.hollaway</li>
-                                    <li class="ng-binding"><i class="zmdi zmdi-twitter"></i> @malinda (twitter.com/malinda)</li>
-                                    <li>
-                                        <i class="zmdi zmdi-pin"></i>
-                                        <address class="m-b-0 ng-binding">
-                                            44-46 Morningside Road,<br>
-                                            Edinburgh,<br>
-                                            Scotland
-                                        </address>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <a class="pmo-map" href="#">
-                                <img src="img/demo/map.png" alt="">
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
