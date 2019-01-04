@@ -30,7 +30,6 @@ class McqAnswerSeeder extends Seeder
             ['id' => '15','mcq_id' => '4', 'answer' => 'Sun is not a star.', 'status' => '0'],
             ['id' => '16','mcq_id' => '4', 'answer' => 'None of Above.', 'status' => '0' ],
         ];
-
         foreach ($items as $item) {
             \App\McqAnswer::create($item);
         }
