@@ -77,24 +77,26 @@
             <div class="card-body card-padding">
                 <div class="contacts clearfix row">
                     @foreach($papers as $paper)
-                        <div class="col-md-2 col-sm-4 col-xs-6">
-                            <div class="c-item">
-                                <a href="#" class="ci-avatar">
-                                    <img src="/admin/img/doc.png" alt="">
-                                </a>
-
-                                <div class="c-info">
-                                    <strong>{{$paper->name}}</strong>
-                                    <small>{{$paper->course->name}}</small>
+                        @foreach (Auth::user()->institutes as $institute)
+                            @if ($institute->id==$paper->institute_id) 
+                                <div class="col-md-2 col-sm-4 col-xs-6">
+                                    <div class="c-item">
+                                        <a href="#" class="ci-avatar">
+                                            <img src="/admin/img/doc.png" alt="">
+                                        </a>
+                                        <div class="c-info">
+                                            <strong>{{$paper->name}}</strong>
+                                            <small>{{$paper->course->name}}</small>
+                                        </div>
+                                        <div class="c-footer">
+                                            <button class="waves-effect"><i class="zmdi zmdi-person-add"></i><a href="{{route('admin.papers.show',$paper->id)}}"> View</a></button>
+                                            <button class="waves-effect"><i class="zmdi zmdi-person-add"></i><a href="{{route('admin.papers.edit',$paper->id)}}"> Edit</a></button>
+                                            <button class="waves-effect"><i class="zmdi zmdi-person-add"></i><a href="{{route('admin.papers.destroy',$paper->id)}}"> Delete</a></button>
+                                        </div>
+                                    </div>
                                 </div>
-
-                                <div class="c-footer">
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i><a href="{{route('admin.papers.show',$paper->id)}}"> View</a></button>
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i><a href="{{route('admin.papers.edit',$paper->id)}}"> Edit</a></button>
-                                    <button class="waves-effect"><i class="zmdi zmdi-person-add"></i><a href="{{route('admin.papers.destroy',$paper->id)}}"> Delete</a></button>
-                                </div>
-                            </div>
-                        </div>
+                            @endif    
+                        @endforeach
                     @endforeach
                 </div>
             </div>

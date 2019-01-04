@@ -3,17 +3,17 @@
     <section id="content">
         <div class="container">
             <div class="c-header">
-                <h2>Students Waiting for Registration</h2>
+                <h2>All Students in your institute</h2>
             </div>
             <div class="card">
                 <div class="card-header">
-                    <h2>Search Students <small>If each student is registered under your institute click on verify, otherwise deny</small></h2>
+                    <h2>Search Students</h2>
                 </div>
 
                 <table id="data-table-command" class="table table-striped table-vmiddle">
                     <thead>
                     <tr>
-                        <th data-column-id="indexNum" data-type="numeric" hidden></th>
+                        <th data-column-id="indexNum" data-type="numeric" hidden>Student Id</th>
                         <th data-column-id="id" data-type="numeric" data-order="desc">Reg Number</th>
                         <th data-column-id="nic">NIC</th>
                         <th data-column-id="name">Name</th>
@@ -28,7 +28,7 @@
                             @foreach(auth()->user()->institutes as $userInstitute)
                                 @if($institute->id==$userInstitute->id)
                                     <tr>
-                                        <td hidden>{{$student->id}}</td>
+                                        <td>{{$student->id}}</td>
                                         <td>{{$institute->pivot->regNumber}}</td>
                                         <td>{{$student->nic}}</td>
                                         <td>{{$student->user->firstname." ".$student->user->Lastname}}</td>

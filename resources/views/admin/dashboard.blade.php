@@ -9,8 +9,8 @@
                                     <div class="sparkline-bar-4 cai-chart"></div>
                                 </div>
                                 <div class="media-body">
-                                    <h2>987,459</h2>
-                                    <small> Website Traffics</small>
+                                    <h2>{{$studentsCount}}</h2>
+                                    <small>Number of Students</small>
                                 </div>
                             </div>
                         </div>
@@ -21,8 +21,8 @@
                                     <div class="sparkline-bar-5 cai-chart"></div>
                                 </div>
                                 <div class="media-body">
-                                    <h2>356,785K</h2>
-                                    <small>Website Impressions</small>
+                                    <h2>{{$teachersCount}}</h2>
+                                    <small>Number of Teachers</small>
                                 </div>
                             </div>
                         </div>
@@ -33,8 +33,8 @@
                                     <div class="sparkline-bar-6 cai-chart"></div>
                                 </div>
                                 <div class="media-body">
-                                    <h2>$ 458,778</h2>
-                                    <small>Total Sales</small>
+                                    <h2>{{$institutesCount}}</h2>
+                                    <small>Number of Institutes</small>
                                 </div>
                             </div>
                         </div>
@@ -42,37 +42,9 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h2>Sales Statistics <small>Vestibulum purus quam scelerisque, mollis nonummy metus</small></h2>
+                            <h2>User Interaction in the Site <small>This graph Shows you about the latest user interaction with this site</small></h2>
 
-                            <ul class="actions">
-                                <li>
-                                    <a href="#">
-                                        <i class="zmdi zmdi-check-all"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="zmdi zmdi-trending-up"></i>
-                                    </a>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" data-toggle="dropdown">
-                                        <i class="zmdi zmdi-more-vert"></i>
-                                    </a>
-
-                                    <ul class="dropdown-menu dropdown-menu-right">
-                                        <li>
-                                            <a href="#">Change Date Range</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Change Graph Type</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Other Settings</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
+                           
                         </div>
 
                         <div class="card-body">
@@ -85,32 +57,12 @@
                     <div id="c-grid" class="clearfix" data-columns>
                         <div class="card c-dark palette-Light-Blue bg">
                                 <div class="card-header">
-                                    <h2>Website Impressions <small>Consectetur Ultricies Porta Fringilla</small></h2>
-
-                                     <ul class="actions a-alt">
-                                        <li class="dropdown">
-                                            <a href="#" data-toggle="dropdown">
-                                                <i class="zmdi zmdi-more-vert"></i>
-                                            </a>
-
-                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                <li>
-                                                    <a href="#">Change Date Range</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Change Graph Type</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Other Settings</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                    <h2>Time on Page <small>Average of time User spent on a Page this week</small></h2>
                                 </div>
                                 <div class="card-body card-padding">
                                     <h2 class="m-t-0 m-b-15 c-white">
                                         <i class="zmdi zmdi-caret-up-circle m-r-5"></i>
-                                        987,453
+                                        {{$avgtimeonpage[0][1]}} Seconds
                                     </h2>
 
                                     <div class="sparkline-1 text-center"></div>
@@ -119,103 +71,16 @@
 
                         <div class="card c-dark palette-Green-A700 bg">
                             <div class="card-header">
-                                <h2>Website Traffics <small>Nullam Adipiscing Pellentesque</small></h2>
-
-                                <ul class="actions a-alt">
-                                    <li class="dropdown">
-                                        <a href="#" data-toggle="dropdown">
-                                            <i class="zmdi zmdi-more-vert"></i>
-                                        </a>
-
-                                        <ul class="dropdown-menu dropdown-menu-right">
-                                            <li>
-                                                <a href="#">Change Date Range</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Change Graph Type</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Other Settings</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                <h2>Traffic From new Users <small>New Users Activities over the week</small></h2>
                             </div>
                             <div class="card-body card-padding">
                                 <h2 class="m-t-0 m-b-15 c-white">
                                     <i class="zmdi zmdi-caret-up-circle m-r-5"></i>
-                                    356,785K
+                                    {{$avgNewUsers}}
                                 </h2>
                                 <div class="sparkline-2 text-center"></div>
                             </div>
                         </div>
-
-                        <div class="card c-dark palette-Blue-Grey bg">
-                            <div class="card-header">
-                                <h2>Total Sales <small>Purus Malesuada Consectetur</small></h2>
-
-                                <ul class="actions a-alt">
-                                    <li class="dropdown">
-                                        <a href="#" data-toggle="dropdown">
-                                            <i class="zmdi zmdi-more-vert"></i>
-                                        </a>
-
-                                        <ul class="dropdown-menu dropdown-menu-right">
-                                            <li>
-                                                <a href="#">Change Date Range</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Change Graph Type</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Other Settings</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="card-body card-padding">
-                                <h2 class="m-t-0 m-b-15 c-white">
-                                    <i class="zmdi zmdi-caret-down-circle m-r-5"></i>
-                                    $458,778
-                                </h2>
-                                <div class="sparkline-3 text-center"></div>
-                            </div>
-                        </div>
-
-                        <div class="card c-dark palette-Deep-Purple-A700 bg">
-                            <div class="card-header">
-                                <h2>Total Sales <small>Purus Malesuada Consectetur</small></h2>
-
-                                <ul class="actions a-alt">
-                                    <li class="dropdown">
-                                        <a href="#" data-toggle="dropdown">
-                                            <i class="zmdi zmdi-more-vert"></i>
-                                        </a>
-
-                                        <ul class="dropdown-menu dropdown-menu-right">
-                                            <li>
-                                                <a href="#">Change Date Range</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Change Graph Type</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Other Settings</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="card-body card-padding">
-                                <h2 class="m-t-0 m-b-15 c-white">
-                                    <i class="zmdi zmdi-caret-down-circle m-r-5"></i>
-                                    $458,778
-                                </h2>
-                                <div class="sparkline-3 text-center"></div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </section>
@@ -230,6 +95,18 @@
 @endpush
 
 @push('js')
+    <script>
+        $(document).ready(function(){
+            var d1 = [
+                @foreach($analyticsData as $data)
+                    [{{$data[0]}},{{$data[1]}}],
+                @endforeach
+            ];
+        });
+        var timeonpage = [@foreach($timeonpage as $time){{$time[1]}},@endforeach];
+        var newUsers = [@foreach($newUsers as $user){{$user[1]}},@endforeach];
+    </script>
+
     <script src="/admin/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="/admin/vendors/bower_components/Waves/dist/waves.min.js"></script>
     <script src="/admin/vendors/bootstrap-growl/bootstrap-growl.min.js"></script>

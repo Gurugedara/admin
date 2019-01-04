@@ -14,5 +14,8 @@ class course extends Model
     public function papers(){
         return $this->hasMany('App\Paper','course_id');
     }
+    public function syllabus(){
+        return $this->hasOne('App\Syllabus');
+    }
 
 }

@@ -122,8 +122,7 @@
     <script src="/admin/vendors/bower_components/Waves/dist/waves.min.js"></script>
     <script src="/admin/vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
     <script src="/admin/js/chat.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+    
 
 
 
