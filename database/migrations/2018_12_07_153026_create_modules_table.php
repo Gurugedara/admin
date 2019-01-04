@@ -18,8 +18,13 @@ class CreateModulesTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('learning_points');
-            $table->integer('syllabus_id');
+            $table->integer('syllabus_id')->unsigned();
             $table->timestamps();
+            $table->foreign('syllabus_id')
+                ->references('id')
+                ->on('syllabi')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

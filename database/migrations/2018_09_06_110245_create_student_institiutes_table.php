@@ -14,13 +14,23 @@ class CreateStudentInstitiutesTable extends Migration
     public function up()
     {
         Schema::create('institute_students', function (Blueprint $table) {
-            $table->string('institute_id');
-            $table->string('student_id');
-            $table->string('course_id');
+            $table->integer('institute_id')->unsigned();
+            $table->integer('student_id')->unsigned();
+            $table->integer('course_id')->unsigned();
             $table->string('regNumber');
             $table->integer('status')->default('0');
             $table->timestamps();
             $table->primary(['student_id','institute_id','course_id']);
+            $table->foreign('institute_id')
+                ->references('id')
+                ->on('institutes')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->foreign('student_id')
+                ->references('id')
+                ->on('students')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

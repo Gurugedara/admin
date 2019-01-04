@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateImagesTable extends Migration
+class AddRelationToStudentInstitute extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,8 @@ class CreateImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('images', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('path');
-            $table->integer('post_id')->unsigned();
-            $table->timestamps();
-            $table->foreign('post_id')
-                ->references('id')
-                ->on('posts')
+        Schema::table('institute_students', function(Blueprint $table) {
+            $table->foreign('course_id')->references('id')->on('courses')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
@@ -34,6 +27,6 @@ class CreateImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('images');
+        //
     }
 }
