@@ -100,6 +100,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
     //courses
     Route::get('/courses','courseController@viewCourses');
+    Route::get('/courses/create','courseController@addCourses');
+    Route::post('/courses/add','courseController@saveCourses');
 
 
 //    Route::resource('roles', 'Admin\RolesController');

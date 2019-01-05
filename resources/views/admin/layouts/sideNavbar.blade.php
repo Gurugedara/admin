@@ -43,7 +43,7 @@
             </ul>
         </li>
         @if(Auth::user()->role_id==1)
-        <li {{(Request::is('admin/courses') ? 'class=active' : '')}}><a href="{{url('/admin/courses')}}"><i class="zmdi zmdi-layers"></i> Courses</a></li>
+        <li {{((Request::is('admin/courses')||(Request::is('admin/courses/*'))) ? 'class=active' : '')}}><a href="{{url('/admin/courses')}}"><i class="zmdi zmdi-layers"></i> Courses</a></li>
         @endif
         <li {{(Request::is('admin/message/view') ? 'class=active' : '')}}><a href="{{url('/admin/message/view')}}"><i class="zmdi zmdi-swap-alt"></i> Message Inbox</a></li>
         <li {{(Request::is('admin/forum') ? 'class=active' : '')}}><a href="{{url('/admin/forum')}}"><i class="zmdi zmdi-collection-text"></i> Forum</a></li>

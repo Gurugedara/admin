@@ -95,7 +95,15 @@ class courseController extends Controller
         }
         return view('admin.courses.index',compact('allCourses','countData'));
     }
-    public function editCourses(){
-        
+
+    public function addCourses(){
+        return view('admin.courses.add');
+    }
+
+    public function saveCourses(Request $request){
+        $course = new course();
+        $course->name = $request->name;
+        $course->save();
+        return redirect('/admin/courses');
     }
 }

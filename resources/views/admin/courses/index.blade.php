@@ -15,33 +15,22 @@
                     <tr>
                         <th data-column-id="id" data-type="numeric" data-order="desc">Course ID</th>
                         <th data-column-id="name">Name</th>
-                        <th data-column-id="institute">Institute</th>
-                        <th data-column-id="nos">Registered Students</th>
-                        <th data-column-id="syllabus">Syllabus</th>
-                        <th data-column-id="action">Action</th>
-
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($allCourses as $course)
-                        @foreach($course->institutes as $institute)
-                            <tr>
-                                <td>{{$course->id}}</td>
-                                <td>{{$course->name}}</td>
-                                <td>{{$institute->name}}</td>
-                                <td>{{$countData[$course->id]}}</td>
-                                <td><a href="{{\Illuminate\Support\Facades\Storage::url(App\Syllabus::find($institute->pivot->syllabus_id)->document)}}">View</a></td>
-                                {{-- <td>View</td> --}}
-                                <td>
-                                    <a id="sa-params" href="/admin/institute/course/edit/{{$institute->id}}/{{$course->id}}"> <button class="btn waves-effect btn-success">Edit</button></a>
-                                    <a id="sa-params" href="/admin/institute/course/delete/{{$institute->id}}/{{$course->id}}"> <button class="btn waves-effect btn-danger">Delete</button></a>
-                                </td>
-                            </tr>
-                        @endforeach
+                        <tr>
+                            <td>{{$course->id}}</td>
+                            <td>{{$course->name}}</td>
+                            <td>
+                                <a id="sa-params" href="/admin/courses/edit/{{$course->id}}"> <button class="btn waves-effect btn-success">Edit</button></a>
+                                <a id="sa-params" href="/admin/courses/delete/{{$course->id}}"> <button class="btn waves-effect btn-danger">Delete</button></a>
+                            </td>
+                        </tr>
                     @endforeach
                     </tbody>
                 </table>
-                <a href="/admin/institute/course/add"> <button class="btn btn-float btn-success m-btn"><i class="zmdi zmdi-plus"></i></button></a>
+                <a href="/admin/courses/create"> <button class="btn btn-float btn-success m-btn"><i class="zmdi zmdi-plus"></i></button></a>
             </div>
         </div>
     </section>
