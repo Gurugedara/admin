@@ -18,7 +18,7 @@
   </div>
   <div class=" select-part-section p-2 rounded" style="margin-top:50px">
       <form method="POST" action="/search">
-      
+      @csrf
         <div class="row">
             <div class="col-lg-9">
                 <select name="courseId" class="form-control form-control-lg pull-left" placeholder="select language">
