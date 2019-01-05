@@ -85,4 +85,17 @@ class courseController extends Controller
         $oldSyllabus->save();
         return back();
     }
+
+    public function viewCourses(){
+        $allCourses = course::all();
+        $countData=array();
+        foreach ($allCourses as $course){
+            $count = institute_student::where('course_id',$course->id)->count();
+            $countData[$course->id]=$count;
+        }
+        return view('admin.courses.index',compact('allCourses','countData'));
+    }
+    public function editCourses(){
+        
+    }
 }

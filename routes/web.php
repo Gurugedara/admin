@@ -98,6 +98,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     //contact
     Route::get('/contact','contactController@index');
 
+    //courses
+    Route::get('/courses','courseController@viewCourses');
+
 
 //    Route::resource('roles', 'Admin\RolesController');
 //    Route::post('roles_mass_destroy', ['uses' => 'Admin\RolesController@massDestroy', 'as' => 'roles.mass_destroy']);
