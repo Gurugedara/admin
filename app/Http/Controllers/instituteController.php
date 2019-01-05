@@ -8,6 +8,7 @@ use App\User;
 use App\institute_owner;
 use App\institute_student;
 use App\institute_teacher;
+use App\course_institute;
 
 class instituteController extends Controller
 {
@@ -138,5 +139,13 @@ class instituteController extends Controller
         $institute->activeStatus = 1;
         $institute->save();
         return back();
+    }
+
+
+    public function searchIns(Request $request)
+    {
+        $courseId = $request->courseId;
+        $results = course_institute::where('course_id',$courseId)->get();
+        return view('search.index',compact('results'));
     }
 }

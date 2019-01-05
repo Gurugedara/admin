@@ -9,6 +9,9 @@ Route::post('/contact','contactController@store');
 // MCQ view
 Route::get('/app/mcq/{id}','mcqAppviewController@index');
 
+//search results
+Route::post('/search', 'instituteController@searchIns');
+
 // Authentication Routes...
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
 $this->post('login', 'Auth\LoginController@login')->name('auth.login');
