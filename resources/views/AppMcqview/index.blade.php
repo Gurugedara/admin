@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.mcq')
 @section('content')
 
 <br>
 <div class="container">
 
     <div class="container">
-        @if(count($allmcq)>1)
+        @if(count($allmcq)>0)
         <form>
             @foreach($allmcq as $mcq)
                 <div class="well">

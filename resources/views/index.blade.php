@@ -9,33 +9,32 @@
       <h1>Place for Learners.</h1>
     </div>
     
-    <div class= bt-set>
-      <div class="col-sm-4">
-        <br>
-        <a class="btn btn-success btn-lg" style="width:200px" href="/institutes/create">Create your Institute</a>
-      </div>
-    </div>  
-  </div>
-  <div class=" select-part-section p-2 rounded" style="margin-top:50px">
-      <form method="POST" action="/search">
-      @csrf
-        <div class="row">
-            <div class="col-lg-9">
-                <select name="courseId" class="form-control form-control-lg pull-left" placeholder="select language">
-                    @foreach($courses as $course)
-                      <option value="{{$course->id}}" >{{$course->name}}</option>
-                    @endforeach
-                </select>
-              
-            </div>
-            <div class="col-lg-3">
-              <input type="submit" class="btn btn-danger btn-block search-btn" value="Search Institute"><i class="fa fa-search" aria-hidden="true"></i>
-            </div>
-        </form>
-      </div>
+  <div class= bt-set>
+    <div class="col-sm-4">
+      <br>
+      <a class="btn btn-success btn-lg" style="width:200px" href="/institutes/create">Create your Institute</a>
     </div>
+  </div>  
 </div>
-a
+<div class=" select-part-section p-2 rounded" style="margin-top:50px">
+    <form method="POST" action="/search">
+    @csrf
+      <div class="row">
+          <div class="col-lg-9">
+              <select name="courseId" class="form-control form-control-lg pull-left" placeholder="select language">
+                  @foreach($courses as $course)
+                    <option value="{{$course->id}}" >{{$course->name}}</option>
+                  @endforeach
+              </select>
+            
+          </div>
+          <div class="col-lg-3">
+            <input type="submit" class="btn btn-danger btn-block search-btn" value="Search Institute"><i class="fa fa-search" aria-hidden="true"></i>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 <!-- Container (About Section) -->
 <div id="about" class="container-fluid">
@@ -150,10 +149,4 @@ a
 </div>
 <!-- ---------------------------------------------------------------- -->
 
-
-
-<!-- ---------------------------------------------------------------- -->
-
-
-<!-- ---------------------------------------------------------------- -->
 @endsection
