@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mcq;
 
 class mcqAppviewController extends Controller
 {
@@ -11,9 +12,10 @@ class mcqAppviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        return view('AppMcqview.index');
+        $allmcq = Mcq::where('paper_id',$id)->get();
+        return view('AppMcqview.index',compact('allmcq'));
     }
 
     /**

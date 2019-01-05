@@ -24,25 +24,13 @@
           @else
           <li><a href="/admin/dashboard">ADMIN</a></li>
           @endif
-          <li><a onclick="openSearch()"><i class="fa fa-search"></i></a></li> 
+          
         </ul>
       </div>
     </div>
   </nav>
 </div>
 
-<!-- search window -->
-
-<div id="myOverlay" class="overlay">
-  <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
-  <div class="overlay-content">
-    <form action="#">
-      <div>
-        <input type="text" placeholder="Search.." name="search">
-      </div>
-    </form>
-  </div>
-</div>
 
 <!-- container(start) -->
 

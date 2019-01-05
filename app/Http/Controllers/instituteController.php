@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\institute;
+use App\User;
 use App\institute_owner;
 use App\institute_student;
 use App\institute_teacher;
@@ -41,7 +42,11 @@ class instituteController extends Controller
         $this->validate($request,[
             'name'=>'required',
             'address'=>'required',
-            'telephone'=>'required'
+            'telephone'=>'required',
+            'firstname'=> 'required',
+            'Lastname'=> 'required', 
+            'email'=> 'required', 
+            'password'=> 'required'
         ]);
 
         $institute = new institute;
@@ -49,10 +54,19 @@ class instituteController extends Controller
         $institute->address = $request->input('address');
         $institute->telephone = $request->input('telephone');
         $institute->save();
+
+        $User = new User;
+        $User->firstname = $request->input('firstname');
+        $User->Lastname = $request->input('Lastname');
+        $User->email = $request->input('email');
+        $User->password = bcrypt($request->input('password'));
+        $User->role_id = 2;
+        $User->save();
         
 
         $institute_owner = new institute_owner;
-        $institute_owner->user_id = 1;
+        $institute_owner->institute_id = $institute->id;
+        $institute_owner->user_id = $User->id;
         $institute_owner->save();
 
         return redirect('/')->with('success', 'Post Created');
