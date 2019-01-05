@@ -1,5 +1,9 @@
 <?php
+
+//Home Controllers
 Route::get('/', function () { return view('index'); });
+Route::get('/institute/register','instituteController@create');
+Route::post('/institute/register','instituteController@store');
 
 // Authentication Routes...
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -81,7 +85,6 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::post('/forum/comment','forumController@comment');
 
     // Institute 
-    Route::post('institute/register','instituteController@store');
     Route::get('/institute/details','instituteController@index');
     Route::get('/institute/edit/{id}','instituteController@edit');
     Route::post('/institute/update/{id}','instituteController@update');
@@ -98,5 +101,4 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 });
 
     // MCQ view
-
     Route::get('/app/mcq','mcqViewControllerController@show');
