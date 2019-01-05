@@ -10,6 +10,10 @@ use App\institute_teacher;
 
 class instituteController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -53,6 +57,7 @@ class instituteController extends Controller
 
         $institute_owner = new institute_owner;
         $institute_owner->user_id = 1;
+        $institute_owner->institute_id = $institute->id;
         $institute_owner->save();
 
         return redirect('/')->with('success', 'Post Created');

@@ -11,6 +11,10 @@ use Spatie\Analytics\Period;
 
 class dashboardController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function index(){
         $analyticsData = Analytics::performQuery(
             Period::days(7),

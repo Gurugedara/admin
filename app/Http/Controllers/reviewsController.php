@@ -8,6 +8,10 @@ use App\review_comment;
 
 class reviewsController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     public function index(){
         $reviews = review::all();
         return view('admin.institutes.reviews',compact('reviews'));

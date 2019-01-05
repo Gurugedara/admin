@@ -60,38 +60,25 @@
     </div>  
   </div>
   <div class=" select-part-section p-2 rounded" style="margin-top:50px">
-      <div class="row">
-        <div class="col-lg-3">
-          <select class="form-control form-control-lg pull-left" placeholder="select language">
-              <option>Select language</option>
-              <option>English</option>
-              <option>Gujrati</option>
-              <option>Hindi</option>
-          </select>
-        </div>
-        <div class="col-lg-3 border-left">
-          <select class="form-control form-control-lg" placeholder="select language">
-              <option>Select Country</option>
-              <option>India</option>
-              <option>USA</option>
-              <option>Japan</option>
-          </select>
-        </div>
-        <div class="col-lg-3 border-left">
-          <select class="form-control form-control-lg pull-left" placeholder="select language">
-              <option> Select Company </option>
-              <option>IT</option>
-              <option>Managament</option>
-              <option>Social Work</option>
-          </select>
-        </div>
-        <div class="col-lg-3">
-          <a href="http://nicesnippets.com" target="_blank" class="btn btn-danger btn-block search-btn"><i class="fa fa-search" aria-hidden="true"></i>Search Institutes</a>
-        </div>
+      <form method="POST" action="/search">
+      
+        <div class="row">
+            <div class="col-lg-9">
+                <select class="form-control form-control-lg pull-left" placeholder="select language">
+                    @foreach($courses as $course)
+                      <option value="{{$course->id}}" >{{$course->name}}</option>
+                    @endforeach
+                </select>
+              
+            </div>
+            <div class="col-lg-3">
+              <a href="http://nicesnippets.com" target="_blank" class="btn btn-danger btn-block search-btn"><i class="fa fa-search" aria-hidden="true"></i>Search Institutes</a>
+            </div>
+        </form>
       </div>
     </div>
 </div>
-
+a
 
 <!-- Container (About Section) -->
 <div id="about" class="container-fluid">
@@ -176,20 +163,23 @@
       <span class="slideanim"><img src="/frontend/img/logo/std.gif"></span>
     </div>
     <div class="col-sm-7 slideanim">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+      <form method="POST" action="/contact">
+        @csrf
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+          </div>
+          <div class="col-sm-6 form-group">
+            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+          </div>
         </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        <textarea class="form-control" id="comments" name="comment" placeholder="Comment" rows="5"></textarea><br>
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <button class="btn btn-default pull-right" type="submit">Send</button>
+          </div>
         </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Send</button>
-        </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>

@@ -8,6 +8,10 @@ use App\Message;
 
 class messageController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     public function index(){
         $user_id = \Auth::user()->id;
         $messages = Message::where('sender_id',$user_id)

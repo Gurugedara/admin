@@ -37,6 +37,14 @@
             <a data-toggle="dropdown" href="#">
                 <img src="{{\Auth::user()->avatar}}" alt="">
             </a>
+            <ul class="dropdown-menu pull-right dm-icon">   
+                <li>
+                    <a href="{{ route('auth.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="zmdi zmdi-time-restore"></i> Logout</a>
+                    <form id="logout-form" action="{{ route('auth.logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </li>
+            </ul>
         </li>
     </ul>
 

@@ -45,7 +45,7 @@
         <li {{(Request::is('admin/message/view') ? 'class=active' : '')}}><a href="{{url('/admin/message/view')}}"><i class="zmdi zmdi-swap-alt"></i> Message Inbox</a></li>
         <li {{(Request::is('admin/forum') ? 'class=active' : '')}}><a href="{{url('/admin/forum')}}"><i class="zmdi zmdi-collection-text"></i> Forum</a></li>
         @if(Auth::user()->role_id==1)
-        <li {{(Request::is('admin/contact') ? 'class=active' : '')}}><a href="{{url('institiue/contact')}}"><i class="zmdi zmdi-layers"></i> Contact Requests</a></li>
+        <li {{(Request::is('admin/contact') ? 'class=active' : '')}}><a href="{{url('/admin/contact')}}"><i class="zmdi zmdi-layers"></i> Contact Requests</a></li>
         @endif
     </ul>
 </aside>
