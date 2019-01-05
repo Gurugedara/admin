@@ -105,6 +105,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::get('/courses','courseController@viewCourses');
     Route::get('/courses/create','courseController@addCourses');
     Route::post('/courses/add','courseController@saveCourses');
+    Route::get('/courses/edit/{id}','courseController@editCourses');
+    Route::post('/courses/edit/{id}','courseController@courseUpdate');
+    Route::get('/courses/delete/{id}','courseController@destroy');
 
 
 //    Route::resource('roles', 'Admin\RolesController');

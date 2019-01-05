@@ -106,4 +106,21 @@ class courseController extends Controller
         $course->save();
         return redirect('/admin/courses');
     }
+
+    public function editCourses($id){
+        $course = course::find($id);
+        return view('admin.courses.edit',compact('course'));
+    }
+
+    public function courseUpdate(Request $request,$id){
+        $course = course::find($id);
+        $course->name = $request->name;
+        $course->save();
+        return back();
+    }
+    public function destroy($id){
+        $course = course::find($id);
+        $course->delete();
+        return back();
+    }
 }
