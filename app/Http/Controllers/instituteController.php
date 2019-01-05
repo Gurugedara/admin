@@ -135,4 +135,12 @@ class instituteController extends Controller
         $institute->save();
         return back();
     }
+
+
+    public function searchIns(Request $request)
+    {
+        $courseId = $request->courseId;
+        $results = course_institute::where('course_id',$courseId);
+        return view('search.index',compact('results'));
+    }
 }
