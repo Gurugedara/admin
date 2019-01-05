@@ -1,31 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="col-sm-8">
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="col-sm-2 navbar-header">
-        <a class="navbar-brand" href="/">Gurugedara</a>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>                        
-        </button>
-      </div>
-      
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#about">ABOUT</a></li>
-          <li><a href="#vision">VISION & MISSION</a></li>
-          <li><a href="#services">SERVICES</a></li>
-          <li><a href="#contact">CONTACT</a></li>
-          <li><a onclick="openSearch()"><i class="fa fa-search"></i></a></li> 
-        </ul>
-      </div>
-    </div>
-  </nav>
-</div>
-
 <!-- search window -->
 
 <div id="myOverlay" class="overlay">

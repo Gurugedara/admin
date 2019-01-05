@@ -8,6 +8,10 @@ use App\teacher;
 
 class teacherController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     public function index(){
         $allteachers=teacher::with(array('institutes'=>function($query){
             $query->where('status',0);

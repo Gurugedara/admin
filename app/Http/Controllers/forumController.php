@@ -9,6 +9,10 @@ use App\Comment;
 
 class forumController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     public function index(){
         $posts = Post::orderBy('id','dsc')->take(5)->get();
         return view('admin.forum.index',compact('posts'));

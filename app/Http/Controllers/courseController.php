@@ -13,6 +13,10 @@ use App\Syllabus;
 
 class courseController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     // Show all courses
     public function index(){
         $allCourses = course::all();

@@ -1,9 +1,10 @@
 <?php
 
 //Home Controllers
-Route::get('/', function () { return view('index'); });
+Route::get('/','HomeController@index');
 Route::get('/institute/register','instituteController@create');
 Route::post('/institute/register','instituteController@store');
+Route::post('/contact','contactController@store');
 
 // MCQ view
 Route::get('/app/mcq/{id}','mcqAppviewController@index');
@@ -96,6 +97,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::post('/institute/update/{id}','instituteController@update');
     Route::get('/institute/hide/{id}','instituteController@hide');
     Route::get('/institute/unhide/{id}','instituteController@unhide');
+
+    //contact
+    Route::get('/contact','contactController@index');
 
 
 //    Route::resource('roles', 'Admin\RolesController');
