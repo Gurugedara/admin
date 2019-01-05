@@ -70,7 +70,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
     // Message
     Route::get('/message/view','messageController@index');
-    Route::get('/message/getUsers/{query}', 'messageController@getUsers');
+    Route::get('/message/getUsers', 'messageController@getUsers');
     Route::get('message/get/{sender}/{reciever}','messageController@getMessages');
     Route::get('message/avatar/{userId}','messageController@getAvatar');
     Route::post('message/send','messageController@sendMessage');
@@ -81,11 +81,13 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::post('/forum/comment','forumController@comment');
 
     // Institute 
+    Route::post('institute/register','instituteController@store');
     Route::get('/institute/details','instituteController@index');
     Route::get('/institute/edit/{id}','instituteController@edit');
     Route::post('/institute/update/{id}','instituteController@update');
     Route::get('/institute/hide/{id}','instituteController@hide');
     Route::get('/institute/unhide/{id}','instituteController@unhide');
+
 
 //    Route::resource('roles', 'Admin\RolesController');
 //    Route::post('roles_mass_destroy', ['uses' => 'Admin\RolesController@massDestroy', 'as' => 'roles.mass_destroy']);
@@ -95,5 +97,6 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     
 });
 
-Route::resource('institutes','instituteController');
-Route::resource('mcq','mcqController');
+    // MCQ view
+
+    Route::get('/app/mcq','mcqViewControllerController@show');
