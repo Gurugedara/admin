@@ -1,49 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="col-sm-8">
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="col-sm-2 navbar-header">
-        <a class="navbar-brand" href="/">Gurugedara</a>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>                        
-        </button>
-      </div>
-      
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#about">ABOUT</a></li>
-          <li><a href="#vision">VISION & MISSION</a></li>
-          <li><a href="#services">SERVICES</a></li>
-          <li><a href="#contact">CONTACT</a></li>
-          @if(Auth::user()==null)
-          <li><a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"> LOGIN</a></li> 
-          @else
-          <li><a href="/admin/dashboard">ADMIN</a></li>
-          @endif
-          <li><a onclick="openSearch()"><i class="fa fa-search"></i></a></li> 
-        </ul>
-      </div>
-    </div>
-  </nav>
-</div>
-
-<!-- search window -->
-
-<div id="myOverlay" class="overlay">
-  <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
-  <div class="overlay-content">
-    <form action="#">
-      <div>
-        <input type="text" placeholder="Search.." name="search">
-      </div>
-    </form>
-  </div>
-</div>
-
 <!-- container(start) -->
 
 <div id="start" class="strt">
@@ -64,7 +21,7 @@
       
         <div class="row">
             <div class="col-lg-9">
-                <select class="form-control form-control-lg pull-left" placeholder="select language">
+                <select name="courseId" class="form-control form-control-lg pull-left" placeholder="select language">
                     @foreach($courses as $course)
                       <option value="{{$course->id}}" >{{$course->name}}</option>
                     @endforeach
@@ -72,7 +29,7 @@
               
             </div>
             <div class="col-lg-3">
-              <a href="http://nicesnippets.com" target="_blank" class="btn btn-danger btn-block search-btn"><i class="fa fa-search" aria-hidden="true"></i>Search Institutes</a>
+              <input type="submit" class="btn btn-danger btn-block search-btn" value="Search Institute"><i class="fa fa-search" aria-hidden="true"></i>
             </div>
         </form>
       </div>
@@ -193,35 +150,7 @@ a
 </div>
 <!-- ---------------------------------------------------------------- -->
 
-<!-- Login panel -->
-<div id="id01" class="modal">
-  
-  <form class="modal-content animate" role="form" method="POST" action="{{ url('login') }}">
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="/frontend/img/logo/logo2.png" alt="Avatar" class="avatar">
-    </div>
 
-    <div class="container1">
-      <label for="uname"><b>Username</b></label>
-      <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Enter username" required>
-      <br>
-      <label for="psw"><b>Password</b></label>
-      <input type="password" class="form-control" name="password" placeholder="Enter password" required>
-      {{-- <input type="checkbox" name="remember" hidden> --}}
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
-
-    <div class="container1" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</div>
 
 <!-- ---------------------------------------------------------------- -->
 

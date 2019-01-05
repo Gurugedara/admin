@@ -1,31 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="col-sm-8">
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="col-sm-2 navbar-header">
-        <a class="navbar-brand" href="/">Gurugedara</a>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>                        
-        </button>
-      </div>
-      
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#about">ABOUT</a></li>
-          <li><a href="#vision">VISION & MISSION</a></li>
-          <li><a href="#services">SERVICES</a></li>
-          <li><a href="#contact">CONTACT</a></li>
-          <li><a onclick="openSearch()"><i class="fa fa-search"></i></a></li> 
-        </ul>
-      </div>
-    </div>
-  </nav>
-</div>
-
 <!-- search window -->
 
 <div id="myOverlay" class="overlay">
@@ -75,6 +50,26 @@
                 <div class="form-group col-lg-8">
                     {{Form::label('title','Telephone')}}
                     {{Form::text('telephone','',['class' => 'form-control', 'placeholder' => 'Enter Telephone'])}}
+                </div>
+                <div class="form-group col-lg-8">
+                  <br>
+                  <h4>Institute Admin Details</h4>
+                </div>
+                <div class="form-group col-lg-8">
+                    {{Form::label('title','First Name')}}
+                    {{Form::text('firstname','',['class' => 'form-control', 'placeholder' => 'Enter First Name'])}}
+                </div>
+                <div class="form-group col-lg-8">
+                    {{Form::label('title','Last Name')}}
+                    {{Form::text('Lastname','',['class' => 'form-control', 'placeholder' => 'Enter Last Name'])}}
+                </div>
+                <div class="form-group col-lg-8">
+                    {{Form::label('title','Email')}}
+                    {{Form::text('email','',['class' => 'form-control', 'placeholder' => 'Enter Email Address'])}}
+                </div>
+                <div class="form-group col-lg-8">
+                    {{Form::label('title','Password')}}
+                    {{Form::password('password',['class' => 'form-control', 'placeholder' => 'Enter Password'])}}
                 </div>
                 <div class="form-group col-lg-8">
                 {{Form::submit('Submit',['class'=>'btn btn-success'])}}

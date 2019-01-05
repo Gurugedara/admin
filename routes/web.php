@@ -6,6 +6,9 @@ Route::get('/institute/register','instituteController@create');
 Route::post('/institute/register','instituteController@store');
 Route::post('/contact','contactController@store');
 
+// MCQ view
+Route::get('/app/mcq/{id}','mcqAppviewController@index');
+
 // Authentication Routes...
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
 $this->post('login', 'Auth\LoginController@login')->name('auth.login');
@@ -104,5 +107,4 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     
 });
 
-    // MCQ view
-    Route::get('/app/mcq','mcqViewControllerController@show');
+

@@ -440,7 +440,9 @@ span.psw {
 
 <!-- mainpage -->
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" onload="document.body.style.opacity='1'">
+    @include('layouts.navbar')
     @yield('content')
+    @include('layouts.loginModel')
 
 <script>
 // Get the modal
