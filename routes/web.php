@@ -12,6 +12,7 @@ Route::get('/app/mcq/{id}','mcqAppviewController@index');
 // Search App view
 Route::get('/app/search', 'HomeController@appshow');
 Route::post('/app/searched', 'instituteController@searchInsapp');
+/**Route::get('/dd','instituteController@index2');*/
 
 //search results
 Route::post('/search', 'instituteController@searchIns');
