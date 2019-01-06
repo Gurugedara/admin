@@ -28,5 +28,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PaperSeeder::class);
         $this->call(McqSeeder::class);
         $this->call(McqAnswerSeeder::class);
+        $this->call(success_storiesSeeder::class);
     }
 }
