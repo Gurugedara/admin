@@ -85,4 +85,42 @@ class courseController extends Controller
         $oldSyllabus->save();
         return back();
     }
+
+    public function viewCourses(){
+        $allCourses = course::all();
+        $countData=array();
+        foreach ($allCourses as $course){
+            $count = institute_student::where('course_id',$course->id)->count();
+            $countData[$course->id]=$count;
+        }
+        return view('admin.courses.index',compact('allCourses','countData'));
+    }
+
+    public function addCourses(){
+        return view('admin.courses.add');
+    }
+
+    public function saveCourses(Request $request){
+        $course = new course();
+        $course->name = $request->name;
+        $course->save();
+        return redirect('/admin/courses');
+    }
+
+    public function editCourses($id){
+        $course = course::find($id);
+        return view('admin.courses.edit',compact('course'));
+    }
+
+    public function courseUpdate(Request $request,$id){
+        $course = course::find($id);
+        $course->name = $request->name;
+        $course->save();
+        return back();
+    }
+    public function destroy($id){
+        $course = course::find($id);
+        $course->delete();
+        return back();
+    }
 }

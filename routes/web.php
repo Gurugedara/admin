@@ -81,7 +81,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
     // Message
     Route::get('/message/view','messageController@index');
-    Route::get('/message/getUsers', 'messageController@getUsers');
+    Route::get('/message/getUsers/{id}', 'messageController@getUsers');
     Route::get('message/get/{sender}/{reciever}','messageController@getMessages');
     Route::get('message/avatar/{userId}','messageController@getAvatar');
     Route::post('message/send','messageController@sendMessage');
@@ -100,6 +100,14 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
 
     //contact
     Route::get('/contact','contactController@index');
+
+    //courses
+    Route::get('/courses','courseController@viewCourses');
+    Route::get('/courses/create','courseController@addCourses');
+    Route::post('/courses/add','courseController@saveCourses');
+    Route::get('/courses/edit/{id}','courseController@editCourses');
+    Route::post('/courses/edit/{id}','courseController@courseUpdate');
+    Route::get('/courses/delete/{id}','courseController@destroy');
 
 
 //    Route::resource('roles', 'Admin\RolesController');

@@ -14,7 +14,10 @@ class courseSeed extends Seeder
         $items = [
             ['id' => 1, 'name' => 'CIMA'],
             ['id' => 2, 'name' => 'AAT'],
+            ['id' => 4, 'name' => 'CIMA'],
             ['id' => 3, 'name' => 'General Information Technology'],
+            ['id' => 5, 'name' => 'BIT'],
+            ['id' => 6, 'name' => 'Cysco Networking'],
         ];
 
         foreach ($items as $item) {

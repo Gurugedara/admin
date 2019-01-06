@@ -13,8 +13,11 @@ class OwnerSeeder extends Seeder
     {
         $items = [
             ['institute_id' => '1','user_id'=>'1'],
+            ['institute_id' => '1','user_id'=>'2'],
             ['institute_id' => '2','user_id'=>'1'],
+            ['institute_id' => '2','user_id'=>'3'],
             ['institute_id' => '3','user_id'=>'1'],
+            ['institute_id' => '3','user_id'=>'4'],
         ];
 
         foreach ($items as $item) {
