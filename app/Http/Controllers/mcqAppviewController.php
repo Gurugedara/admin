@@ -15,7 +15,8 @@ class mcqAppviewController extends Controller
     public function index($id)
     {
         $allmcq = Mcq::where('paper_id',$id)->get();
-        return view('AppMcqview.index',compact('allmcq'));
+        $number = 1;
+        return view('AppMcqview.index',compact('allmcq','number'));
     }
 
     /**
