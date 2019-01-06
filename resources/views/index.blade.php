@@ -37,7 +37,7 @@
 </div>
 
 <!-- Container (About Section) -->
-<div id="about" class="container-fluid">
+<div id="about" name="about" class="container-fluid">
   <div class="row">
     <div class="col-sm-8">
       <h2>About Gurugedara</h2><br>
