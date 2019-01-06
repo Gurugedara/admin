@@ -16,7 +16,7 @@ class ExampleTest extends TestCase
     public function testBasicTest()
     {
         $this->assertTrue(true);
-        // $response = $this->call('GET','/');
+        // $response = $this->call('GET','/admin/dashboard');
         // $this->assertEquals(200,$response->getStatusCode());
     }
 }

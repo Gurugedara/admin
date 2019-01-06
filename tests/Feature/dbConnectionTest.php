@@ -6,7 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class onlineCheck extends TestCase
+class dbConnectionTest extends TestCase
 {
     /**
      * A basic test example.
@@ -15,6 +15,7 @@ class onlineCheck extends TestCase
      */
     public function testExample()
     {
-        
+        //$user = \App\student::first();
+        $this->assertEquals(null,null);
     }
 }
