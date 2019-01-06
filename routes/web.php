@@ -6,8 +6,13 @@ Route::get('/institute/register','instituteController@create');
 Route::post('/institute/register','instituteController@store');
 Route::post('/contact','contactController@store');
 
-// MCQ view
+// MCQ App view
 Route::get('/app/mcq/{id}','mcqAppviewController@index');
+
+// Search App view
+Route::get('/app/search', 'HomeController@appshow');
+Route::post('/app/searched', 'instituteController@searchInsapp');
+/**Route::get('/dd','instituteController@index2');*/
 
 //search results
 Route::post('/search', 'instituteController@searchIns');
