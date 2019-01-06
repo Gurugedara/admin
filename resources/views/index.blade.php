@@ -3,7 +3,7 @@
 
 <!-- container(start) -->
 
-<div id="start" class="strt">
+<div id="start" class="strt" style="background-repeat:no-repeat;">
   <div class="row">
     <div class="head-title">
       <h1>Place for Learners.</h1>

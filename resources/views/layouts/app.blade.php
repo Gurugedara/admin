@@ -77,8 +77,8 @@
   }
 
   .strt {
-  background-image:url("frontend/img/logo/back.jpg");
-  padding: 270px ;
+  background-image:url("frontend/img/logo/fin.jpeg");
+  padding: 200px ;
   }
 
    /* section-2 background color*/
