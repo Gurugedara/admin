@@ -7,7 +7,7 @@
 
 <div class="container col-xs-12">
     <div class=" select-part-section p-2 rounded" style="margin-top:50px">
-        <form method="POST" action="/app/searched">
+        <form method="POST" action="/app/search">
         @csrf
             <div class="row">
                 <div class="col-lg-9">
@@ -19,7 +19,7 @@
                 </div>
                 <br>
                 <div class="col-lg-3">
-                <input type="submit" class="btn btn-primary btn-block search-btn" value="Search Institute"><i class="fa fa-search" aria-hidden="true"></i>
+                <input type="submit" class="btn btn-primary btn-block search-btn" value="Search Institute">
                 </div>
             </form>
         </div>
