@@ -107,4 +107,9 @@ class paperController extends Controller
         $paper->delete();
         return back();
     }
+
+    public function getResults($id){
+        $paper = Paper::find($id);
+        return view('admin.papers.results',compact('paper'));
+    }
 }
