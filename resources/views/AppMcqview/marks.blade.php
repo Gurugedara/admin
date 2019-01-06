@@ -5,8 +5,8 @@
 
 <div class="container" style="text-align:center;">
     <div class="well col-xs-12" style="text-align:center;">
-        <p>Correct- 9/10</p>
-        <p>90%</p>
+    <p>Correct- {{$marks}}/{{$numQuestions}}</p>
+        <p>Marks: {{$marks}}</p>
     </div>
 </div>
 

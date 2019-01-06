@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mcq;
 use App\McqAnswer;
+use App\paper_result;
+use App\student;
+use App\Paper;
 
 class mcqController extends Controller
 {
@@ -126,5 +129,21 @@ class mcqController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function getResult(Request $request,$userid,$paper_id)
+    {
+        $marks=0;
+        foreach ($request->result as $mcq => $answer) {
+            if(McqAnswer::find($answer)->status==1){
+                $marks+=1;
+            }
+        }
+        $numQuestions = count(Paper::find($paper_id)->mcqs);
+        $result = new paper_result();
+        $result->paper_id=$paper_id;
+        $result->student_id = student::where('user_id',$userid)->first()->id;
+        $result->marks = $marks;
+        $result->save();
+        return view('AppMcqview.marks',compact('marks','numQuestions'));
     }
 }

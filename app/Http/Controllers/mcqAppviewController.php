@@ -12,11 +12,12 @@ class mcqAppviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index($userid,$paperid)
     {
-        $allmcq = Mcq::where('paper_id',$id)->get();
+        $allmcq = Mcq::where('paper_id',$paperid)->get();
+        $paper = $paperid;
         $number = 1;
-        return view('AppMcqview.index',compact('allmcq','number'));
+        return view('AppMcqview.index',compact('allmcq','number','paper','userid'));
     }
 
     /**

@@ -7,12 +7,12 @@ Route::post('/institute/register','instituteController@store');
 Route::post('/contact','contactController@store');
 
 // MCQ App view
-Route::get('/app/mcq/{id}','mcqAppviewController@index');
+Route::get('/app/mcq/{userid}/{paperid}','mcqAppviewController@index');
 
 // Search App view
 Route::get('/app/search', 'HomeController@appshow');
-Route::post('/app/searched', 'instituteController@searchInsapp');
-/**Route::get('/dd','instituteController@index2');*/
+Route::post('/app/search', 'instituteController@searchInsapp');
+Route::post('/app/getResult/{userid}/{paperid}','mcqController@getResult');
 
 //search results
 Route::post('/search', 'instituteController@searchIns');

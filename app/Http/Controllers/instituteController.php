@@ -155,10 +155,4 @@ class instituteController extends Controller
         $results = course_institute::where('course_id',$courseId)->get();
         return view('AppSearchview.result',compact('results'));
     }
-    /**public function index2()
-    {
-        return view('AppMcqview.marks');
-    }
-    */
-
 }
