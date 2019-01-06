@@ -9,7 +9,7 @@
 <br>
 <div class="container">
     <div class="container" style="text-align:center;">
-        @if(count($results)>1)
+        @if(count($results)>0)
             @foreach($results as $result)
             <div class="card col-sm-5 well" style="text-align:center; margin-left: 50px;">
                 <div class="card-body">
@@ -29,7 +29,7 @@
 
 
         @else
-            <p>No MCQs Found</p>
+            <p>No Institutes Found</p>
         @endif
     </div>
     
