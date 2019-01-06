@@ -148,4 +148,12 @@ class instituteController extends Controller
         $results = course_institute::where('course_id',$courseId)->get();
         return view('search.index',compact('results'));
     }
+
+    public function searchInsapp(Request $request)
+    {
+        $courseId = $request->courseId;
+        $results = course_institute::where('course_id',$courseId)->get();
+        return view('AppSearchview.result',compact('results'));
+    }
+
 }
