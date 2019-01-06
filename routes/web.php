@@ -13,6 +13,7 @@ Route::get('/app/mcq/{userid}/{paperid}','mcqAppviewController@index');
 Route::get('/app/search', 'HomeController@appshow');
 Route::post('/app/search', 'instituteController@searchInsapp');
 Route::post('/app/getResult/{userid}/{paperid}','mcqController@getResult');
+Route::view('/myfakePath','AppMcqview.fakemarks');
 
 //search results
 Route::post('/search', 'instituteController@searchIns');

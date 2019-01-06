@@ -24,7 +24,7 @@
                 </div>
             @endforeach
             <div>
-                <button type="submit" class="col-xs-4 col-sm-4 btn btn-primary">Submit</button>
+                <a href="/myfakePath" class="col-xs-4 col-sm-4 btn btn-primary">Submit</a>
             </div>
         </form> 
         @else
