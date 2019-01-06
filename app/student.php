@@ -25,4 +25,8 @@ class student extends Model
         return $this->hasMany('App\review','id');
     }
 
+    public function results(){
+        return $this->hasMany('App\paper_result');
+    }
+
 }

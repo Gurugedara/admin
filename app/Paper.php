@@ -20,4 +20,7 @@ class Paper extends Model
     public function mcqs(){
         return $this->hasMany('App\Mcq','paper_id');
     }
+    public function results(){
+        return $this->hasMany('App\paper_result');
+    }
 }

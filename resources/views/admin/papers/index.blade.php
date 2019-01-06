@@ -96,6 +96,7 @@
                                                     @csrf
                                             <button class="waves-effect center" style="border:none;background:none;color:red;margin-left:46px;"><i class="zmdi zmdi-person-add"></i>Delete</button>
                                             </form>
+                                            <button class="waves-effect"><i class="zmdi zmdi-person-add"></i><a href="/admin/institute/paper/{{$paper->id}}"> Results</a></button>
                                         </div>
                                     </div>
                                 </div>
