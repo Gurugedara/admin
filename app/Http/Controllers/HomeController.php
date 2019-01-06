@@ -24,4 +24,10 @@ class HomeController extends Controller
         $courses = course::all();
         return view('index',compact('courses'));
     }
+
+    public function appshow()
+    {
+        $courses = course::all();
+        return view('AppSearchview.index',compact('courses'));
+    }
 }
