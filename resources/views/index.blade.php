@@ -12,7 +12,7 @@
   <div class= bt-set>
     <div class="col-sm-4">
       <br>
-      <a class="btn btn-success btn-lg" style="width:200px" href="/institutes/create">Create your Institute</a>
+      <a class="btn btn-success btn-lg" style="width:200px" href="/institute/register">Create your Institute</a>
     </div>
   </div>  
 </div>
