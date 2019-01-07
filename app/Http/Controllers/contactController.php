@@ -12,6 +12,11 @@ class contactController extends Controller
         return view('admin.contact.index',compact('contacts'));
     }
     public function store(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'comment' => 'required',
+        ]);
         $contact = new Contact();
         $contact->name = $request->name;
         $contact->email = $request->email;

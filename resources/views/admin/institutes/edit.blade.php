@@ -18,7 +18,7 @@
                             <span class="input-group-addon"><i class="zmdi zmdi-book"></i></span>
                             <div class="select">
                                 <input class="form-control" type="text" name="name"
-                            placeholder="Name of the Institute" value="{{$institute->name}}">
+                            placeholder="Name of the Institute" value="{{$institute->name}}" required>
                             </div>
                         </div>
                         <br/>
@@ -26,7 +26,7 @@
                             <span class="input-group-addon"><i class="zmdi zmdi-book"></i></span>
                             <div class="select">
                                 <input class="form-control" type="text" name="address"
-                                        placeholder="Address" value="{{$institute->address}}">
+                                        placeholder="Address" value="{{$institute->address}}" required>
                             </div>
                         </div>
                         <br/>
@@ -34,7 +34,7 @@
                                 <span class="input-group-addon"><i class="zmdi zmdi-book"></i></span>
                                 <div class="select">
                                     <input class="form-control" type="text" name="telephone"
-                                            placeholder="telephone" value="{{$institute->telephone}}">
+                                            placeholder="telephone" value="{{$institute->telephone}}" required>
                                 </div>
                             </div>
                         <br/>

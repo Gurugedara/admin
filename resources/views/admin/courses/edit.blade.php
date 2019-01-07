@@ -20,7 +20,7 @@
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="zmdi zmdi-book"></i></span>
                                         <div class="select">
-                                            <input class="form-control" type="text" value="{{$course->name}}" name="name" placeholder="Name of the Course">
+                                            <input class="form-control" type="text" value="{{$course->name}}" name="name" placeholder="Name of the Course" required>
                                         </div>
                                     </div>
 
