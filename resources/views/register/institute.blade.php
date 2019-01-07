@@ -41,15 +41,15 @@
                 
                 <div class="form-group col-lg-8 col-sm-8 col-md-8">
                     {{Form::label('title','Institute Name')}}
-                    {{Form::text('name','',['class' => ['form-control'], 'placeholder' => 'Enter Institute Name'])}}
+                    {{Form::text('name','',['required'],['class' => ['form-control'], 'placeholder' => 'Enter Institute Name'])}}
                 </div>
                 <div class="form-group col-lg-8">
                     {{Form::label('title','Address')}}
-                    {{Form::text('address','',['class' => 'form-control', 'placeholder' => 'Enter Address'])}}
+                    {{Form::text('address','',['required'],['class' => 'form-control', 'placeholder' => 'Enter Address'])}}
                 </div>
                 <div class="form-group col-lg-8">
                     {{Form::label('title','Telephone')}}
-                    {{Form::text('telephone','',['class' => 'form-control', 'placeholder' => 'Enter Telephone'])}}
+                    {{Form::text('telephone','',['required'],['class' => 'form-control', 'placeholder' => 'Enter Telephone'])}}
                 </div>
                 <div class="form-group col-lg-8">
                   <br>
@@ -57,19 +57,24 @@
                 </div>
                 <div class="form-group col-lg-8">
                     {{Form::label('title','First Name')}}
-                    {{Form::text('firstname','',['class' => 'form-control', 'placeholder' => 'Enter First Name'])}}
+                    {{Form::text('firstname','',['required'],['class' => 'form-control', 'placeholder' => 'Enter First Name'])}}
                 </div>
                 <div class="form-group col-lg-8">
                     {{Form::label('title','Last Name')}}
-                    {{Form::text('Lastname','',['class' => 'form-control', 'placeholder' => 'Enter Last Name'])}}
+                    {{Form::text('Lastname','',['required'],['class' => 'form-control', 'placeholder' => 'Enter Last Name'])}}
                 </div>
                 <div class="form-group col-lg-8">
                     {{Form::label('title','Email')}}
-                    {{Form::text('email','',['class' => 'form-control', 'placeholder' => 'Enter Email Address'])}}
                 </div>
+                <div class="form-group col-lg-10">
+                    {{Form::email('email','',['required'],['class' => 'form-control', 'placeholder' => 'Enter Email Address'])}}
+                </div>
+                
                 <div class="form-group col-lg-8">
                     {{Form::label('title','Password')}}
-                    {{Form::password('password',['class' => 'form-control', 'placeholder' => 'Enter Password'])}}
+                </div>
+                <div class="form-group col-lg-8">
+                    {{Form::password('password',['required'],['class' => 'form-control', 'placeholder' => 'Enter Password'])}}
                 </div>
                 <div class="form-group col-lg-8">
                 {{Form::submit('Submit',['class'=>'btn btn-success'])}}
