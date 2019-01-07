@@ -120,16 +120,6 @@ class mcqController extends Controller
         return back();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
     public function getResult(Request $request,$userid,$paper_id)
     {
         $marks=0;
