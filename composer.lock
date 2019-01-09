@@ -3611,16 +3611,16 @@
         },
         {
             "name": "laravel/dusk",
-            "version": "v4.0.2",
+            "version": "v4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/dusk.git",
-                "reference": "9810f8609c8b53d9a3bac7d38c56530e0d77a6bb"
+                "reference": "3b2df334d92b6215400ddd183253eb4bcc07debb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/dusk/zipball/9810f8609c8b53d9a3bac7d38c56530e0d77a6bb",
-                "reference": "9810f8609c8b53d9a3bac7d38c56530e0d77a6bb",
+                "url": "https://api.github.com/repos/laravel/dusk/zipball/3b2df334d92b6215400ddd183253eb4bcc07debb",
+                "reference": "3b2df334d92b6215400ddd183253eb4bcc07debb",
                 "shasum": ""
             },
             "require": {
@@ -3668,7 +3668,7 @@
                 "testing",
                 "webdriver"
             ],
-            "time": "2018-10-03T15:37:05+00:00"
+            "time": "2018-12-19T13:55:39+00:00"
         },
         {
             "name": "mockery/mockery",
