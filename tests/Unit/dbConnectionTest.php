@@ -17,26 +17,25 @@ class dbConnectionTest extends TestCase
      */
     public function testUser()
     {
-        $userData = [
-            'firstname' => $this->faker->name,
-            'lastname' => $this->faker->name, 
-            'email' => $this->faker->email, 
-            'password' => bcrypt($this->faker->word),
-            'avatar'=>'/admin/img/profile-pics/2.jpg', 
-            'role_id' => 25,
-        ];
-
-        $testUser = \App\User::create($userData);
+        $testUser = factory(\App\User::class)->make([
+            'firstname' => 'kamal',
+        ]);
         
         $this->assertInstanceOf(\App\User::class,$testUser);
-        $this->assertEquals($userData['firstname'],$testUser->firstname);
+        $this->assertEquals("kamal",$testUser->firstname);
     }
     public function testStudent(){
-        $studentData = [
-            'nic' => $this->faker->word,
-            'phone' => $this->faker->word,
-            'school' => $this->faker->word,
-            'age' => $this->faker->age,
-        ];
+        $testStudent = factory(\App\student::class)->make([
+            'school' => 'mySchool',
+        ]);
+        $this->assertInstanceOf(\App\student::class,$testStudent);
+        $this->assertEquals("mySchool",$testStudent->school);
+    }
+    public function testInstitute(){
+        $testInstitute = factory(\App\institute::class)->make([
+            'name' => 'myInstitute',
+        ]);
+        $this->assertInstanceOf(\App\institute::class,$testInstitute);
+        $this->assertEquals("myInstitute",$testInstitute->name);
     }
 }
