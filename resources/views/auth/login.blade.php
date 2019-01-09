@@ -46,11 +46,15 @@
                     <label class="fg-label">Password</label>
                 </div>
             </div>
-
+            @if ($errors->has('email'))
+                <div class="form-group fg-float" style="color:red">{{ $errors->first('email') }}</div>
+            @endif
+            @if ($errors->has('password'))
+                <div class="form-group fg-float" style="color:red">{{ $errors->first('password') }}</div>
+            @endif
             <button type="submit" class="btn palette-Teal bg">Sign in</button>
         </form>
         <div class="m-t-20">
-            <a data-block="#l-register" data-bg="blue" class="palette-Teal text d-block m-b-5" href="#">Creat an account</a>
             <a data-block="#l-forget-password" data-bg="purple" href="#" class="palette-Teal text">Forgot password?</a>
         </div>
     </div>
@@ -64,77 +68,31 @@
     </div>
 
     <div class="lb-body">
-        <p class="m-b-30">Lorem ipsum dolor fringilla enim feugiat commodo sed ac lacus.</p>
-
-        <div class="form-group fg-float">
-            <div class="fg-line">
-                <input type="text" class="input-sm form-control fg-input">
-                <label class="fg-label">Email Address</label>
+        <p class="m-b-30">Enter your email regitered with our system</p>
+        <form class="form-horizontal"
+                          role="form" method="POST" action="{{ url('password/email') }}">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <div class="form-group fg-float">
+                <div class="fg-line">
+                    <input type="text" name="email" class="input-sm form-control fg-input">
+                    <label class="fg-label">Email Address</label>
+                </div>
             </div>
-        </div>
 
-        <button class="btn palette-Purple bg">Create Account</button>
+            <button type="submit" class="btn palette-Purple bg">Create Account</button>
 
-        <div class="m-t-30">
-            <a data-block="#l-login" data-bg="teal" class="palette-Purple text d-block m-b-5" href="#">Already have an account?</a>
-            <a data-block="#l-register" data-bg="blue" href="#" class="palette-Purple text">Create an account</a>
-        </div>
+            <div class="m-t-30">
+                <a data-block="#l-login" data-bg="teal" class="palette-Purple text d-block m-b-5" href="#">Already have an account?</a>
+            </div>
+        </form>
     </div>
 </div>
 </div>
-
-<!-- Older IE warning message -->
-<!--[if lt IE 9]>
-<div class="ie-warning">
-    <h1 class="c-white">Warning!!</h1>
-    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-    <div class="iew-container">
-        <ul class="iew-download">
-            <li>
-                <a href="http://www.google.com/chrome/">
-                    <img src="/admin/img/browsers/chrome.png" alt="">
-                    <div>Chrome</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.mozilla.org/en-US/firefox/new/">
-                    <img src="/admin/img/browsers/firefox.png" alt="">
-                    <div>Firefox</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://www.opera.com">
-                    <img src="/admin/img/browsers/opera.png" alt="">
-                    <div>Opera</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.apple.com/safari/">
-                    <img src="/admin/img/browsers/safari.png" alt="">
-                    <div>Safari</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                    <img src="i/admin/mg/browsers/ie.png" alt="">
-                    <div>IE (New)</div>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <p>Sorry for the inconvenience!</p>
-</div>
-<![endif]-->
 
 <!-- Javascript Libraries -->
 <script src="/admin/vendors/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="/admin/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="/admin/vendors/bower_components/Waves/dist/waves.min.js"></script>
-
-<!-- Placeholder for IE9 -->
-<!--[if IE 9 ]>
-<script src="/admin/vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
-<![endif]-->
 
 <script src="/admin/js/functions.js"></script>
 
