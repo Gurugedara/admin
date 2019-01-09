@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="fg-line form-group">
-                                <input type="text" name="description" class="form-control input-sm" placeholder="Enter the Question">
+                                <input type="text" name="description" class="form-control input-sm" placeholder="Enter the Question" required>
                             </div>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                     <div class="row">
                         <div class="col-xs-4">
                             <div class="fg-line form-group">
-                                <input type="text" name="answers[]" class="form-control input-sm" placeholder="Answer 1">
+                                <input type="text" name="answers[]" class="form-control input-sm" placeholder="Answer 1" required>
                             </div>
                         </div>
                         <div class="col-sm-4 m-b-20">
@@ -39,7 +39,7 @@
                     <div class="row">
                         <div class="col-xs-4">
                             <div class="fg-line form-group">
-                                <input type="text" name="answers[]" class="form-control input-sm" placeholder="Answer 2">
+                                <input type="text" name="answers[]" class="form-control input-sm" placeholder="Answer 2" required>
                             </div>
                         </div>
                         <div class="col-sm-4 m-b-20">
@@ -52,7 +52,7 @@
                     <div class="row">
                         <div class="col-xs-4">
                             <div class="fg-line form-group">
-                                <input type="text" name="answers[]" class="form-control input-sm" placeholder="Answer 3">
+                                <input type="text" name="answers[]" class="form-control input-sm" placeholder="Answer 3" required>
                             </div>
                         </div>
                         <div class="col-sm-4 m-b-20">
@@ -65,7 +65,7 @@
                     <div class="row">
                         <div class="col-xs-4">
                             <div class="fg-line form-group">
-                                <input type="text" name="answers[]" class="form-control input-sm" placeholder="Answer 4">
+                                <input type="text" name="answers[]" class="form-control input-sm" placeholder="Answer 4" required>
                             </div>
                         </div>
                         <div class="col-sm-4 m-b-20">
@@ -78,7 +78,7 @@
                     <div class="row">
                     <div class="col-xs-4">
                         <div class="fg-line form-group">
-                            <input type="number" name="marks" class="form-control input-sm" placeholder="Marks">
+                            <input type="number" name="marks" class="form-control input-sm" placeholder="Marks" required>
                         </div>
                     </div>
                     <button type="submit" name="submit" class="btn btn-success sa-btn-medium">Save</button>

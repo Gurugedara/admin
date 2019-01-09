@@ -15,11 +15,11 @@ class courseInstitute extends Seeder
             ['institute_id' => 1, 'course_id' => 2, 'syllabus_id' => '2'],
             ['institute_id' => 1, 'course_id' => 3, 'syllabus_id' => '1'],
             ['institute_id' => 2, 'course_id' => 1, 'syllabus_id' => '3'],
-            ['institute_id' => 2, 'course_id' => 2, 'syllabus_id' => '2'],
+            ['institute_id' => 2, 'course_id' => 2, 'syllabus_id' => '4'],
             ['institute_id' => 3, 'course_id' => 2, 'syllabus_id' => '2'],
-            ['institute_id' => 3, 'course_id' => 1, 'syllabus_id' => '3'],
+            ['institute_id' => 3, 'course_id' => 1, 'syllabus_id' => '5'],
             ['institute_id' => 3, 'course_id' => 4, 'syllabus_id' => '2'],
-            ['institute_id' => 4, 'course_id' => 5, 'syllabus_id' => '2'],
+            ['institute_id' => 4, 'course_id' => 5, 'syllabus_id' => '6'],
             ['institute_id' => 4, 'course_id' => 6, 'syllabus_id' => '3'],
         ];
 

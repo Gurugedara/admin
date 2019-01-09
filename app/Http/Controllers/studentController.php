@@ -55,4 +55,7 @@ class studentController extends Controller
         $student = student::findOrFail($student_id);
         return view('admin.students.studentProfile',compact('student'));
     }
+    public function searchStudent($id){
+        return student::where("id","LIKE","%".$id."%")->get();
+    }
 }

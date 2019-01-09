@@ -110,6 +110,11 @@ class instituteController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+            'name'=>'required',
+            'address'=>'required',
+            'telephone'=>'required',
+        ]);
         $institute = institute::findOrFail($id);
         $institute->name = $request->name;
         $institute->address = $request->address;
@@ -134,6 +139,9 @@ class instituteController extends Controller
 
     public function searchIns(Request $request)
     {
+        $this->validate($request,[
+            'course_id'=>'required',
+        ]);
         $courseId = $request->courseId;
         $results = course_institute::where('course_id',$courseId)->get();
         return view('search.index',compact('results'));
@@ -141,6 +149,9 @@ class instituteController extends Controller
 
     public function searchInsapp(Request $request)
     {
+        $this->validate($request,[
+            'course_id'=>'required',
+        ]);
         $courseId = $request->courseId;
         $results = course_institute::where('course_id',$courseId)->get();
         return view('AppSearchview.result',compact('results'));

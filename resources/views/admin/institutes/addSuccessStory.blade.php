@@ -16,14 +16,15 @@
                     <div class=" m-b-20">
                         <div class="form-group fg-line">
                             <label>student id</label>
-                            <input type="text" name="student_id" class="form-control input-mask"  placeholder="eg: 168545" maxlength="10" autocomplete="off"><br>
+                            <input type="text" id="studentId" name="student_id" class="form-control input-mask"  
+                            placeholder="eg: 168545" maxlength="10" autocomplete="off" required><br>
                         </div>
                     </div>
 
                     <div class="">
                         <p class="f-500 m-b-15 c-black">Institute</p>
 
-                        <select name="institute_id" class="selectpicker bs-select-hidden">
+                        <select name="institute_id" class="selectpicker bs-select-hidden" required>
                             @foreach(\Illuminate\Support\Facades\Auth::user()->institutes as $institute)
                                 <option value="{{$institute->id}}">{{$institute->name}}</option>
                             @endforeach
@@ -40,7 +41,7 @@
                                     <span class="btn btn-info btn-file">
                                         <span class="fileinput-new">Select image</span>
                                         <span class="fileinput-exists">Change</span>
-                                        <input type="file" name="image">
+                                        <input type="file" name="image" required>
                                     </span>
                             <a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a>
                         </div>
@@ -83,10 +84,44 @@
     <script src="/admin/vendors/fileinput/fileinput.min.js"></script>
     <script src="/admin/vendors/input-mask/input-mask.min.js"></script>
     <script src="/admin/vendors/farbtastic/farbtastic.min.js"></script>
+    <script>
+        $(document).ready(function() {
+                var bloodhound = new Bloodhound({
+                    datumTokenizer: Bloodhound.tokenizers.whitespace,
+                    queryTokenizer: Bloodhound.tokenizers.whitespace,
+                    remote: {
+                        url: '/admin/institute/students/%QUERY%',
+                        wildcard: '%QUERY%'
+                    },
+                });
+                
+                $('#studentId').typeahead({
+                    hint: true,
+                    highlight: true,
+                    minLength: 1
+                }, {
+                    name: 'users',
+                    source: bloodhound,
+                    display: function(data) {
+                        return data.firstname  //Input value to be set when you select a suggestion. 
+                    },
+                    templates: {
+                        empty: [
+                            '<div class="list-group search-results-dropdown"><div class="list-group-item">Nothing found.</div></div>'
+                        ],
+                        header: [
+                            '<div class="list-group search-results-dropdown">'
+                        ],
+                        suggestion: function(data) {
+                        return '<div style="font-weight:normal; margin-top:-10px ! important;" class="list-group-item">' + data.id + '</div></div>'
+                        }
+                    }
+                });
+            });
+    </script>
 @endpush
 
 @push('css')
-    @push('css')
         <link href="/admin/vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
         <link href="/admin/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
         <link href="/admin/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">

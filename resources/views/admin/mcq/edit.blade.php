@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="fg-line form-group">
-                                <input type="text" value="{{$mcq->description}}" name="description" class="form-control input-sm" placeholder="Enter the Question">
+                                <input type="text" value="{{$mcq->description}}" name="description" class="form-control input-sm" placeholder="Enter the Question" required>
                             </div>
                         </div>
                     </div>
@@ -27,14 +27,13 @@
                         <div class="col-xs-4">
                             <div class="fg-line form-group">
                                 <input type="text" name="answers[]" class="form-control input-sm" placeholder="Answer 1"
-                                value="{{$answer1->answer}}">
+                                value="{{$answer1->answer}}" required>
                             </div>
                         </div>
                         <div class="col-sm-4 m-b-20">
                             <div class="toggle-switch" data-ts-color="blue">
                                 <input id="ans1" name="answer" type="radio" hidden="hidden" value="1"
-                                {{($answer1->status==1) ? "checked":""}}
-                                >
+                                {{($answer1->status==1) ? "checked":""}}>
                                 <label for="ans1" class="ts-helper"></label>
                             </div>
                         </div>
@@ -43,7 +42,7 @@
                         <div class="col-xs-4">
                             <div class="fg-line form-group">
                                 <input type="text" name="answers[]" class="form-control input-sm" placeholder="Answer 2"
-                                       value="{{$answer2->answer}}">
+                                       value="{{$answer2->answer}}" required>
                             </div>
                         </div>
                         <div class="col-sm-4 m-b-20">
@@ -58,7 +57,7 @@
                         <div class="col-xs-4">
                             <div class="fg-line form-group">
                                 <input type="text" name="answers[]" class="form-control input-sm" placeholder="Answer 3"
-                                       value="{{$answer3->answer}}">
+                                       value="{{$answer3->answer}}" required>
                             </div>
                         </div>
                         <div class="col-sm-4 m-b-20">
@@ -73,7 +72,7 @@
                         <div class="col-xs-4">
                             <div class="fg-line form-group">
                                 <input type="text" name="answers[]" class="form-control input-sm" placeholder="Answer 4"
-                                       value="{{$answer4->answer}}">
+                                       value="{{$answer4->answer}}" required>
                             </div>
                         </div>
                         <div class="col-sm-4 m-b-20">
@@ -87,7 +86,7 @@
                     <div class="row">
                     <div class="col-xs-4">
                         <div class="fg-line form-group">
-                            <input type="number" value="{{$mcq->marks}}" name="marks" class="form-control input-sm" placeholder="Marks">
+                            <input type="number" value="{{$mcq->marks}}" name="marks" class="form-control input-sm" placeholder="Marks" required>
                         </div>
                     </div>
                     <button type="submit" name="submit" class="btn btn-success sa-btn-medium">Update</button>

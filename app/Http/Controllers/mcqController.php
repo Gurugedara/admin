@@ -44,6 +44,12 @@ class mcqController extends Controller
     public function store(Request $request)
     {
 //        dd($request);
+        $this->validate($request,[
+            'paper_id'=>'required',
+            'description'=>'required',
+            'marks'=>'required',
+            'answers'=>'required',
+        ]);
         $mcq = new Mcq();
         $mcq->paper_id = $request->paper_id;
         $mcq->description = $request->description;

@@ -15,13 +15,15 @@
                     <br/><br/>
                     <form method="POST" action="{{route('admin.modules.update',$module->id)}}" id = "addCourse">
                         @csrf
-                        @method('PUT');
+                        @method('PUT')
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="input-group">
 
                                     <div class="select">
-                                        <input type="text" class="form-control" name="name" placeholder="module Name" value="{{$module->name}}">
+                                        <input type="text" class="form-control" 
+                                        name="name" placeholder="module Name" value="{{$module->name}}" required
+                                        >
                                     </div>
                                 </div>
 
@@ -30,7 +32,8 @@
                             <div class="col-sm-4">
                                 <div class="input-group">
                                     <div class="select">
-                                        <input type="text" class="form-control" name="description" placeholder="description" value="{{$module->description}}">
+                                        <input type="text" class="form-control" name="description" 
+                                        \placeholder="description" value="{{$module->description}}" required>
                                     </div>
                                 </div>
                                 <br/>
@@ -41,7 +44,7 @@
                             <div class="col-sm-4">
                                 <div class="input-group">
                                     <div class="select">
-                                        <textarea class="form-control" cols="20" rows="10" name="learning_points" placeholder="Learning Points">{{$module->learning_points}}</textarea>
+                                        <textarea class="form-control" cols="20" rows="10" required name="learning_points" placeholder="Learning Points">{{$module->learning_points}}</textarea>
                                     </div>
                                 </div>
 
@@ -50,7 +53,7 @@
                             <div class="col-sm-4">
                                 <div class="input-group">
                                     <div class="select">
-                                        <select class="form-control" name="syllabus_id" style="width: 180px">
+                                        <select class="form-control" name="syllabus_id" required style="width: 180px">
                                             @foreach($syllabi as $syllabus)
                                                 <option value="{{$syllabus->id}}">{{$syllabus->name}}</option>
                                             @endforeach
@@ -73,7 +76,7 @@
                 </div>
                 <br/>
             </div>
-
+            <a href="/admin/institute/syllabus"> <button class="btn btn-float btn-danger m-btn"><i class="zmdi zmdi-arrow-back"></i></button></a>
         </div>
     </section>
 @endsection
