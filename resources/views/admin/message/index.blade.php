@@ -164,12 +164,16 @@
 
         <script>
             var messageWindow = document.getElementById('chatWindow');
+            var user;
             getMessages(
                 @if(!empty($users))
                     {{$users[0]}}
                 @endif
             );
+            setInterval(function(){getMessages(user)},30000);
             function getMessages(userId){
+                user = userId;
+                document.getElementById('reciever').value = user;
                 $.ajax({
                     type: 'GET',
                     url: '/admin/message/get/{{\Auth::user()->id}}/'+userId,
