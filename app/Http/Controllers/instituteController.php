@@ -140,8 +140,9 @@ class instituteController extends Controller
     public function searchIns(Request $request)
     {
         $this->validate($request,[
-            'course_id'=>'required',
+            'courseId'=>'required',
         ]);
+        // dd($request);
         $courseId = $request->courseId;
         $results = course_institute::where('course_id',$courseId)->get();
         return view('search.index',compact('results'));
